@@ -153,6 +153,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &311846651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1864209637579622, guid: 6060902afa66e3a4da2696a620a63ace,
+    type: 2}
+  m_PrefabInternal: {fileID: 1570303282}
+--- !u!114 &311846652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 311846651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32157cf7856f7c4daeeccb998748630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +665,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114277470758442762, guid: 6060902afa66e3a4da2696a620a63ace,
+        type: 2}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4630514028672728, guid: 6060902afa66e3a4da2696a620a63ace, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4.94
@@ -700,8 +721,33 @@ Prefab:
         type: 2}
       propertyPath: damageText
       value: 
-      objectReference: {fileID: 114482713743575062, guid: b3c831932b6ae0e44a356452b2d0364e,
+      objectReference: {fileID: 114923832989802518, guid: b3c831932b6ae0e44a356452b2d0364e,
         type: 2}
+    - target: {fileID: 114277470758442762, guid: 6060902afa66e3a4da2696a620a63ace,
+        type: 2}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277470758442762, guid: 6060902afa66e3a4da2696a620a63ace,
+        type: 2}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277470758442762, guid: 6060902afa66e3a4da2696a620a63ace,
+        type: 2}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 311846652}
+    - target: {fileID: 114277470758442762, guid: 6060902afa66e3a4da2696a620a63ace,
+        type: 2}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlayerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277470758442762, guid: 6060902afa66e3a4da2696a620a63ace,
+        type: 2}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114804290070458326, guid: 6060902afa66e3a4da2696a620a63ace, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 6060902afa66e3a4da2696a620a63ace, type: 2}
@@ -795,6 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0618956042000624dbb92cf0e50e2540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contactDamage: 0
 --- !u!114 &1908207629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,8 +854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  damageText: {fileID: 114482713743575062, guid: b3c831932b6ae0e44a356452b2d0364e,
-    type: 2}
+  damageText: {fileID: 0}
   OnDeathEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -942,7 +988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 9
-  damageText: {fileID: 114482713743575062, guid: b3c831932b6ae0e44a356452b2d0364e,
+  damageText: {fileID: 114923832989802518, guid: b3c831932b6ae0e44a356452b2d0364e,
     type: 2}
   OnDeathEvent:
     m_PersistentCalls:
@@ -971,6 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0618956042000624dbb92cf0e50e2540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contactDamage: 999
 --- !u!1 &2005674308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,10 +1050,10 @@ RectTransform:
   m_Father: {fileID: 1196709556}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.75989, y: -185}
-  m_SizeDelta: {x: 277.22, y: 46.9}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -226, y: -144}
+  m_SizeDelta: {x: 277.21997, y: 46.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005674310
 MonoBehaviour:

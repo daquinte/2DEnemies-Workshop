@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour {
             timeToLive--;
         }
         if(gameObject.activeInHierarchy)
-            Destroy(this.gameObject);
+            Destroy(gameObject);
     }
 
 }
