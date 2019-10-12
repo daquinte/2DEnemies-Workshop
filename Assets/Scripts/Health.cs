@@ -10,7 +10,6 @@ public class Health : MonoBehaviour {
 
     //Public variables
     public int maxHealth = 1;                       //Vida máxima de la entidad
-    public DamagePopup damageText;                  //Prefab del texto de daño
 
     //Eventos OnDeath
     [Header("Events")]
@@ -38,6 +37,9 @@ public class Health : MonoBehaviour {
     public void Heal(int heal)
     {
         currentHealth += heal;
+        if(currentHealth > maxHealth){
+            currentHealth = maxHealth;
+        }
     }
 
     //Daña a la entidad
@@ -63,7 +65,7 @@ public class Health : MonoBehaviour {
     void ShowDamage(int damageAmount)
     {
         Vector3 textPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y +2);
-        DamagePopup dmgtxt = Instantiate(damageText, textPosition, Quaternion.identity);
+        DamagePopup dmgtxt = Instantiate(PrefabManager.instance.GetDamagePopUp(), textPosition, Quaternion.identity);
         dmgtxt.Setup(damageAmount);        
     }
 
