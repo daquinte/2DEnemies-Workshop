@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// The enemy moves in a straight line directly to a stop of the screen.
-/// Usage: A enemy you would want to move from one spot to another, either randomly or between fixed points.
+/// The enemy moves in a straight line, but changes direction in response to a trigger.
 /// </summary>
-public class Liner : MonoBehaviour
+public class Pacer : MonoBehaviour
 {
 
     public float movementSpeed = 0.40f;
 
-    public bool random;
-
-
+    private bool MovingRight = true;
+    //TODO: PENSAR COMO HACER EL TRANSFORM DELANTE Y LANZAR EL RAYO DESDE AHI
+    //https://www.youtube.com/watch?v=aRxuKoJH9Y0
     // Start is called before the first frame update
     void Start()
     {

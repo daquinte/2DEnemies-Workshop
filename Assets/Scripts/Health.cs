@@ -9,12 +9,12 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour {
 
     //Public variables
-    public int maxHealth = 1;                       //Vida máxima de la entidad
+    public int maxHealth = 1;                       //Entity´s max health. Better to be changed in the editor.
 
-    //Eventos OnDeath
+    //OnDeath events
     [Header("Events")]
     [Space]
-    public UnityEvent OnDeathEvent;
+    public UnityEvent OnDeathEvent;     //TODO: quitar esto
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
@@ -26,14 +26,14 @@ public class Health : MonoBehaviour {
         currentHealth = maxHealth; 
 	}
 
-    //Para asignacion posterior al start
+    //In case you want to start this component dinamically
     public void Setup(int health, UnityAction callback = null)
     {
         maxHealth = currentHealth = health;
         //TODO: Asignar callbacks al evento 
     }
 
-    //Cura a la entidad 
+    //Heals the entity. A entity cannot overheal.
     public void Heal(int heal)
     {
         currentHealth += heal;
@@ -42,7 +42,7 @@ public class Health : MonoBehaviour {
         }
     }
 
-    //Daña a la entidad
+    //Damages the entity.
     public void Damage(int dmg)
     {
         currentHealth -= dmg;
@@ -55,13 +55,16 @@ public class Health : MonoBehaviour {
 
     void Die()
     {
-        OnDeathEvent.Invoke(); //Invocamos a los callbacks 
+        OnDeathEvent.Invoke();
         
         ShowDamage(maxHealth);
         Destroy(gameObject);
     }
 
-    //TODO: Gestion de DamageText en un cs aparte??
+    /// <summary>
+    /// Shows a floating damageText
+    /// </summary>
+    /// <param name="damageAmount">Damage you want to show</param>
     void ShowDamage(int damageAmount)
     {
         Vector3 textPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y +2);
