@@ -1396,7 +1396,6 @@ GameObject:
   - component: {fileID: 2103104951}
   - component: {fileID: 2103104950}
   - component: {fileID: 2103104949}
-  - component: {fileID: 2103104953}
   - component: {fileID: 2103104954}
   - component: {fileID: 2103104955}
   m_Layer: 0
@@ -1499,20 +1498,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2103104953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103104948}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd3e11105da2e8c40b153d0f9ca43684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 0.4
-  random: 0
 --- !u!61 &2103104954
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1546,7 +1531,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103104948}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71174366ed9e3214885c7b5cd3bde12e, type: 3}
   m_Name: 
