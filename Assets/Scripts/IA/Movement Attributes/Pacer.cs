@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Enumerator to calcule the direction of the entity
+public enum InitialMovement { Right, Left };
+
 /// <summary>
-/// The enemy moves in a straight line, in the direction you specify, but changes direction in response to a trigger.
+/// The enemy moves in a straight line, in the direction you specify, 
+/// but changes direction in response to a trigger.
 /// </summary>
 /// 
-public enum InitialMovement
-{ 
-    Right, Left
-};
-public class Pacer : MonoBehaviour
-{
+public class Pacer : MonoBehaviour { 
 
-    public float movementSpeed = 0.1f;
+    public float movementSpeed = 0.1f;   
     public InitialMovement initialMovement;
 
-    private GameObject raycastEmitter; 
-    //private bool MovingRight;
-    private int groundLayerMask;
+    private GameObject raycastEmitter;                  //GameObject you throw the raycast from. Created dinamically.
+    private int groundLayerMask;                        //Ground layer for raycast
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +26,10 @@ public class Pacer : MonoBehaviour
         Setup();
     }
 
+    /// <summary>
+    /// Setup of the direcion, dependant on he initial movement.
+    /// Placing of the raycast gameObject
+    /// </summary>
     void Setup()
     {
         //Set the direction
@@ -51,17 +54,16 @@ public class Pacer : MonoBehaviour
         switch (initialMovement)
         {
             case InitialMovement.Left:
-                
-                raycastEmitter.transform.position = new Vector3(GOTransform.position.x - 1.5f, GOTransform.position.y );
+                raycastEmitter.transform.position = 
+                    new Vector3(GOTransform.position.x - 1.5f, GOTransform.position.y );
                 break;
+
             case InitialMovement.Right:
                 
-                raycastEmitter.transform.position = new Vector3(GOTransform.position.x + 1.5f, GOTransform.position.y - 0.3f);
-
+                raycastEmitter.transform.position = 
+                    new Vector3(GOTransform.position.x + 1.5f, GOTransform.position.y - 0.3f);
                 break;
         }
-
-
     }
 
     // Update is called once per frame
@@ -70,7 +72,7 @@ public class Pacer : MonoBehaviour
         transform.Translate(Vector2.right * movementSpeed * Time.deltaTime);
 
         RaycastHit2D groundRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, 2, groundLayerMask);
-        if(groundRay.collider == null){ //TODO: exclusivo del suelo
+        if(groundRay.collider == null){
             transform.Rotate(Vector2.up, 180);
         }
     }

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// Enemy requerirá que el objeto tenga un componente Health
-[RequireComponent(typeof(Health))]
 public class Enemy : MonoBehaviour {
 
     private Health EnemyHealth;

@@ -20,7 +20,8 @@ public class EnemyBullet : MonoBehaviour
         if (h != null)
         {
             h.DamagePlayer(damage);
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
+       
     }
 }
