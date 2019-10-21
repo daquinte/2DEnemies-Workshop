@@ -19,7 +19,20 @@ public class Faller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D groundRay = Physics2D.Raycast(transform.position, Vector2.down, 5);
+        RaycastHit2D enemyRay = Physics2D.Raycast(transform.position, Vector2.down, detectionRange);
+        if(enemyRay.collider != null)
+        {
+            PlayerManager PM = enemyRay.collider.gameObject.GetComponent<PlayerManager>();
+            if(PM != null)
+            {
+                FallDown();
+            }
+        }
 
+    }
+
+    void FallDown()
+    {
+        transform.Translate(Vector2.down * fallSpeed);
     }
 }
