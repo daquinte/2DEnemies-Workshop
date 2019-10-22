@@ -613,7 +613,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1486513183
 GameObject:
@@ -874,6 +874,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1864209637579622, guid: 6060902afa66e3a4da2696a620a63ace, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4713724148466378, guid: 6060902afa66e3a4da2696a620a63ace, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.44
@@ -957,6 +961,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1689282586517736, guid: 98d19ed8c29ad234db6bb56b543bd157,
         type: 3}
+    - target: {fileID: 1287326553681156, guid: 6060902afa66e3a4da2696a620a63ace, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114854235808486710, guid: 6060902afa66e3a4da2696a620a63ace,
+        type: 3}
+      propertyPath: runSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692774492062924, guid: 6060902afa66e3a4da2696a620a63ace, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114932006411198, guid: 6060902afa66e3a4da2696a620a63ace, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6060902afa66e3a4da2696a620a63ace, type: 3}
 --- !u!1 &1715754646
@@ -977,7 +998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1715754647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1053,7 +1074,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!61 &1715754650
 BoxCollider2D:
@@ -1095,6 +1116,7 @@ GameObject:
   - component: {fileID: 1866364472}
   - component: {fileID: 1866364471}
   - component: {fileID: 1866364470}
+  - component: {fileID: 1866364476}
   m_Layer: 0
   m_Name: Bat (Faller)
   m_TagString: Untagged
@@ -1114,8 +1136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93124727224b9d4429e81adc2b770046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 0.4
-  detectionRange: 4
+  fallSpeed: 1
+  detectionRange: 10
 --- !u!114 &1866364471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,12 +1240,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866364469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2, y: -2.8, z: 0}
+  m_LocalPosition: {x: -2.2, y: 0.68, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1866364476
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866364469}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.234375, y: 0.25}
+    newSize: {x: 0.15, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.234375, y: 0.25}
+  m_EdgeRadius: 0
 --- !u!1 &1908207625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908207625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.21, y: -0.2, z: 0}
+  m_LocalPosition: {x: -6.34, y: -0.2, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1776,7 +1824,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2103104954
 BoxCollider2D:
