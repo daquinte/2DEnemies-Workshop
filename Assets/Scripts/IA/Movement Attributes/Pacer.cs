@@ -34,7 +34,7 @@ public class Pacer : MonoBehaviour {
     {
         //Set the direction
         float dir = 0f;
-        Debug.Log(transform.eulerAngles);
+
         if(transform.eulerAngles.y == 0) { 
              dir = (initialMovement == InitialMovement.Left) ? -1f : 1f;
         }

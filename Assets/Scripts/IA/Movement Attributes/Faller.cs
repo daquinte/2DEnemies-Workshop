@@ -7,16 +7,18 @@ using UnityEngine;
 /// </summary>
 public class Faller : MonoBehaviour
 {
-    public float fallSpeed;                             //downwards speed
+    public int gravity;                                 //downwards speed
     public int detectionRange;                          //Range in which the enemy detects the player
 
-    private Vector3 originalPosition;                   //The position the entity will return after falling
+    /// ---------------
+    /// Private variables
+    /// ---------------
+
     private int playerLayerMask;                        //Player layer for raycast
 
     // Start is called before the first frame update
     void Start()
     {
-        originalPosition = transform.position;
         playerLayerMask = (LayerMask.GetMask("Player"));
     }
 
@@ -24,6 +26,7 @@ public class Faller : MonoBehaviour
     void Update()
     {
         RaycastHit2D enemyRay = Physics2D.Raycast(transform.position, Vector2.down, detectionRange, playerLayerMask);
+        //RaycastHit2D enemyRay = Physics2D.BoxCast(transform.position, 2, Vector3.down, Vector3.down);
         if(enemyRay.collider != null)
         {
             PlayerManager PM = enemyRay.collider.gameObject.GetComponent<PlayerManager>();
@@ -35,20 +38,22 @@ public class Faller : MonoBehaviour
 
     }
 
-    void FallDown()
+    IEnumerator FallDown()
     {
-        //transform.Translate(Vector2.down * fallSpeed);
-        //iTween.MoveAdd(gameObject, new Vector3(transform.position.x, transform.position.y - fallSpeed), 1f);
-        iTween.MoveAdd(gameObject, Vector3.down * fallSpeed, 1f);
+
+        ModifyGravityScale(gravity);
+        yield return new WaitForSecondsRealtime(0.2f);
+        ModifyGravityScale(0);
         
-        //StartCoroutine("ReturnToOriginalPosition");
     }
 
-
-   IEnumerator ReturnToOriginalPosition()
+    void ModifyGravityScale(int mod)
     {
-        yield return new WaitForSecondsRealtime(0.8f);
-        transform.Translate(Vector2.up * fallSpeed);
-        yield return null;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.gravityScale = mod;
+        }
     }
+
 }
