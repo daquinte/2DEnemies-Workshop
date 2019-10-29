@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// The enemy falls from the ceiling onto the ground.
+/// A Faller enemy will drop itself down when a certain condition is met.
+/// The condition usually is given by the detection range.
 /// </summary>
 public class Faller : MonoBehaviour
 {
-    public int gravity;                                 //downwards speed
+    public int gravity;                                 //Gravity that will be applied for the fall.
     public int detectionRange;                          //Range in which the enemy detects the player
+    public float timeBeforeFall = 0.1f;                 //Time, in unscaled seconds, the enemy will wait before the fall
 
     /// ---------------
     /// Private variables
@@ -25,14 +27,15 @@ public class Faller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D enemyRay = Physics2D.Raycast(transform.position, Vector2.down, detectionRange, playerLayerMask);
-        //RaycastHit2D enemyRay = Physics2D.BoxCast(transform.position, 2, Vector3.down, Vector3.down);
-        if(enemyRay.collider != null)
+        //RaycastHit2D enemyRay = Physics2D.Raycast(transform.position, Vector2.down, detectionRange, playerLayerMask);
+        RaycastHit2D enemyRay = Physics2D.BoxCast(transform.position, new Vector2(2, 2), 0, Vector2.down, detectionRange, playerLayerMask);
+        if (enemyRay.collider != null)
         {
+            Debug.Log("AAAAAAAAAAA");
             PlayerManager PM = enemyRay.collider.gameObject.GetComponent<PlayerManager>();
-            if(PM != null)
+            if (PM != null)
             {
-                FallDown();
+                StartCoroutine("FallDown");
             }
         }
 
@@ -40,11 +43,10 @@ public class Faller : MonoBehaviour
 
     IEnumerator FallDown()
     {
-
+        yield return new WaitForSecondsRealtime(timeBeforeFall);
         ModifyGravityScale(gravity);
-        yield return new WaitForSecondsRealtime(0.2f);
-        ModifyGravityScale(0);
-        
+            
+   
     }
 
     void ModifyGravityScale(int mod)
@@ -56,4 +58,13 @@ public class Faller : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gizmos for the Faller behaviour
+    /// </summary>
+    private void OnDrawGizmosSelected()
+    {
+        // Draws a blue line from this transform to the target
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - detectionRange));
+    }
 }

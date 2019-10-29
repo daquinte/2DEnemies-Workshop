@@ -61,9 +61,19 @@ public class Floater : MonoBehaviour {
         }
     }
 
+
+    /// <summary>
+    /// Called then the component is disabled.
+    /// We stop all coroutines, either the X or Y axis corroutine will be stopped.
+    /// </summary>
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     //TODO: Unir FloatMovement in X/Y Axis de alguna manera
-    
-   IEnumerator FloatMovementInYAxis()
+
+    IEnumerator FloatMovementInYAxis()
     {
         while (true) { 
             if (towardsUpperLimit)
@@ -132,6 +142,10 @@ public class Floater : MonoBehaviour {
 
     }
 
+
+    /// <summary>
+    /// Gizmos for the Floater behaviour
+    /// </summary>
     private void OnDrawGizmosSelected()
     {
         // Draws a blue line from this transform to the target
