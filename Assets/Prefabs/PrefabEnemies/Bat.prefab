@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4560940722512842801}
   - component: {fileID: 4560940722512842800}
   - component: {fileID: 4560940722512842802}
-  - component: {fileID: 4560940722512842803}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -129,18 +128,4 @@ MonoBehaviour:
   movementDistance: 4
   movementSpeed: 1
   delayTime: 0.3
-  axis: 0
---- !u!114 &4560940722512842803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4560940722512842805}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd3e11105da2e8c40b153d0f9ca43684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 0.4
-  random: 0
+  axis: 1

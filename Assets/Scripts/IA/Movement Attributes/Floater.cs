@@ -72,6 +72,7 @@ public class Floater : MonoBehaviour {
     }
 
     //TODO: Unir FloatMovement in X/Y Axis de alguna manera
+    //TODO: Quitar coroutinas
 
     IEnumerator FloatMovementInYAxis()
     {
@@ -150,8 +151,18 @@ public class Floater : MonoBehaviour {
     {
         // Draws a blue line from this transform to the target
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + movementDistance/2));
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - movementDistance/2));
+        switch (axis)
+        {
+            case MovementAxis.X:
+                float posAuxX = transform.position.x - movementDistance / 2;
+                Gizmos.DrawLine(transform.position, new Vector3(posAuxX + movementDistance, transform.position.y));    
+                break;
+            case MovementAxis.Y:
+                float posAuxY = transform.position.y - movementDistance / 2;
+                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, posAuxY + movementDistance));
+                break;
+        }
+      
     }
 
 }
