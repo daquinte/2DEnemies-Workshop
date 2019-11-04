@@ -8,18 +8,20 @@ using UnityEngine;
 /// </summary>
 public class Jumper : MonoBehaviour
 {
-    //TODO: COMENTAR ATRIBUTOS
+    
     //Public attributes
-    public float delayBetweenJumps;
-    public float jumpForce;
+    public float delayBetweenJumps;                     //Delay the entity stays on the ground before jumping
+    public float jumpForce;                             //force that will be applied to a gameobject
 
     //Private attributes
-    private GameObject groundPoint;                  //A position marking where to check if the player is grounded. Created dinamically.
+    [SerializeField]
+    private GameObject  player;                         //Player instance
+
+    private GameObject  groundPoint;                    //A position marking where to check if the player is grounded. Created dinamically.
     private Rigidbody2D RB2D;
-    
-    private bool canJump;
-    private float lastJumpTimer;
-    private float groundCheckRadius = 0.2f;
+    private bool        canJump;
+    private float       lastJumpTimer;
+    private float       groundCheckRadius = 0.2f;
 
     LayerMask groundMask;
 
@@ -48,7 +50,7 @@ public class Jumper : MonoBehaviour
     {
         if (canJump)
         {
-
+            //Todo: Transform.InverseTransformPoint, puede ser la clave para hacer el giro
             RB2D.AddForce(new Vector2(-jumpForce, jumpForce*1.5f), ForceMode2D.Impulse);
             canJump = false;
         }

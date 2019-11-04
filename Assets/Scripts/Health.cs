@@ -12,9 +12,12 @@ public class Health : MonoBehaviour {
     public int maxHealth = 1;                       //Entity´s max health. Better to be changed in the editor.
 
     //OnDeath events
+    [SerializeField]
+    private DamagePopup DamagePopup;
+
     [Header("Events")]
     [Space]
-    public UnityEvent OnDeathEvent;     //TODO: quitar esto
+    public UnityEvent OnDeathEvent;     //TODO: ¿Lo uso o no?
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
@@ -68,7 +71,7 @@ public class Health : MonoBehaviour {
     void ShowDamage(int damageAmount)
     {
         Vector3 textPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y +2);
-        DamagePopup dmgtxt = Instantiate(PrefabManager.instance.GetDamagePopUp(), textPosition, Quaternion.identity);
+        DamagePopup dmgtxt = Instantiate(DamagePopup, textPosition, Quaternion.identity);
         dmgtxt.Setup(damageAmount);        
     }
 

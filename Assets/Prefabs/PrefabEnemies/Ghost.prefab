@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 7741138870556888433}
   - component: {fileID: 7741138870556888446}
   - component: {fileID: 7741138870556888435}
+  - component: {fileID: -7461183179167985197}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7741138870556888432
 Transform:
   m_ObjectHideFlags: 0
@@ -122,3 +123,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6, y: 2.6}
   m_EdgeRadius: 0
+--- !u!114 &-7461183179167985197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741138870556888447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e48e9220be3024abf59389752ab91f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 6
+  DamagePopup: {fileID: 114923832989802518, guid: b3c831932b6ae0e44a356452b2d0364e,
+    type: 3}
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7741138870556888447}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
