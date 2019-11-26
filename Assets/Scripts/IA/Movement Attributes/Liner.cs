@@ -4,46 +4,67 @@ using UnityEngine;
 
 /// <summary>
 /// The enemy moves in a straight line directly to point of the screen.
-/// This component changes the direction of the gameObject, instead of moving towards an axis.
+/// If rotateTowardsTarget is active, this component changes the direction of the gameObject to orientate itself.
 /// Usage: A enemy you would want to move from one spot to another, either randomly or between fixed points.
-/// 
-///  Liner
-///Direccion X/Y
-///  Speed -> unidades de Unity/segundo
-///Cambia direccion!!! (Separara direccion de "movimiento en X eje")
-/// -> Una cosa es la direccion del enemigo y otra que se mueva en un determinado eje sin cambiar la rotacion
 /// </summary>
 public class Liner : MonoBehaviour
 {
     public float    movementSpeed = 0.40f;                 //Speed at which the entity moves in Unity units per second
     public float    rotationSpeed = 0.60f;                 //Speed at which the entity rotates in Unity units per second?
-    public bool     random;
+    public bool     rotateTowardsTarget;                   //whether you want the entity to rotate or not
 
-    public Vector3 end;
-    public float travelSpeed = 0.3f;
+    public Vector3 targetPoint;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+  
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        //rotate to look at the end point
-        Vector3 difference = end - transform.position;
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-       
+        if(targetPoint != transform.position) { 
+            //move towards the target
+            transform.position = Vector3.Lerp(transform.position, targetPoint, movementSpeed * Time.deltaTime);
+        }
 
-        //move towards the player
-        transform.position = Vector3.Lerp(transform.position, end, Time.time * Time.deltaTime);
+        if (rotateTowardsTarget)
+        {
+            rotateToTarget();
+            
+        }
     }
 
     public void SetTargetPosition(float x, float y)
     {
-        end = new Vector3(x, y);
+        targetPoint = new Vector3(x, y);
+
+       
+    }
+
+    private void rotateToTarget()
+    {
+        Vector3 relativePos = targetPoint - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(relativePos);
+        rotation.x = transform.rotation.x;
+        rotation.y = transform.rotation.y;
+        transform.rotation = rotation;
+    }
+
+    /// <summary>
+    /// Gizmos for the editor.
+    /// Draw a yellow sphere at the targets's position
+    /// Draw a blue line to check the route
+    /// </summary>
+    private void OnDrawGizmosSelected()
+    {
+       
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(targetPoint, .3f);
+       
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, targetPoint);
     }
 }

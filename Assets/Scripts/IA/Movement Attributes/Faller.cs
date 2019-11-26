@@ -12,6 +12,7 @@ public class Faller : MonoBehaviour
     public int detectionRange;                          //Range in which the enemy detects the player
     public float timeBeforeFall = 0.1f;                 //Time, in unscaled seconds, the enemy will wait before the fall
 
+    public float rayWidth = 4;
     /// ---------------
     /// Private variables
     /// ---------------
@@ -27,8 +28,7 @@ public class Faller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //RaycastHit2D enemyRay = Physics2D.Raycast(transform.position, Vector2.down, detectionRange, playerLayerMask);
-        RaycastHit2D enemyRay = Physics2D.BoxCast(transform.position, new Vector2(2, 2), 0, Vector2.down, detectionRange, playerLayerMask);
+        RaycastHit2D enemyRay = Physics2D.BoxCast(transform.position, new Vector2(rayWidth, 1), 0, Vector2.down, detectionRange, playerLayerMask);
         if (enemyRay.collider != null)
         {
             Debug.Log("AAAAAAAAAAA");
@@ -41,12 +41,16 @@ public class Faller : MonoBehaviour
 
     }
 
-    IEnumerator FallDown()
+    public IEnumerator FallDown()
     {
         yield return new WaitForSecondsRealtime(timeBeforeFall);
+        Floater f = GetComponent<Floater>();
+        if (f != null)
+        {
+            f.enabled = false;
+        }
         ModifyGravityScale(gravity);
-            
-   
+        yield return null;
     }
 
     void ModifyGravityScale(int mod)

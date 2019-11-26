@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
+ 
+    public  LevelManager levelManager;
+    private LevelManager levelManagerInstance;
+
     private void Awake()
     {
        
@@ -22,16 +26,33 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+
+        levelManagerInstance = Instantiate(levelManager);
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
+    public LevelManager GetLevelManager()
+    {
+        return (levelManagerInstance != null) ? levelManagerInstance : null;
+    }
+
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    /// <summary>
+    /// Callback cuando cargas una escena.
+    /// </summary>
+    /// <param name="scene"></param>
+    /// <param name="mode"></param>
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        levelManagerInstance = Instantiate(levelManager);
     }
 }

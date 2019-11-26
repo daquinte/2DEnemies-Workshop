@@ -157,9 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93124727224b9d4429e81adc2b770046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 5
+  gravity: 2
   detectionRange: 10
   timeBeforeFall: 0.1
+  rayWidth: 4
 --- !u!61 &8361305793450920233
 BoxCollider2D:
   m_ObjectHideFlags: 0

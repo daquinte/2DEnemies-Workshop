@@ -14,7 +14,6 @@ public class Jumper : MonoBehaviour
     public float jumpForce;                             //force that will be applied to a gameobject
 
     //Private attributes
-    [SerializeField]
     private GameObject  player;                         //Player instance
 
     private GameObject  groundPoint;                    //A position marking where to check if the player is grounded. Created dinamically.
@@ -29,6 +28,8 @@ public class Jumper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        player = GameManager.instance.GetLevelManager().GetPlayer();
         canJump = true;
         lastJumpTimer = Time.deltaTime;
         RB2D = GetComponent<Rigidbody2D>();
@@ -50,13 +51,12 @@ public class Jumper : MonoBehaviour
     {
         if (canJump)
         {
-            //Todo: Transform.InverseTransformPoint, puede ser la clave para hacer el giro
-            RB2D.AddForce(new Vector2(-jumpForce, jumpForce*1.5f), ForceMode2D.Impulse);
+            Jump();
             canJump = false;
         }
         else
         {
-            if ((Time.time - lastJumpTimer > delayBetweenJumps))
+            if (Time.time - lastJumpTimer > delayBetweenJumps)
             {
                 //Cast a sphere of 0.2f radius from the groundPoint to check for ground
                 RaycastHit2D groundRay = Physics2D.Raycast(groundPoint.transform.position, Vector2.down, groundCheckRadius, groundMask);
@@ -69,6 +69,14 @@ public class Jumper : MonoBehaviour
             }
         }
 
+    }
+
+
+    private void Jump()
+    {
+        int difX = (player.transform.position.x > transform.position.x) ? 1 : -1;
+        RB2D.AddForce(new Vector2(jumpForce * difX, jumpForce * 1.5f), ForceMode2D.Impulse);
+        //TODO: ROTAR SPRITE
     }
 
     // Draws a wireframe sphere in the Scene view, fully enclosing
