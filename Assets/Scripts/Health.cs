@@ -12,7 +12,6 @@ public class Health : MonoBehaviour {
     public int maxHealth = 1;                       //Entity´s max health. Better to be changed in the editor.
 
     //OnDeath events
-    [SerializeField]
     private DamagePopup DamagePopup;
 
     [Header("Events")]

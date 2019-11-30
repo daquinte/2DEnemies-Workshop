@@ -674,7 +674,6 @@ GameObject:
   - component: {fileID: 1454566676}
   - component: {fileID: 1454566675}
   - component: {fileID: 1454566677}
-  - component: {fileID: 1454566679}
   - component: {fileID: 1454566678}
   m_Layer: 0
   m_Name: Critter
@@ -819,25 +818,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18452b35c247914a8ac59c07f34b351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  components:
+  activateComponents:
   - {fileID: 1454566677}
-  - {fileID: 1454566679}
---- !u!114 &1454566679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454566672}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd3e11105da2e8c40b153d0f9ca43684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 0.4
-  rotationSpeed: 0.6
-  rotateTowardsTarget: 0
-  targetPoint: {x: 0, y: 0, z: 0}
+  sensorType: 0
+  detectionRange: 8
+  targetType: 0
+  customTarget: {fileID: 0}
 --- !u!1 &1486513183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1004,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517714127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: -0.94, z: -0.2868849}
+  m_LocalPosition: {x: 2.01, y: -5.08, z: -0.2868849}
   m_LocalScale: {x: 2.39, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

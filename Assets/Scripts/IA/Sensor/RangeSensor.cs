@@ -3,27 +3,127 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+public enum RangeSensorType { Horizontal, Vertical, DistanceBased }
+public enum Target { Player, Custom }
 
-public class RangeSensor : Sensor 
+/// <summary>
+/// This class works as a distance or range sensor between this entity and some target GameObject
+/// When the distance is closer than a given value, either in one of the axis or any given distance, 
+/// the sensor will trigger a customizable response.
+/// </summary>
+public class RangeSensor : Sensor
 {
+    [Tooltip("Especifies the sensor range´s type.")]
+    public RangeSensorType sensorType;
+
+    [Tooltip("Range, in Unity units, the sensor will value")]
+    public float detectionRange = 1.0f;
+
+
+    public Target targetType;
+
+
+    [Tooltip("The target in case you don´t want the target to be the Player")]
+    public GameObject customTarget;
+
+
+    private GameObject target;
+    private bool sensorActive;          //whether the sensor was active or not.
+
     // Start is called before the first frame update
     void Start()
     {
+        if (targetType == Target.Player)
+        {
+            target = GameManager.instance.GetLevelManager().GetPlayer();
+        }
+        else if (target == null)
+        {
+            Debug.LogWarning("Target is null! Please, especify the target in the Inspector.");
+        }
+        else { target = customTarget; }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        OnSensorActive();
+        switch (sensorType)
+        {
+            case RangeSensorType.Horizontal:
+                if (Mathf.Abs(transform.position.x - target.transform.position.x) < detectionRange)
+                    OnSensorActive();
+                else if (sensorActive) OnSensorExit();
+                break;
+            case RangeSensorType.Vertical:
+                if (Mathf.Abs(transform.position.y - target.transform.position.y) > detectionRange) //TODO: mayor?
+                    OnSensorActive();
+                else if (sensorActive) OnSensorExit();
+                break;
+            case RangeSensorType.DistanceBased:
+                if (Vector2.Distance(transform.position, target.transform.position) < detectionRange)
+                    OnSensorActive();
+                else if (sensorActive) OnSensorExit();
+                break;
+        }
+
     }
 
     override public void OnSensorActive()
     {
-        foreach(MonoBehaviour monoBehaviour in components)
+
+        sensorActive = true;
+        foreach (MonoBehaviour monoBehaviour in activateComponents)
         {
-            Debug.Log(monoBehaviour.GetType()); //Devuelve "Jumper"
-            monoBehaviour.enabled = true;       //¡Y se activa!
+            monoBehaviour.enabled = true;
         }
+
+        /*
+        foreach (MonoBehaviour monoBehaviour in deactivateComponents)
+        {
+            monoBehaviour.enabled = false;      
+        }*/
+    }
+
+    override public void OnSensorExit()
+    {
+        foreach (MonoBehaviour monoBehaviour in activateComponents)
+        {
+            monoBehaviour.enabled = false;
+        }
+
+        /*
+        foreach (MonoBehaviour monoBehaviour in deactivateComponents)
+        {
+            monoBehaviour.enabled = false;      
+        }*/
+    }
+
+
+    /// <summary>
+    /// Gizmos for the editor.
+    /// We draw a line to 
+    /// </summary>
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        float x = transform.position.x;
+        float y = transform.position.y;
+        if (sensorType == RangeSensorType.Horizontal)
+        {
+            Gizmos.DrawLine(transform.position, new Vector2(x + detectionRange, y));
+            Gizmos.DrawLine(transform.position, new Vector2(x - detectionRange, y));
+        }
+
+        if (sensorType == RangeSensorType.Vertical)
+        {
+            Gizmos.DrawLine(transform.position, new Vector2(x, y + detectionRange));
+            Gizmos.DrawLine(transform.position, new Vector2(x, y - detectionRange));
+        }
+
+        if(sensorType == RangeSensorType.DistanceBased)
+        {
+            Gizmos.DrawWireSphere(transform.position, detectionRange);
+        }
+
     }
 }

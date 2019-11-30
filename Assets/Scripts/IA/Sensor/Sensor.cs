@@ -6,20 +6,12 @@ using UnityEditor;
 public class Sensor : MonoBehaviour
 {
 
-    
-    public List <MonoBehaviour> components;
+    [Tooltip("Components list you would like to enable. Enter a size and drag the components from this inspector window")]
+    public List <MonoBehaviour> activateComponents;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+   /* [Tooltip("Components list you would like to disable. Enter a size and drag the components from this inspector window")]
+    public List <MonoBehaviour> deactivateComponents;
+    */
     public virtual void OnSensorActive() { }
+    public virtual void OnSensorExit() { }
 }
