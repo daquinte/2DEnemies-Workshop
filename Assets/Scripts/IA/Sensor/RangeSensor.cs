@@ -23,12 +23,12 @@ public class RangeSensor : Sensor
     public Target targetType;
 
 
-    [Tooltip("The target in case you don´t want the target to be the Player")]
+    [Tooltip("The target in case you don´t want the target to be the Player. Custom shall be selected in the Target, too.")]
     public GameObject customTarget;
 
 
     private GameObject target;
-    private bool sensorActive;          //whether the sensor was active or not.
+    private bool sensorActive;               //whether the sensor was active or not.
 
     // Start is called before the first frame update
     void Start()
@@ -72,16 +72,13 @@ public class RangeSensor : Sensor
     {
 
         sensorActive = true;
-        foreach (MonoBehaviour monoBehaviour in activateComponents)
-        {
-            monoBehaviour.enabled = true;
-        }
+        base.OnSensorActive();
 
-        /*
+        
         foreach (MonoBehaviour monoBehaviour in deactivateComponents)
         {
             monoBehaviour.enabled = false;      
-        }*/
+        }
     }
 
     override public void OnSensorExit()
@@ -91,11 +88,11 @@ public class RangeSensor : Sensor
             monoBehaviour.enabled = false;
         }
 
-        /*
+       /* 
         foreach (MonoBehaviour monoBehaviour in deactivateComponents)
         {
-            monoBehaviour.enabled = false;      
-        }*/
+            monoBehaviour.enabled = true;      
+        }*/ //No neceseariamente quiero activar todos los componentes que quiero desactivar.
     }
 
 

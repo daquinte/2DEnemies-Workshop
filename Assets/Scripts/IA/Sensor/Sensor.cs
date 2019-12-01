@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// Father of all the Senson classes.
+/// </summary>
 public class Sensor : MonoBehaviour
 {
 
-    [Tooltip("Components list you would like to enable. Enter a size and drag the components from this inspector window")]
+    [Tooltip("Components list you would like to enable when trigger is active. Enter a size and drag the components from this inspector window")]
     public List <MonoBehaviour> activateComponents;
 
-   /* [Tooltip("Components list you would like to disable. Enter a size and drag the components from this inspector window")]
+    [Tooltip("Components list you would like to disable when trigger is active. Enter a size and drag the components from this inspector window")]
     public List <MonoBehaviour> deactivateComponents;
-    */
-    public virtual void OnSensorActive() { }
+    
+    public virtual void OnSensorActive() {
+
+        foreach (MonoBehaviour monoBehaviour in activateComponents)
+        {
+            monoBehaviour.enabled = true;
+        }
+    }
     public virtual void OnSensorExit() { }
 }

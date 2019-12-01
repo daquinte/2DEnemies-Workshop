@@ -9,51 +9,26 @@ using UnityEngine;
 public class Faller : MonoBehaviour
 {
     public int gravity;                                 //Gravity that will be applied for the fall.
-    public int detectionRange;                          //Range in which the enemy detects the player
     public float timeBeforeFall = 0.1f;                 //Time, in unscaled seconds, the enemy will wait before the fall
 
     public float rayWidth = 4;
-    /// ---------------
-    /// Private variables
-    /// ---------------
-
-    private int playerLayerMask;                        //Player layer for raycast
 
     // Start is called before the first frame update
     void Start()
     {
-        playerLayerMask = (LayerMask.GetMask("Player"));
+        StartCoroutine(FallDown());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        RaycastHit2D enemyRay = Physics2D.BoxCast(transform.position, new Vector2(rayWidth, 1), 0, Vector2.down, detectionRange, playerLayerMask);
-        if (enemyRay.collider != null)
-        {
-            Debug.Log("AAAAAAAAAAA");
-            PlayerManager PM = enemyRay.collider.gameObject.GetComponent<PlayerManager>();
-            if (PM != null)
-            {
-                StartCoroutine("FallDown");
-            }
-        }
 
-    }
 
     public IEnumerator FallDown()
     {
         yield return new WaitForSecondsRealtime(timeBeforeFall);
-        Floater f = GetComponent<Floater>();
-        if (f != null)
-        {
-            f.enabled = false;
-        }
         ModifyGravityScale(gravity);
         yield return null;
     }
 
-    void ModifyGravityScale(int mod)
+    private void ModifyGravityScale(int mod)
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
@@ -69,6 +44,6 @@ public class Faller : MonoBehaviour
     {
         // Draws a blue line from this transform to the target
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - detectionRange));
+        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 2));
     }
 }

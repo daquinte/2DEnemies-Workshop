@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8361305793450920238}
   - component: {fileID: 8361305793450920239}
+  - component: {fileID: 8361305793450920233}
+  - component: {fileID: 8361305793450920232}
   - component: {fileID: 8361305793450920236}
   - component: {fileID: 8361305793450920237}
   - component: {fileID: 8361305793450920226}
   - component: {fileID: 8361305793450920227}
-  - component: {fileID: 8361305793450920233}
-  - component: {fileID: 8361305793450920232}
+  - component: {fileID: 3340267437186351134}
   m_Layer: 0
   m_Name: Bat (Faller)
   m_TagString: Untagged
@@ -86,81 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8361305793450920236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8361305793450920224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1e48e9220be3024abf59389752ab91f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 2
-  DamagePopup: {fileID: 114923832989802518, guid: b3c831932b6ae0e44a356452b2d0364e,
-    type: 3}
-  OnDeathEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8361305793450920237}
-        m_MethodName: OnDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &8361305793450920237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8361305793450920224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0618956042000624dbb92cf0e50e2540, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8361305793450920226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8361305793450920224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff957f6ad373151439810e114940ba4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementDistance: 1
-  movementSpeed: 1
-  delayTime: 0.1
-  axis: 1
---- !u!114 &8361305793450920227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8361305793450920224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93124727224b9d4429e81adc2b770046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 2
-  detectionRange: 10
-  timeBeforeFall: 0.1
-  rayWidth: 4
 --- !u!61 &8361305793450920233
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -208,3 +134,94 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8361305793450920236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361305793450920224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e48e9220be3024abf59389752ab91f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8361305793450920237}
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &8361305793450920237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361305793450920224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0618956042000624dbb92cf0e50e2540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8361305793450920226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361305793450920224}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff957f6ad373151439810e114940ba4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementDistance: 1
+  movementSpeed: 1
+  delayTime: 0.1
+  axis: 1
+--- !u!114 &8361305793450920227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361305793450920224}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93124727224b9d4429e81adc2b770046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 2
+  detectionRange: 10
+  timeBeforeFall: 0.1
+  rayWidth: 4
+--- !u!114 &3340267437186351134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361305793450920224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18452b35c247914a8ac59c07f34b351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateComponents:
+  - {fileID: 8361305793450920227}
+  sensorType: 0
+  detectionRange: 1.5
+  targetType: 0
+  customTarget: {fileID: 0}

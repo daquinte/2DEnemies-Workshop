@@ -22,18 +22,9 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
         
         DontDestroyOnLoad(gameObject);
-    }
-
-    // Use this for initialization
-    void Start () {
-
         levelManagerInstance = Instantiate(levelManager);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
     public LevelManager GetLevelManager()
     {
