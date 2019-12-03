@@ -68,7 +68,7 @@ public class RangeSensor : Sensor
 
     }
 
-    override public void OnSensorActive()
+    override protected void OnSensorActive()
     {
 
         sensorActive = true;
@@ -81,7 +81,7 @@ public class RangeSensor : Sensor
         }
     }
 
-    override public void OnSensorExit()
+    override protected void OnSensorExit()
     {
         foreach (MonoBehaviour monoBehaviour in activateComponents)
         {

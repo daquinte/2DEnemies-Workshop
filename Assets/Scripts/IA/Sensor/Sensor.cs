@@ -15,12 +15,12 @@ public class Sensor : MonoBehaviour
     [Tooltip("Components list you would like to disable when trigger is active. Enter a size and drag the components from this inspector window")]
     public List <MonoBehaviour> deactivateComponents;
     
-    public virtual void OnSensorActive() {
+    protected virtual void OnSensorActive() {
 
         foreach (MonoBehaviour monoBehaviour in activateComponents)
         {
             monoBehaviour.enabled = true;
         }
     }
-    public virtual void OnSensorExit() { }
+    protected virtual void OnSensorExit() { }
 }
