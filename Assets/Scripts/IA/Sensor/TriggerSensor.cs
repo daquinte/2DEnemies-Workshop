@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum TriggerPreset {None, Up, Down, Left, Right, BothSides}
+public enum PresetTrigger { None, Up, Down, Left, Right, BothSides}
 
 
 public class TriggerSensor : Sensor
 {
 
     [Tooltip("The sensor will set the Triggers accordingly, based on Renderer size")]
-    public TriggerPreset triggerPreset;
+    public PresetTrigger presetTrigger;
 
     public BoxCollider2D[] customBoxColliders;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (triggerPreset != TriggerPreset.None)
+        if (presetTrigger != PresetTrigger.None)
             SetPresetTriggers();
     }
 
@@ -42,21 +42,21 @@ public class TriggerSensor : Sensor
             groundPoint.transform.position = new Vector2(transform.position.x, rend.bounds.min.y);
             groundPoint.transform.parent = gameObject.transform;
          */
-        switch (triggerPreset)
+        switch (presetTrigger)
         {
-            case TriggerPreset.Up:
+            case PresetTrigger.Up:
                 break;
 
-            case TriggerPreset.Down:
+            case PresetTrigger.Down:
                 break;
 
-            case TriggerPreset.Left:
+            case PresetTrigger.Left:
                 break;
 
-            case TriggerPreset.Right:
+            case PresetTrigger.Right:
                 break;
 
-            case TriggerPreset.BothSides:
+            case PresetTrigger.BothSides:
                 break;
         }
     }
