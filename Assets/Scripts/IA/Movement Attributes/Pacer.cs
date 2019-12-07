@@ -32,7 +32,7 @@ public class Pacer : MonoBehaviour {
     /// </summary>
     void Setup()
     {
-        //Set the direction
+        //Set the direction (BASE)
         float dir = 0f;
 
         if(transform.eulerAngles.y == 0) { 
@@ -44,7 +44,6 @@ public class Pacer : MonoBehaviour {
 
         }
         movementSpeed *= dir;
-        Debug.Log(movementSpeed);
 
 
         //Place the Transform you cast rays from
@@ -69,12 +68,36 @@ public class Pacer : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * movementSpeed * Time.deltaTime);
+        Move();
+        Check();
+    }
 
+    /// <summary>
+    /// Moves the entity, always to the right but modified by the movementSpeed´s
+    /// magnitude and it being positive or negative.
+    /// </summary>
+    protected void Move()
+    {
+        transform.Translate(Vector2.right * movementSpeed * Time.deltaTime);
+    }
+
+    /// <summary>
+    /// Checks if there is ground beneath. 
+    /// If there isn´t, we rotate the gameObject
+    /// </summary>
+    protected virtual void Check()
+    {
         RaycastHit2D groundRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, 2, groundLayerMask);
-        if(groundRay.collider == null){
-            transform.Rotate(Vector2.up, 180);
+        if (groundRay.collider == null)
+        {
+            ChangeDir();
         }
+    }
+
+    protected void ChangeDir()
+    {
+        transform.Rotate(Vector2.up, 180);
+
     }
 
 }

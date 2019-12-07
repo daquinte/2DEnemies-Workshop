@@ -28,7 +28,6 @@ public class RangeSensor : Sensor
 
 
     private GameObject target;
-    private bool sensorActive;               //whether the sensor was active or not.
 
     // Start is called before the first frame update
     void Start()
@@ -70,11 +69,7 @@ public class RangeSensor : Sensor
 
     override protected void OnSensorActive()
     {
-
-        sensorActive = true;
-        base.OnSensorActive();
-
-        
+        base.OnSensorActive();   
         foreach (MonoBehaviour monoBehaviour in deactivateComponents)
         {
             monoBehaviour.enabled = false;      

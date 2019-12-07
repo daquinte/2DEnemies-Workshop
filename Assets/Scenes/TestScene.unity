@@ -132,15 +132,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elephant
       objectReference: {fileID: 0}
+    - target: {fileID: 3408963746462657250, guid: f3825c9b2c1793641a362596e6f104df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3408963746462657262, guid: f3825c9b2c1793641a362596e6f104df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 3408963746462657262, guid: f3825c9b2c1793641a362596e6f104df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.67
+      value: -3.94
       objectReference: {fileID: 0}
     - target: {fileID: 3408963746462657262, guid: f3825c9b2c1793641a362596e6f104df,
         type: 3}
@@ -186,6 +191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408963746462657261, guid: f3825c9b2c1793641a362596e6f104df,
+        type: 3}
+      propertyPath: initialMovement
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3825c9b2c1793641a362596e6f104df, type: 3}
@@ -365,18 +375,17 @@ GameObject:
   m_Component:
   - component: {fileID: 1017727035}
   - component: {fileID: 1017727034}
-  - component: {fileID: 1017727033}
-  - component: {fileID: 1017727032}
   - component: {fileID: 1017727031}
-  - component: {fileID: 1017727030}
   - component: {fileID: 1017727029}
+  - component: {fileID: 1017727030}
+  - component: {fileID: 1017727033}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1017727029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ceec8d58edf6b24fa99ef3dba319425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 0.4
+  initialMovement: 1
 --- !u!114 &1017727030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +415,8 @@ MonoBehaviour:
   activateComponents: []
   deactivateComponents: []
   presetTrigger: 0
-  customBoxColliders: []
+  customBoxColliders:
+  - {fileID: 1017727033}
 --- !u!61 &1017727031
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -418,7 +430,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.03694564}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -429,33 +441,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 1.2}
-  m_EdgeRadius: 0
---- !u!61 &1017727032
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017727028}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.2}
-    newSize: {x: 0.5, y: 0.375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6, y: 1.2}
+  m_Size: {x: 1.6, y: 1.1261088}
   m_EdgeRadius: 0
 --- !u!61 &1017727033
 BoxCollider2D:
@@ -467,10 +453,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.0139666, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -481,7 +467,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 1.2}
+  m_Size: {x: 0.32581234, y: 1.2}
   m_EdgeRadius: 0
 --- !u!212 &1017727034
 SpriteRenderer:
@@ -540,7 +526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017727028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.43, y: -4.32, z: -1.2281331}
+  m_LocalPosition: {x: 2.37, y: -7.4, z: -1.2281331}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1227,6 +1213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Critter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775288377908171434, guid: 59e2f180de95f44488520d908e9e3c5d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7775288377908171432, guid: 59e2f180de95f44488520d908e9e3c5d,
         type: 3}

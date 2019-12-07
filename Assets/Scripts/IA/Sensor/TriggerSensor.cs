@@ -26,11 +26,13 @@ public class TriggerSensor : Sensor
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        sensorActive = true;
         OnSensorActive();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        sensorActive = false;
         OnSensorExit();
     }
 
