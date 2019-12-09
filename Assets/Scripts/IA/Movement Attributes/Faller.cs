@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+
 /// <summary>
 /// A Faller enemy will drop itself down when a certain condition is met.
 /// The condition usually is given by the detection range.

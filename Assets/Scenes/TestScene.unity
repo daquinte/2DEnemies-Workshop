@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 3408963746462657262, guid: f3825c9b2c1793641a362596e6f104df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.31
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 3408963746462657262, guid: f3825c9b2c1793641a362596e6f104df,
         type: 3}
@@ -199,6 +199,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3825c9b2c1793641a362596e6f104df, type: 3}
+--- !u!1 &134702774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3408963746462657250, guid: f3825c9b2c1793641a362596e6f104df,
+    type: 3}
+  m_PrefabInstance: {fileID: 134702773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &134702775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134702774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78317e7e8ba6fe8478de1029d7762f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateComponents: []
+  deactivateComponents: []
+  originPoint: {fileID: 1549501976}
+  rayDirection: {x: 0, y: -1}
+  raycastDistance: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!4 &134702776 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3408963746462657262, guid: f3825c9b2c1793641a362596e6f104df,
+    type: 3}
+  m_PrefabInstance: {fileID: 134702773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &266385402
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,8 +430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ceec8d58edf6b24fa99ef3dba319425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.4
   initialMovement: 1
+  movementSpeed: 0.4
 --- !u!114 &1017727030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,6 +1035,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1549501975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1549501976}
+  m_Layer: 0
+  m_Name: RaycastPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1549501976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549501975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.92, y: -0.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 134702776}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1564337252
 GameObject:

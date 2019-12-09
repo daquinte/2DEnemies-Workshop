@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(RaycastSensor))]
 
 
 /// <summary>
@@ -28,7 +29,7 @@ public class Pacer : AbstractChangeDir {
     void Setup()
     {
         base.SetupDir();
-
+        /*
         //Place the Transform you cast rays from
         Transform GOTransform = transform;
         raycastEmitter = new GameObject("raycastEmitter");
@@ -45,12 +46,13 @@ public class Pacer : AbstractChangeDir {
                     new Vector3(GOTransform.position.x + 1.5f, GOTransform.position.y - 0.3f);
                 break;
         }
+        */
     }
 
     // Update is called once per frame
     void Update()
     {
-        base.MoveForward();
+        MoveForward();
         Check();
     }
 
@@ -62,10 +64,8 @@ public class Pacer : AbstractChangeDir {
     /// </summary>
     protected override void Check()
     {
-        RaycastHit2D groundRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, 2, groundLayerMask);
-        if (groundRay.collider == null)
-        {
-            base.ChangeDir();
+        if (GetComponent<RaycastSensor>().GetSensorActive()) {
+            ChangeDir();
         }
     }
 
