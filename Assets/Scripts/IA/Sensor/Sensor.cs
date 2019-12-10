@@ -17,17 +17,14 @@ public class Sensor : MonoBehaviour
     [Tooltip("Components list you would like to disable when trigger is active. Enter a size and drag the components from this inspector window")]
     public List <MonoBehaviour> deactivateComponents;
 
-    protected bool sensorActive;        //Sometimes I just want the sensor to track this information so other components can ask.
+    protected bool sensorActive;        //Sometimes I just want the sensor to track this information so any components (previously active) can ask.
 
 
     /*Methods*/
-
-
     public bool GetSensorActive()
     {
         return sensorActive;
     }
-
 
     protected virtual void OnSensorActive() {
 

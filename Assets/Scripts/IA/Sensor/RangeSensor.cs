@@ -23,7 +23,7 @@ public class RangeSensor : Sensor
     public Target targetType;
 
 
-    [Tooltip("The target in case you don´t want the target to be the Player. Custom shall be selected in the Target, too.")]
+    [Tooltip("The target in case you don´t want the target to be the Player. If that´s so, please select Custom in the Target Type")]
     public GameObject customTarget;
 
 

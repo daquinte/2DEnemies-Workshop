@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//We need a Rigidbody in order to apply force to the gameObject
+[RequireComponent(typeof(Rigidbody2D))]
+
 /// <summary>
-/// A Jumper enemy will bounce towards another entity. 
-/// TODO: Redactar los atributos, una vez los tenga claros
+/// A Jumper enemy will bounce towards another gameObject, usually the Player.
+/// You can especify the delay between jumps, as well as the jump force. 
+/// The Jumper will jump according to where the target gameObject it, and it will NOT change direction mid-flight
+/// 
 /// </summary>
 public class Jumper : MonoBehaviour
 {
@@ -15,14 +20,14 @@ public class Jumper : MonoBehaviour
 
     //Private attributes
     private GameObject  player;                         //Player instance
-
     private GameObject  groundPoint;                    //A position marking where to check if the player is grounded. Created dinamically.
-    private Rigidbody2D RB2D;
-    private bool        canJump;
-    private float       lastJumpTimer;
-    private float       groundCheckRadius = 0.2f;
+    private Rigidbody2D RB2D;                           //This object´s rigidbody
 
-    LayerMask groundMask;
+    private bool        canJump;                        //¿Are you touching the ground, and your delay is over?
+    private float       lastJumpTimer;                  //Tracks the last frame in which you jumped
+    private float       groundCheckRadius = 0.2f;       //Radius of the sphere we use to track the ground.
+
+    LayerMask groundMask;                               //Ground layer
 
 
     // Start is called before the first frame update
@@ -37,6 +42,9 @@ public class Jumper : MonoBehaviour
         SetUpGroundPoint();
     }
 
+    /// <summary>
+    /// Sets the point which will track if you are on the ground or not.
+    /// </summary>
     private void SetUpGroundPoint()
     {
         groundPoint = new GameObject("JumperGroundPoint");
@@ -71,12 +79,15 @@ public class Jumper : MonoBehaviour
 
     }
 
-
+    /// <summary>
+    /// Apply an impulse force to the GameObject to make it jump
+    /// </summary>
     private void Jump()
     {
         int difX = (player.transform.position.x > transform.position.x) ? 1 : -1;
         RB2D.AddForce(new Vector2(jumpForce * difX, jumpForce * 1.5f), ForceMode2D.Impulse);
-        //TODO: ROTAR SPRITE
+        
+        //TODO: Rotar
     }
 
     // Draws a wireframe sphere in the Scene view, fully enclosing

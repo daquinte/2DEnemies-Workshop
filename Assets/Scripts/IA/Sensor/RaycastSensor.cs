@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum RayLayerMask { All, Ground, Player }
 public class RaycastSensor : Sensor
 {
 
@@ -14,7 +13,7 @@ public class RaycastSensor : Sensor
 
     public float raycastDistance;
 
-    [Tooltip("Especifies the layer the ray will collide on.")] //TODO: rephrase
+    [Tooltip("Especifies the layer the ray will collide on.")]
     public LayerMask layerMask;
 
 

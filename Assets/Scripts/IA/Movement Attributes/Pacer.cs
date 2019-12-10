@@ -29,24 +29,6 @@ public class Pacer : AbstractChangeDir {
     void Setup()
     {
         base.SetupDir();
-        /*
-        //Place the Transform you cast rays from
-        Transform GOTransform = transform;
-        raycastEmitter = new GameObject("raycastEmitter");
-        raycastEmitter.transform.parent = gameObject.transform;
-        switch (initialMovement)
-        {
-            case InitialMovement.Left:
-                raycastEmitter.transform.position = 
-                    new Vector3(GOTransform.position.x - 1.5f, GOTransform.position.y );
-                break;
-
-            case InitialMovement.Right:
-                raycastEmitter.transform.position = 
-                    new Vector3(GOTransform.position.x + 1.5f, GOTransform.position.y - 0.3f);
-                break;
-        }
-        */
     }
 
     // Update is called once per frame
@@ -55,8 +37,6 @@ public class Pacer : AbstractChangeDir {
         MoveForward();
         Check();
     }
-
-
 
     /// <summary>
     /// Checks if there is ground beneath this GameObject. 
@@ -68,7 +48,4 @@ public class Pacer : AbstractChangeDir {
             ChangeDir();
         }
     }
-
-
-
 }

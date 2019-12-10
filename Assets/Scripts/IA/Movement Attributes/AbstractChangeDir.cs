@@ -40,7 +40,9 @@ public class AbstractChangeDir : MonoBehaviour
         transform.Translate(Vector2.right * movementSpeed * Time.deltaTime);
     }
 
-
+    /// <summary>
+    /// Rotates the gameObject 180º in Y axis. 
+    /// </summary>
     protected void ChangeDir()
     {
         transform.Rotate(Vector2.up, 180);
@@ -48,7 +50,7 @@ public class AbstractChangeDir : MonoBehaviour
 
 
     /// <summary>
-    /// Method that will be overrride by its sons
+    /// Method that will be overrrided in each sensor
     /// </summary>
-    protected virtual void Check() { }
+    protected virtual void Check() {}
 }

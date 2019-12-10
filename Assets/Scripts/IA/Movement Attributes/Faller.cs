@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//We need a Rigidbody in order to apply gravity to the gameObject
 [RequireComponent(typeof(Rigidbody2D))]
 
 /// <summary>
@@ -13,15 +14,11 @@ public class Faller : MonoBehaviour
     public int gravity;                                 //Gravity that will be applied for the fall.
     public float timeBeforeFall = 0.1f;                 //Time, in unscaled seconds, the enemy will wait before the fall
 
-    public float rayWidth = 4;
-
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(FallDown());
     }
-
-
 
     public IEnumerator FallDown()
     {
