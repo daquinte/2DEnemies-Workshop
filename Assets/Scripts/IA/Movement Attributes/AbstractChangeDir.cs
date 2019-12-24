@@ -50,7 +50,7 @@ public class AbstractChangeDir : MonoBehaviour
 
 
     /// <summary>
-    /// Method that will be overrrided in each sensor
+    /// Method that will be overrided in each sensor
     /// </summary>
     protected virtual void Check() {}
 }

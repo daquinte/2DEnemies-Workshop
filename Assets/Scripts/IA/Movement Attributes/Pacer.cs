@@ -10,8 +10,7 @@ using UnityEngine;
 /// but changes direction in response to a trigger.
 /// </summary>
 /// 
-public class Pacer : AbstractChangeDir { 
-
+public class Pacer : AbstractChangeDir {
 
     private GameObject raycastEmitter;                  //GameObject you throw the raycast from. Created dinamically.
     private int groundLayerMask;                        //Ground layer for raycast
@@ -21,6 +20,7 @@ public class Pacer : AbstractChangeDir {
     {
         groundLayerMask = (LayerMask.GetMask("Ground"));
         Setup();
+      
     }
 
     /// <summary>
@@ -29,6 +29,15 @@ public class Pacer : AbstractChangeDir {
     void Setup()
     {
         base.SetupDir();
+
+        //Place the Transform you cast rays from
+        Transform GOTransform = transform;
+        raycastEmitter = new GameObject("raycastEmitter");
+
+        Renderer rend = GetComponent<Renderer>();
+        raycastEmitter.transform.position = new Vector3(GOTransform.position.x - 1.5f, GOTransform.position.y);
+        raycastEmitter.transform.parent = gameObject.transform;
+
     }
 
     // Update is called once per frame
@@ -44,7 +53,9 @@ public class Pacer : AbstractChangeDir {
     /// </summary>
     protected override void Check()
     {
-        if (GetComponent<RaycastSensor>().GetSensorActive()) {
+        RaycastHit2D groundRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, 2, groundLayerMask);
+        if (groundRay.collider == null)
+        {
             ChangeDir();
         }
     }

@@ -46,8 +46,8 @@ public class Liner : MonoBehaviour
 
     private void rotateToTarget()
     {
-        Vector3 relativePos = targetPoint - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(relativePos);
+        Vector3 relativePos = transform.position - targetPoint;
+        Quaternion rotation = Quaternion.LookRotation(relativePos); //NO, USAR ROTACIONES DE TRANSFORM
         rotation.x = transform.rotation.x;
         rotation.y = transform.rotation.y;
         transform.rotation = rotation;
