@@ -10,9 +10,21 @@ public class Bullet : MonoBehaviour
 
     public int movementSpeed;
 
+    //From the public enum in AbstractDir
+    public InitialMovement initialMovement; 
+    
+    public void ChangeDirection(InitialMovement initialM)
+    {
+        initialMovement = initialM;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * movementSpeed * Time.deltaTime);
+        if(initialMovement == InitialMovement.Left)
+            transform.Translate(Vector2.left * movementSpeed * Time.deltaTime);
+        else
+            transform.Translate(Vector2.right * movementSpeed * Time.deltaTime);
+
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7775288377908171433}
   - component: {fileID: 7775288377908171439}
   - component: {fileID: 7775288377908171436}
+  - component: {fileID: 1867822673}
   m_Layer: 0
   m_Name: Critter
   m_TagString: Untagged
@@ -144,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBetweenJumps: 2.5
-  jumpForce: 7
+  jumpHeight: 2
 --- !u!114 &7775288377908171436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +162,23 @@ MonoBehaviour:
   - {fileID: 7775288377908171439}
   deactivateComponents: []
   sensorType: 0
-  detectionRange: 8
+  detectionRange: 6
   targetType: 0
   customTarget: {fileID: 0}
+--- !u!114 &1867822673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775288377908171434}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd3e11105da2e8c40b153d0f9ca43684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0.4
+  rotationSpeed: 0.6
+  rotateTowardsTarget: 0
+  target: {fileID: 0}
+  targetPoint: {x: 0, y: 0, z: 0}

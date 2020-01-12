@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(TriggerSensor))]         //A Bumper entity needs a sensor to change direction
 public class Bumper : AbstractChangeDir
 {
-    [Range(2.0f, 10.0f)]
+    [Range(1.0f, 5.0f)]
     public float colliderWidth;
     
     // Start is called before the first frame update
@@ -18,7 +17,7 @@ public class Bumper : AbstractChangeDir
     void Setup()
     {
         SetupDir();
-        //Place the Transform you cast rays from
+       
         BoxCollider2D bumperCollider = gameObject.AddComponent<BoxCollider2D>();
         bumperCollider.transform.position = new Vector3(this.transform.position.x, this.transform.position.y);
         bumperCollider.size = new Vector2(colliderWidth, bumperCollider.size.y);

@@ -6,20 +6,20 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 
 /// <summary>
-/// A Jumper enemy will bounce towards another gameObject, usually the Player.
+/// Jumps as high ad the "jump force" variable.
 /// You can especify the delay between jumps, as well as the jump force. 
-/// The Jumper will jump according to where the target gameObject it, and it will NOT change direction mid-flight
 /// 
+/// USAGE:
+/// Combined with a Liner, a Jumper enemy will bounce towards another gameObject, usually the Player.
 /// </summary>
 public class Jumper : MonoBehaviour
 {
     
     //Public attributes
     public float delayBetweenJumps;                     //Delay the entity stays on the ground before jumping
-    public float jumpForce;                             //force that will be applied to a gameobject
+    public float jumpHeight;                            //How high you want this entity to jump
 
     //Private attributes
-    private GameObject  player;                         //Player instance
     private GameObject  groundPoint;                    //A position marking where to check if the player is grounded. Created dinamically.
     private Rigidbody2D RB2D;                           //This object´s rigidbody
 
@@ -33,8 +33,6 @@ public class Jumper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        player = GameManager.instance.GetLevelManager().GetPlayer();
         canJump = true;
         lastJumpTimer = Time.deltaTime;
         RB2D = GetComponent<Rigidbody2D>();
@@ -84,8 +82,7 @@ public class Jumper : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-        int difX = (player.transform.position.x > transform.position.x) ? 1 : -1;
-        RB2D.AddForce(new Vector2(jumpForce * difX, jumpForce * 1.5f), ForceMode2D.Impulse);
+        RB2D.AddForce(new Vector2(0, jumpHeight * 1.5f), ForceMode2D.Impulse);
         
         //TODO: Rotar
     }
