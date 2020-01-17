@@ -9,54 +9,56 @@ using UnityEngine;
 /// </summary>
 public class Liner : MovementBehaviour
 {
-    public float    movementSpeed = 0.40f;                 //Speed at which the entity moves in Unity units per second
-    public float    rotationSpeed = 0.60f;                 //Speed at which the entity rotates in Unity units per second?
-    public bool     rotateTowardsTarget;                   //whether you want the entity to rotate or not
+    public float movementSpeed = 0.40f;                 //Speed at which the entity moves in Unity units per second
+    public float rotationSpeed = 0.60f;                 //Speed at which the entity rotates in Unity units per second?
+    public bool rotateTowardsTarget;                   //whether you want the entity to rotate or not
 
-    public GameObject    target;
-    public Vector3      targetPoint;
-
-    //PRUEBA
-    private Vector3 velocity;
-    private Rigidbody2D rb2D;
-
-    void Awake()
-    {
-        rb2D = gameObject.GetComponent<Rigidbody2D>();
-    }
+    private Vector3 targetPoint;                        //Punto objetivo
 
     // Start is called before the first frame update
     new void Start()
     {
-        
+
         base.Start();
+        targetPoint = enemyEngine.GetTargetPosition();
         if (rotateTowardsTarget)
         {
-          RotateToTarget();
+            RotateToTarget();
         }
     }
 
     public void SetTargetPosition(float x, float y)
     {
         targetPoint = new Vector3(x, y);
-       
     }
 
-    private void RotateToTarget()
+    /// <summary>
+    /// This method is called from the enemy engine and it does hell of a lot of things!!!!
+    /// </summary>
+    /// <returns></returns>
+    public override Vector2 GetMovement()
     {
-        Vector3 targetPos = enemyEngine.GetTargetPosition();
-        // Get Angle in Radians
-        float AngleRad = Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x);
-        // Get Angle in Degrees
-        float AngleDeg = (180 / Mathf.PI) * AngleRad;
-        // Rotate Object
-
-        if (targetPos.x > transform.position.x)
+        if (transform.position != targetPoint)
         {
-            transform.rotation = (Quaternion.Euler(0, 180, -AngleDeg));
+            Vector2 steering = Vector2.zero;
+
+            Vector3 desiredVelocity = targetPoint - transform.position;
+            desiredVelocity.Normalize();
+            desiredVelocity *= 5.0f;
+
+            //A la velocidad que llevase, tengo que aplicarle la mía
+            steering = desiredVelocity - enemyEngine.GetVelocity();
+
+
+            lastMovement = steering;
         }
-        else transform.rotation = Quaternion.Euler(0, 0, AngleDeg-180);
+        else
+        {
+            lastMovement = Vector3.zero;
+        }
+        return lastMovement;
     }
+
 
     /// <summary>
     /// Gizmos for the editor.
@@ -65,27 +67,25 @@ public class Liner : MovementBehaviour
     /// </summary>
     private void OnDrawGizmosSelected()
     {
-       
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(targetPoint, .3f);
-       
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, targetPoint);
+        Gizmos.DrawLine(transform.position, enemyEngine.GetTargetPosition());
     }
 
-    public override Vector2 GetMovement()
+
+
+    private void RotateToTarget()
     {
-        Debug.Log("Seek");
-        Vector2 steering = Vector2.zero;
+        // Get Angle in Radians
+        float AngleRad = Mathf.Atan2(targetPoint.y - transform.position.y, targetPoint.x - transform.position.x);
+        // Get Angle in Degrees
+        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        // Rotate Object
 
-        Vector3 desiredVelocity = enemyEngine.GetTargetPosition() - transform.position;
-        desiredVelocity.Normalize();
-        desiredVelocity *= 5.0f;
-
-        //A la velocidad que llevase, tengo que aplicarle la mía
-        steering = desiredVelocity - enemyEngine.GetVelocity();
-
-        lastMovement = steering;
-        return lastMovement;
+        if (enemyEngine.GetTargetPosition().x > transform.position.x)
+        {
+            transform.rotation = (Quaternion.Euler(0, 180, -AngleDeg));
+        }
+        else transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 180);
     }
+
 }

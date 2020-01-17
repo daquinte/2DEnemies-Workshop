@@ -52,12 +52,6 @@ public class EnemyEngine : MonoBehaviour
 	{
 		enemyBehaviours = new List<MovementBehaviour>();
 
-		
-	}
-
-	// Start is called before the first frame update
-	void Start()
-    {
 		isMoving = false;
 		if (m_target != null)
 		{
@@ -72,6 +66,12 @@ public class EnemyEngine : MonoBehaviour
 				isMoving = true;
 			}
 		}
+	}
+
+	// Start is called before the first frame update
+	void Start()
+    {
+
 	}
 
     // Update is called once per frame
