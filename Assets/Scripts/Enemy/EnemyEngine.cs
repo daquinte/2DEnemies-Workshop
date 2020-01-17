@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This is the core of an enemy.
+/// </summary>
 public class EnemyEngine : MonoBehaviour
 {
 
-    /// <summary>
-	/// Referencia al objetivo al que queremos llegar
-	/// </summary>
 	[Tooltip("Objetivo que tendrá el enemigo. Si es null, se asignará el jugador")]
 	public GameObject m_target = null;
 
@@ -31,7 +31,7 @@ public class EnemyEngine : MonoBehaviour
 	/// <summary>
 	/// Lista con los comportamientos que component el movimiento
 	/// </summary>
-	public List<MovementBehaviour> enemyBehaviours;
+	private List<MovementBehaviour> enemyBehaviours;
 
 	/// <summary>
 	/// ¿Nos estamos moviendo?
@@ -52,6 +52,12 @@ public class EnemyEngine : MonoBehaviour
 	{
 		enemyBehaviours = new List<MovementBehaviour>();
 
+		
+	}
+
+	// Start is called before the first frame update
+	void Start()
+    {
 		isMoving = false;
 		if (m_target != null)
 		{
@@ -68,23 +74,17 @@ public class EnemyEngine : MonoBehaviour
 		}
 	}
 
-	// Start is called before the first frame update
-	void Start()
-    {
-		
-	}
-
     // Update is called once per frame
     void Update()
     {
 		if (isMoving)
 			updatePosition();
-		float distance = (TargetPosition() - transform.position).magnitude;
+		float distance = (GetTargetPosition() - transform.position).magnitude;
 		isMoving = distance > m_StopDistance;
 	}
 
 
-	public Vector3 TargetPosition()
+	public Vector3 GetTargetPosition()
 	{
 		return m_target != null ? m_target.transform.position : Vector3.zero;
 	}
@@ -102,7 +102,42 @@ public class EnemyEngine : MonoBehaviour
 
 	private void updatePosition()
 	{
-		//TODO: THIS
+		foreach (MovementBehaviour sb in enemyBehaviours)
+		{
+			accel += sb.GetMovement();
+		}
+		if (accel.magnitude > m_maxAccel)
+		{
+			accel.Normalize();
+			accel *= m_maxAccel;
+		}
+		Vector2 newVelocity = velocity;
+		newVelocity += accel * Time.deltaTime;
+
+		if (newVelocity.magnitude > m_maxSpeed)
+		{
+			newVelocity.Normalize();
+			newVelocity *= m_maxSpeed;
+		}
+		velocity = new Vector3(newVelocity.x, newVelocity.y, 0.0f);
+		transform.position += velocity * Time.deltaTime;
+
+		// The enemy forward vector is facing up
+		//transform.up = velocity.normalized;
+		accel = Vector3.zero;
+	}
+
+	public Vector3 GetVelocity() { return velocity; }
+
+	/// <summary>
+	/// Flips the enemy
+	/// </summary>
+	private void Flip()
+	{
+		// Switch the way the player is labelled as facing.
+		//m_FacingRight = !m_FacingRight;
+
+		transform.Rotate(0f, 180f, 0f);
 	}
 
 }

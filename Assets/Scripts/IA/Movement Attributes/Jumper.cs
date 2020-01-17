@@ -82,7 +82,7 @@ public class Jumper : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-        RB2D.AddForce(new Vector2(0, jumpHeight * 1.5f), ForceMode2D.Impulse);
+        RB2D.AddForce(new Vector2(0, jumpHeight * 1.5f));
         
         //TODO: Rotar
     }

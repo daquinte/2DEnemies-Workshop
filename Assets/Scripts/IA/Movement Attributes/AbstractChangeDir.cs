@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Enumerator to calcule the direction of the entity
-public enum InitialMovement { Right, Left };
 
 public class AbstractChangeDir : MonoBehaviour
 {
-    public InitialMovement initialMovement;
+    //Enumerator to calcule the direction of the entity
+    protected enum InitialMovement { Right, Left };
+
+    private InitialMovement initialMovement = InitialMovement.Left;
     public float movementSpeed = 0.1f;
 
     /// <summary>

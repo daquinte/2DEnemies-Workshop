@@ -16,35 +16,24 @@ public class Liner : MovementBehaviour
     public GameObject    target;
     public Vector3      targetPoint;
 
+    //PRUEBA
+    private Vector3 velocity;
+    private Rigidbody2D rb2D;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        if(target == null) target = GameObject.FindGameObjectWithTag("Player");
-
-        if (rotateTowardsTarget)
-        {
-            RotateToTarget();
-
-        }
+        rb2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    new void Start()
     {
-        targetPoint = target.transform.position;
-        //Operacion que necesito:  transform.position = Vector3.Lerp(transform.position, targetPoint, movementSpeed * Time.deltaTime); 
-
-        if (targetPoint != transform.position) {
-            //move towards the target
-
-            float step = movementSpeed * Time.deltaTime; // calculate distance to move
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
-
-
+        
+        base.Start();
+        if (rotateTowardsTarget)
+        {
+          RotateToTarget();
         }
-
-  
     }
 
     public void SetTargetPosition(float x, float y)
@@ -55,17 +44,18 @@ public class Liner : MovementBehaviour
 
     private void RotateToTarget()
     {
+        Vector3 targetPos = enemyEngine.GetTargetPosition();
         // Get Angle in Radians
-        float AngleRad = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x);
+        float AngleRad = Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x);
         // Get Angle in Degrees
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
         // Rotate Object
 
-        if (target.transform.position.x > transform.position.x)
+        if (targetPos.x > transform.position.x)
         {
             transform.rotation = (Quaternion.Euler(0, 180, -AngleDeg));
         }
-        else transform.rotation = Quaternion.Euler(0, 0, AngleDeg + 180);
+        else transform.rotation = Quaternion.Euler(0, 0, AngleDeg-180);
     }
 
     /// <summary>
@@ -85,6 +75,17 @@ public class Liner : MovementBehaviour
 
     public override Vector2 GetMovement()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Seek");
+        Vector2 steering = Vector2.zero;
+
+        Vector3 desiredVelocity = enemyEngine.GetTargetPosition() - transform.position;
+        desiredVelocity.Normalize();
+        desiredVelocity *= 5.0f;
+
+        //A la velocidad que llevase, tengo que aplicarle la mía
+        steering = desiredVelocity - enemyEngine.GetVelocity();
+
+        lastMovement = steering;
+        return lastMovement;
     }
 }
