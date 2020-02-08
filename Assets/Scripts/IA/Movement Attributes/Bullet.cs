@@ -16,7 +16,12 @@ public class Bullet : AbstractChangeDir
     // Update is called once per frame
     void Update()
     {
-       transform.Translate(Vector2.left * movementSpeed * Time.deltaTime);
+       
+    }
+
+    public Vector2 GetBulletMovement()
+    {
+        return Vector2.left * movementSpeed * Time.deltaTime;
     }
 
 

@@ -9,42 +9,39 @@ public class EnemyEngine : MonoBehaviour
 {
 
 	[Tooltip("Objetivo que tendrá el enemigo. Si es null, se asignará el jugador")]
-	public GameObject m_target = null;
+	public GameObject enemyTarget = null;
+
+	[Tooltip("Distance in which we consider the enemy has reached the player")]
+	public float stopDistance = 0.2f;
+
+	[Tooltip("Maximum velocity in which an enemy can move")]
+	public float maxVelocity = 5.0f;
+
+	[Tooltip("Maximum acceleration that can be applied to an enemy")]
+	public float maxAccel = 5.0f;
 
 	/// <summary>
-	/// Distancia a la que consideramos que hemos alcanzado el objetivo
-	/// </summary>
-	[Tooltip("Distancia a la que consideramos que hemos alcanzado el objetivo")]
-	public float m_StopDistance = 0.2f;
-
-	/// <summary>
-	/// Velocidad máxima
-	/// </summary>
-	[Tooltip("Velocidad máxima a la que puede ir el enemigo")]
-	public float m_maxSpeed = 5.0f;
-
-	/// <summary>
-	/// Aceleración máxima
-	/// </summary>
-	public float m_maxAccel = 5.0f;
-
-	/// <summary>
-	/// Lista con los comportamientos que component el movimiento
+	/// List with every component that composes an enemy behaviour
 	/// </summary>
 	private List<MovementBehaviour> enemyBehaviours;
 
 	/// <summary>
-	/// ¿Nos estamos moviendo?
+	/// ¿Is the enemy moving?
 	/// </summary>
 	private bool isMoving;
 
 	/// <summary>
-	/// Vector velocidad
+	/// ¿Is the enemy facing left?
+	/// </summary>
+	private bool isFacingLeft;
+
+	/// <summary>
+	/// Velocity vector that this enemy has
 	/// </summary>
 	private Vector3 velocity;
 
 	/// <summary>
-	/// Vector de aceleración. Será actualizado por los steerings
+	/// Acceleration vector. It will be modified by the movement behaviours
 	/// </summary>
 	private Vector2 accel = Vector2.zero;
 
@@ -53,7 +50,8 @@ public class EnemyEngine : MonoBehaviour
 		enemyBehaviours = new List<MovementBehaviour>();
 
 		isMoving = false;
-		if (m_target != null)
+		isFacingLeft = true;
+		if (enemyTarget != null)
 		{
 			isMoving = true;
 		}
@@ -62,17 +60,12 @@ public class EnemyEngine : MonoBehaviour
 			GameObject player = GameObject.FindGameObjectWithTag("Player");
 			if (player != null)
 			{
-				m_target = player;
+				enemyTarget = player;
 				isMoving = true;
 			}
 		}
 	}
 
-	// Start is called before the first frame update
-	void Start()
-    {
-
-	}
 
     // Update is called once per frame
     void Update()
@@ -80,19 +73,22 @@ public class EnemyEngine : MonoBehaviour
 		if (isMoving)
 			updatePosition();
 		float distance = (GetTargetPosition() - transform.position).magnitude;
-		isMoving = distance > m_StopDistance;
+		isMoving = distance > stopDistance;
 	}
 
 
 	public Vector3 GetTargetPosition()
 	{
-		return m_target != null ? m_target.transform.position : Vector3.zero;
+		return enemyTarget != null ? enemyTarget.transform.position : Vector3.zero;
 	}
+
+	public Vector3 GetVelocity() { return velocity; }
+	public float GetMaxVelocity() { return maxVelocity; }
 
 	public void newTarget(GameObject target)
 	{
 		if (target != this.gameObject)
-			m_target = target;
+			enemyTarget = target;
 	}
 
 	public void RegistrerBehaviour(MovementBehaviour mb)
@@ -106,18 +102,18 @@ public class EnemyEngine : MonoBehaviour
 		{
 			accel += sb.GetMovement();
 		}
-		if (accel.magnitude > m_maxAccel)
+		if (accel.magnitude > maxAccel)
 		{
 			accel.Normalize();
-			accel *= m_maxAccel;
+			accel *= maxAccel;
 		}
 		Vector2 newVelocity = velocity;
 		newVelocity += accel * Time.deltaTime;
 
-		if (newVelocity.magnitude > m_maxSpeed)
+		if (newVelocity.magnitude > maxVelocity)
 		{
 			newVelocity.Normalize();
-			newVelocity *= m_maxSpeed;
+			newVelocity *= maxVelocity;
 		}
 		velocity = new Vector3(newVelocity.x, newVelocity.y, 0.0f);
 		transform.position += velocity * Time.deltaTime;
@@ -127,8 +123,6 @@ public class EnemyEngine : MonoBehaviour
 		accel = Vector3.zero;
 	}
 
-	public Vector3 GetVelocity() { return velocity; }
-
 	/// <summary>
 	/// Flips the enemy
 	/// </summary>
@@ -136,7 +130,7 @@ public class EnemyEngine : MonoBehaviour
 	{
 		// Switch the way the player is labelled as facing.
 		//m_FacingRight = !m_FacingRight;
-
+		isFacingLeft = !isFacingLeft;
 		transform.Rotate(0f, 180f, 0f);
 	}
 

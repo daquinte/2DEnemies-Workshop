@@ -12,9 +12,10 @@ public class Liner : MovementBehaviour
     public float movementSpeed = 0.40f;                 //Speed at which the entity moves in Unity units per second
     public float rotationSpeed = 0.60f;                 //Speed at which the entity rotates in Unity units per second?
     public bool rotateTowardsTarget;                   //whether you want the entity to rotate or not
-
-    private Vector3 targetPoint;                        //Punto objetivo
-
+    public float smoothTime = 0.3F;                     //Movement smoothing
+    
+    private Vector3 targetPoint;                        //The end point of the line
+    private Vector3 velocity = Vector3.zero;            //Velocity for the smoothdamp
     // Start is called before the first frame update
     new void Start()
     {
@@ -48,7 +49,9 @@ public class Liner : MovementBehaviour
 
             //A la velocidad que llevase, tengo que aplicarle la mía
             steering = desiredVelocity - enemyEngine.GetVelocity();
-
+          
+            // And then smoothing it out and applying it to the character
+            steering = Vector3.SmoothDamp(steering, desiredVelocity, ref velocity, smoothTime);
 
             lastMovement = steering;
         }
@@ -68,7 +71,7 @@ public class Liner : MovementBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, enemyEngine.GetTargetPosition());
+        //Gizmos.DrawLine(transform.position, enemyEngine.GetTargetPosition());
     }
 
 
