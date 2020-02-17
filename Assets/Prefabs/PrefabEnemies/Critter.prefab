@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 7775288377908171435}
   - component: {fileID: 7775288377908171438}
   - component: {fileID: 7775288377908171433}
-  - component: {fileID: 7775288377908171439}
+  - component: {fileID: 915187332}
   - component: {fileID: 7775288377908171436}
+  - component: {fileID: 915187330}
+  - component: {fileID: 915187329}
+  - component: {fileID: 7775288377908171439}
   m_Layer: 0
   m_Name: Critter
   m_TagString: Untagged
@@ -131,20 +134,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7775288377908171439
+--- !u!114 &915187332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7775288377908171434}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ae36d7fb666d14c98f693d6b9a47eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 5555d495ddd0e2b4cbd3cc82242b860a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBetweenJumps: 2.5
-  jumpHeight: 5
+  enemyTarget: {fileID: 0}
+  stopDistance: 0.2
+  maxVelocity: 5
+  maxAccel: 5
 --- !u!114 &7775288377908171436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,9 +163,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activateComponents:
-  - {fileID: 7775288377908171439}
+  - {fileID: 915187330}
   deactivateComponents: []
   sensorType: 0
-  detectionRange: 15
+  detectionRange: 6
   targetType: 0
   customTarget: {fileID: 0}
+--- !u!114 &915187330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775288377908171434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96c3e7835b054049af1214bd413ad2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayBetweenJumps: 1
+  jumper: {fileID: 7775288377908171439}
+  bullet: {fileID: 915187329}
+--- !u!114 &915187329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775288377908171434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38763839d8790646aaa9fc74d12ac28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 6
+--- !u!114 &7775288377908171439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775288377908171434}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ae36d7fb666d14c98f693d6b9a47eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 5

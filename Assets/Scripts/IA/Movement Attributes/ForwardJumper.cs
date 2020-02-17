@@ -11,7 +11,7 @@ using UnityEngine;
 /// It is needed because we do not want to jump forward all the time, instead this enemy will jump
 /// according to the timers. 
 /// </summary>
-public class ForwardJumper : MonoBehaviour
+public class ForwardJumper : MovementBehaviour
 {
     //Public attributes
     public float delayBetweenJumps;                     //Delay the entity stays on the ground before jumping
@@ -20,7 +20,6 @@ public class ForwardJumper : MonoBehaviour
     [SerializeField] private Jumper jumper;             //This object´s Jumper component
     [SerializeField] private Bullet bullet;             //This object´s Bullet component
     private GameObject groundPoint;                     //A position marking where to check if the player is grounded. Created dinamically.
-    private Rigidbody2D RB2D;                           //This object´s rigidbody
 
     
     private bool canJump;                               //¿Are you touching the ground, and your delay is over?
@@ -34,21 +33,21 @@ public class ForwardJumper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        base.Start();
         canJump = true;
         lastJumpTimer = Time.deltaTime;
-        RB2D = GetComponent<Rigidbody2D>();
         groundMask = (LayerMask.GetMask("Ground"));
         SetUpGroundPoint();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override Vector2 GetMovement()
     {
+        Vector2 steering = Vector2.zero;
         if (canJump)
         {
-            jumper.Jump();          //Jump!         
-            RB2D.velocity += bullet.GetBulletMovement();
-            canJump = false;        //We shall not jump until next timer states so
+            jumper.Jump();                              //Jump!         
+            steering += bullet.GetBulletMovement();     
+            canJump = false;                            //We shall not jump until next timer states so
         }
         else
         {
@@ -64,8 +63,9 @@ public class ForwardJumper : MonoBehaviour
                 lastJumpTimer = Time.time;
             }
         }
-    }
 
+        return steering;
+    }
 
     /// <summary>
     /// Sets the point which will track if you are on the ground or not.
@@ -96,4 +96,6 @@ public class ForwardJumper : MonoBehaviour
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(center, radius);
     }
+
+    
 }

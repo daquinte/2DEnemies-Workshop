@@ -1,0 +1,2995 @@
+fileFormatVersion: 2
+guid: d73da2f055665ef469bc3de726503c0b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6127832943470481395
+    second: BCrit0Izq
+  - first:
+      213: -799032587981634996
+    second: BCrit1Izq
+  - first:
+      213: -513478073176475330
+    second: BCrit2Izq
+  - first:
+      213: 803181398581145072
+    second: NpcCemetPNG_3
+  - first:
+      213: -6428139395624606081
+    second: NpcCemetPNG_4
+  - first:
+      213: 7507202381292506471
+    second: NpcCemetPNG_5
+  - first:
+      213: 1046086703076651904
+    second: NpcCemetPNG_6
+  - first:
+      213: 3988778405944730246
+    second: NpcCemetPNG_7
+  - first:
+      213: -5139181667869946867
+    second: NpcCemetPNG_8
+  - first:
+      213: 6932496009906720793
+    second: NpcCemetPNG_9
+  - first:
+      213: 38076748583456899
+    second: NpcCemetPNG_10
+  - first:
+      213: -2847455086806596025
+    second: NpcCemetPNG_11
+  - first:
+      213: 2940718604141748265
+    second: NpcCemetPNG_12
+  - first:
+      213: -1781948696088271913
+    second: NpcCemetPNG_13
+  - first:
+      213: 2870573466065177970
+    second: NpcCemetPNG_14
+  - first:
+      213: -7085519343080606075
+    second: NpcCemetPNG_15
+  - first:
+      213: -974506890236923501
+    second: NpcCemetPNG_16
+  - first:
+      213: 3543339744305257338
+    second: NpcCemetPNG_17
+  - first:
+      213: -1971188483977373920
+    second: NpcCemetPNG_18
+  - first:
+      213: 1395802931439114716
+    second: NpcCemetPNG_19
+  - first:
+      213: 4052169667671052707
+    second: BCrit0Der
+  - first:
+      213: 8932333688898669007
+    second: BCrit1Der
+  - first:
+      213: 7237030578545171599
+    second: BCrit2Der
+  - first:
+      213: -1127875870760226741
+    second: NpcCemetPNG_23
+  - first:
+      213: 3834860735487109816
+    second: NpcCemetPNG_24
+  - first:
+      213: -6982527384738672934
+    second: NpcCemetPNG_25
+  - first:
+      213: 8040887973171247578
+    second: NpcCemetPNG_26
+  - first:
+      213: 3507434742883761306
+    second: NpcCemetPNG_27
+  - first:
+      213: 5071905846747013698
+    second: NpcCemetPNG_28
+  - first:
+      213: -4661823733288553538
+    second: NpcCemetPNG_29
+  - first:
+      213: -7902320208954779877
+    second: NpcCemetPNG_30
+  - first:
+      213: -5822014199994359226
+    second: NpcCemetPNG_31
+  - first:
+      213: 897223243714037717
+    second: NpcCemetPNG_32
+  - first:
+      213: -4853652346525172290
+    second: NpcCemetPNG_33
+  - first:
+      213: -8988470019603284486
+    second: NpcCemetPNG_34
+  - first:
+      213: -7261464771082844468
+    second: NpcCemetPNG_35
+  - first:
+      213: -3645451793984057986
+    second: NpcCemetPNG_36
+  - first:
+      213: 5567654472559272223
+    second: NpcCemetPNG_37
+  - first:
+      213: -1267760599404001485
+    second: NpcCemetPNG_38
+  - first:
+      213: -7940460746996388942
+    second: NpcCemetPNG_39
+  - first:
+      213: 4621732368180594492
+    second: BBat0Izq
+  - first:
+      213: 7490745976865540536
+    second: BBat1Izq
+  - first:
+      213: -3292386685170975638
+    second: BBat2Izq
+  - first:
+      213: -1614797610876754656
+    second: BBat3Izq
+  - first:
+      213: -4033460569105742930
+    second: BBat2to3Izq
+  - first:
+      213: 2121814396623139290
+    second: BBatFallIZq
+  - first:
+      213: -7539168640961854729
+    second: NpcCemetPNG_46
+  - first:
+      213: -4779168833573325864
+    second: NpcCemetPNG_47
+  - first:
+      213: -576873170715161883
+    second: NpcCemetPNG_48
+  - first:
+      213: -1111556698074552257
+    second: NpcCemetPNG_49
+  - first:
+      213: 3444941983661539237
+    second: NpcCemetPNG_50
+  - first:
+      213: -2212266433712917411
+    second: NpcCemetPNG_51
+  - first:
+      213: 3748232896304994273
+    second: NpcCemetPNG_52
+  - first:
+      213: -5664084723823383137
+    second: NpcCemetPNG_53
+  - first:
+      213: -4218005219909002093
+    second: NpcCemetPNG_54
+  - first:
+      213: 4211324005909256944
+    second: NpcCemetPNG_55
+  - first:
+      213: 662635917651538269
+    second: NpcCemetPNG_56
+  - first:
+      213: -6128395952378057957
+    second: NpcCemetPNG_57
+  - first:
+      213: -6055827547838727639
+    second: NpcCemetPNG_58
+  - first:
+      213: 4140665691104164922
+    second: NpcCemetPNG_59
+  - first:
+      213: 4888240116520109537
+    second: NpcCemetPNG_60
+  - first:
+      213: -6561662576757179676
+    second: NpcCemetPNG_61
+  - first:
+      213: 7272026324875119527
+    second: NpcCemetPNG_62
+  - first:
+      213: -7795673195871451131
+    second: NpcCemetPNG_63
+  - first:
+      213: -433191387458076583
+    second: NpcCemetPNG_64
+  - first:
+      213: 3922689081178501171
+    second: NpcCemetPNG_65
+  - first:
+      213: -2989568072648038715
+    second: NpcCemetPNG_66
+  - first:
+      213: 7927092529118270823
+    second: NpcCemetPNG_67
+  - first:
+      213: -1310060729055368180
+    second: NpcCemetPNG_68
+  - first:
+      213: 155920034472420690
+    second: NpcCemetPNG_69
+  - first:
+      213: 1409992192171541292
+    second: NpcCemetPNG_70
+  - first:
+      213: 4234987096876742111
+    second: NpcCemetPNG_71
+  - first:
+      213: 3284576284426886206
+    second: NpcCemetPNG_72
+  - first:
+      213: -1008032231937444931
+    second: NpcCemetPNG_73
+  - first:
+      213: 1016258118499097187
+    second: NpcCemetPNG_74
+  - first:
+      213: 517156058625885988
+    second: NpcCemetPNG_75
+  - first:
+      213: 7339026655354819609
+    second: NpcCemetPNG_76
+  - first:
+      213: -1843372123496994438
+    second: NpcCemetPNG_77
+  - first:
+      213: 7226741620774803591
+    second: NpcCemetPNG_78
+  - first:
+      213: -2833166565087008256
+    second: NpcCemetPNG_79
+  - first:
+      213: -966065515824500077
+    second: NpcCemetPNG_80
+  - first:
+      213: 7500354994240128682
+    second: NpcCemetPNG_81
+  - first:
+      213: -7727256135682213204
+    second: NpcCemetPNG_82
+  - first:
+      213: -1175839010665649086
+    second: NpcCemetPNG_83
+  - first:
+      213: -7000211310634490757
+    second: NpcCemetPNG_84
+  - first:
+      213: -5523096179606842386
+    second: NpcCemetPNG_85
+  - first:
+      213: 706988090292745454
+    second: NpcCemetPNG_86
+  - first:
+      213: 8082047822399840613
+    second: NpcCemetPNG_87
+  - first:
+      213: 2746954707762517026
+    second: NpcCemetPNG_88
+  - first:
+      213: -5351807509072299157
+    second: NpcCemetPNG_89
+  - first:
+      213: -5279310499697579697
+    second: NpcCemetPNG_90
+  - first:
+      213: 4279513757384176987
+    second: NpcCemetPNG_91
+  - first:
+      213: -5852063930537541860
+    second: NpcCemetPNG_92
+  - first:
+      213: 1663570423550773285
+    second: NpcCemetPNG_93
+  - first:
+      213: 8009979843526357394
+    second: NpcCemetPNG_94
+  - first:
+      213: -8792580305068506937
+    second: NpcCemetPNG_95
+  - first:
+      213: 3981492293114770199
+    second: NpcCemetPNG_96
+  - first:
+      213: 3331592150465510406
+    second: NpcCemetPNG_97
+  - first:
+      213: -4313720061076860746
+    second: NpcCemetPNG_98
+  - first:
+      213: -1672492459389941870
+    second: NpcCemetPNG_99
+  - first:
+      213: -5496546371028879132
+    second: NpcCemetPNG_100
+  - first:
+      213: 2476033825371413487
+    second: NpcCemetPNG_101
+  - first:
+      213: -5050582961225243895
+    second: NpcCemetPNG_102
+  - first:
+      213: -1834406616153424014
+    second: NpcCemetPNG_103
+  - first:
+      213: 2285829032453339140
+    second: NpcCemetPNG_104
+  - first:
+      213: -3863710849503659457
+    second: NpcCemetPNG_105
+  - first:
+      213: -6566948013474221697
+    second: NpcCemetPNG_106
+  - first:
+      213: 3330642016974210295
+    second: NpcCemetPNG_107
+  - first:
+      213: 5464430304811031914
+    second: NpcCemetPNG_108
+  - first:
+      213: 2809138350351062470
+    second: NpcCemetPNG_109
+  - first:
+      213: 8212968738853705923
+    second: NpcCemetPNG_110
+  - first:
+      213: -2175221310970810257
+    second: NpcCemetPNG_111
+  - first:
+      213: -530770510382754444
+    second: NpcCemetPNG_112
+  - first:
+      213: -4496378804439681451
+    second: NpcCemetPNG_113
+  - first:
+      213: -411795490738389432
+    second: NpcCemetPNG_114
+  - first:
+      213: -1438752086948489855
+    second: NpcCemetPNG_115
+  - first:
+      213: -7640210029088539531
+    second: NpcCemetPNG_116
+  - first:
+      213: 6495856633871309430
+    second: NpcCemetPNG_117
+  - first:
+      213: 6758806486964509751
+    second: NpcCemetPNG_118
+  - first:
+      213: 7590886595652471337
+    second: NpcCemetPNG_119
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BCrit0Izq
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17081dc8e38180948b1e2764f5c36d95
+      internalID: 6127832943470481395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BCrit1Izq
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 97
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6774db7314f6fa4429dbcc2e113ce53e
+      internalID: -799032587981634996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BCrit2Izq
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c7c2e865e4351449f84dfa86314489
+      internalID: -513478073176475330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0c6c20fe2b4b549a4fc1f40f8c7a68
+      internalID: 803181398581145072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507cbebf22bea834ba95a3dbabaf3815
+      internalID: -6428139395624606081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7cb668dcd9c514e9d1083495048145
+      internalID: 7507202381292506471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d9701b2f0ebe140bddb0d4580aa404
+      internalID: 1046086703076651904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816259cd2bc733446979b442e5facdac
+      internalID: 3988778405944730246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28e24a83f1092c4faea06ed0fcf4853
+      internalID: -5139181667869946867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bcd9782d656f043b5503e8a5eca1ad
+      internalID: 6932496009906720793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1125928d0a209648900185a7451fc75
+      internalID: 38076748583456899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8513e1bd9f3629469fd86a59417f0b5
+      internalID: -2847455086806596025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f509d40a56e703f478815825a070cd8b
+      internalID: 2940718604141748265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8969c558b0ef28249b306e518d5a01d0
+      internalID: -1781948696088271913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc1ee843fa1a844eb5b481c2943995a
+      internalID: 2870573466065177970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60638097dd9cd334880dbd09ca49980e
+      internalID: -7085519343080606075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b9d475cf50141489860ab278a9b5a0
+      internalID: -974506890236923501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535ebb8a2c30732498a645c84429557f
+      internalID: 3543339744305257338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c7812affd322140a2deca18557afaa
+      internalID: -1971188483977373920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_19
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 93.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b952901ea72134fb7aa18946007ca9
+      internalID: 1395802931439114716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BCrit0Der
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f98c2bb34a0cdc4a842303d6c35ba4d
+      internalID: 4052169667671052707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BCrit1Der
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 81
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da2474577cf6f944afd3356c8665f6c
+      internalID: 8932333688898669007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BCrit2Der
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e1e2b10f3561044ac8ba1a580db381
+      internalID: 7237030578545171599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_23
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 75
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb192cdc044f234f811bfea13997193
+      internalID: -1127875870760226741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690102d304416924595fe0ad3ef68ac3
+      internalID: 3834860735487109816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b626ff7954c2a48b438f3ccd24ec68
+      internalID: -6982527384738672934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef7dfe0f7f08c34ab1930f26db7e834
+      internalID: 8040887973171247578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_27
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1defbe95d66712f43be56ee8dba72d81
+      internalID: 3507434742883761306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f95d9de4bfe7f14cadcdcb6dfa9bb8c
+      internalID: 5071905846747013698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_29
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7f0ad8dff29ba458e86d22fbad998f
+      internalID: -4661823733288553538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_30
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82b28610848d394182d9f2654ee9c43
+      internalID: -7902320208954779877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_31
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e7b96641dd4844c9be788a28f53e31
+      internalID: -5822014199994359226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_32
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b8aca41a9b46b4ba4dfb281a8c0cff
+      internalID: 897223243714037717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_33
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0fe224bc7188604d8acf2b59c5ed0fb
+      internalID: -4853652346525172290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_34
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ceab9d87bc65749a6440a613b65124
+      internalID: -8988470019603284486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_35
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd1e777235259542bd3718696c12702
+      internalID: -7261464771082844468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_36
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7e9cbe4e805434bb5b9e5845162948
+      internalID: -3645451793984057986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_37
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6525b094adf502b4dbfe687c5cfb77e7
+      internalID: 5567654472559272223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_38
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f519158bc2b53a45a072cadf97017c6
+      internalID: -1267760599404001485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_39
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 75.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821d926f7b63efd458287728037ada90
+      internalID: -7940460746996388942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BBat0Izq
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 67
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32dcd052a175c0b4a9056dceaf6ed40a
+      internalID: 4621732368180594492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BBat1Izq
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 67
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ccdf1c911561d4a93f1d0e4c622596
+      internalID: 7490745976865540536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BBat2Izq
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 67
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0172261656399184bbaa6aa371b03eda
+      internalID: -3292386685170975638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BBat3Izq
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593120182abde1b42823ab400a642559
+      internalID: -1614797610876754656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BBat2to3Izq
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 67
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c6da0c6522eaf340ac90975303022ef
+      internalID: -4033460569105742930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BBatFallIZq
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 66
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb0d0d16359dd34da218847da88c9da
+      internalID: 2121814396623139290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_46
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4bf4b5d839e9343a24090f432cb904
+      internalID: -7539168640961854729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_47
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbb20d1e7453bb4ca401755e0f86244
+      internalID: -4779168833573325864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_48
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0ceb391a0b10d4e8c860068b7a21b4
+      internalID: -576873170715161883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_49
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf513fa2460b044ebcea4cf106bdc0c
+      internalID: -1111556698074552257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_50
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14923639420178244a824043477ecffd
+      internalID: 3444941983661539237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_51
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173ffff3accbbd945bd40c22ae18865b
+      internalID: -2212266433712917411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_52
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ae3eb9d22d621459cd50e4d46faa80
+      internalID: 3748232896304994273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_53
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd251a58dc034948b85ab15a9f8f1dd
+      internalID: -5664084723823383137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_54
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78cc71d426d4b9a4daa2a8e1382132ed
+      internalID: -4218005219909002093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_55
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a581dc145ffeb4c9db2b137590ab3a
+      internalID: 4211324005909256944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_56
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce09428f326c5894086544a11e538ed6
+      internalID: 662635917651538269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_57
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb0b01b545cdbd44900479c93a90790
+      internalID: -6128395952378057957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_58
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42c60fcaab9aa1478e25507c70fcb27
+      internalID: -6055827547838727639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_59
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 57.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f586c51d33b5b0444a73857d61338d93
+      internalID: 4140665691104164922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 51
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b91fcbc84ff4645946f857d4e8af11
+      internalID: 4888240116520109537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_61
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74be8443b477f3148b29e31769ef625a
+      internalID: -6561662576757179676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_62
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0e897703e332c4d8b5ab4bd356a54e
+      internalID: 7272026324875119527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_63
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a8f9a1f64f7aa42849747561885024
+      internalID: -7795673195871451131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_64
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5440dc72756fe40a877471c17f8b25
+      internalID: -433191387458076583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_65
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6950d203ed13e9343b10d7a863a25880
+      internalID: 3922689081178501171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_66
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfde891dcea5bbb47af7ca631c29216f
+      internalID: -2989568072648038715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_67
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efcaf530f42b2714e8397b794aaabb6f
+      internalID: 7927092529118270823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49281bf1879ab5f4d81939d7558ecfe4
+      internalID: -1310060729055368180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_69
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75d11774855f3442ab55caa32652e15
+      internalID: 155920034472420690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_70
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2954bee7c475d434a8ec022f9539ad12
+      internalID: 1409992192171541292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_71
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9454509ca4fe3464da0de4878942a5ce
+      internalID: 4234987096876742111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_72
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019ce740a52bc054a802de7d16ccea1a
+      internalID: 3284576284426886206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_73
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b6b1c001e15fd448a746c88cd658c4
+      internalID: -1008032231937444931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_74
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933311411c4ce2f47b2e5aa85f7aea35
+      internalID: 1016258118499097187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_75
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5806b4948844fd944832b00cc9543216
+      internalID: 517156058625885988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_76
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c224743b4846cba47a05d88fd5ba7869
+      internalID: 7339026655354819609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_77
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49059791e4ce30143a8e87a0cbeaea3d
+      internalID: -1843372123496994438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_78
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db193f95d86e3824bad6bd84f846bf45
+      internalID: 7226741620774803591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_79
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 39.333336
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cafcf32e489478479621caecf76527a
+      internalID: -2833166565087008256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509bdf86470b86e4f8b9f2585dd4584b
+      internalID: -966065515824500077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_81
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81e76a3ed9fe8b4cbe9fb54d8e774b7
+      internalID: 7500354994240128682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_82
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8446c8b8e67ec240bea9500eecf0162
+      internalID: -7727256135682213204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_83
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e8f8b36d7318247945572d66121a5a
+      internalID: -1175839010665649086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_84
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a6191a6027de540afd9ba463fb9691
+      internalID: -7000211310634490757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_85
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3061dbc39e7e7d2479340263290fb9f6
+      internalID: -5523096179606842386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_86
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e36724a3ae40a4f840f5ada6fc376b
+      internalID: 706988090292745454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_87
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafdf7b84c22c824da20e2932280bfc9
+      internalID: 8082047822399840613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_88
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4e38e313b953a4e8256b972a533f4a
+      internalID: 2746954707762517026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_89
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3531ba19fd948fe4c8a27f1b24911884
+      internalID: -5351807509072299157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_90
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0158b518cf4ffec4daa9d0a5d33586cc
+      internalID: -5279310499697579697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_91
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cde95b5bb4b9ab4c86300c203570e3f
+      internalID: 4279513757384176987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_92
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daae55b33aacc534a9df02bac8c8847a
+      internalID: -5852063930537541860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_93
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a972c75e3ad0a94290240d59fd3cb27
+      internalID: 1663570423550773285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_94
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70bf6dc29bcf874089699593a93d393
+      internalID: 8009979843526357394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_95
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc369bdc7d5f6f469aae0b4f9007a46
+      internalID: -8792580305068506937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_96
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e67ab59f4d5ef448dda9acd6541219
+      internalID: 3981492293114770199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_97
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f5ae057c1ff8b40925eb971a501012
+      internalID: 3331592150465510406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_98
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577bc39151d26b04d9ec609ba0910244
+      internalID: -4313720061076860746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_99
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 21.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a2abe17d1964184dbfdc3e8f8730b47
+      internalID: -1672492459389941870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d1fd58a6260f6429b41ee9a6c66821
+      internalID: -5496546371028879132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_101
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b689bf9e4ea948e4f85712edb6cb0581
+      internalID: 2476033825371413487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_102
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff694024c6f5e54785a39356ef3f5aa
+      internalID: -5050582961225243895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_103
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08d4d2338ab67341a2225456d4c9241
+      internalID: -1834406616153424014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_104
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df737bed32fadd44955b7313ba699a4
+      internalID: 2285829032453339140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_105
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6948be504f847bc4889359ab5496b393
+      internalID: -3863710849503659457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_106
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36061a047e77c0648aef381084dbbcb3
+      internalID: -6566948013474221697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_107
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df52c1eb68136140a053e45e4d2b877
+      internalID: 3330642016974210295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_108
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f4f50ab15b97146b08757bfd00ca91
+      internalID: 5464430304811031914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_109
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e684485da4543f4c93d5d9d4da29ee2
+      internalID: 2809138350351062470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_110
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f8c9241d532af45871d87d867e761e
+      internalID: 8212968738853705923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_111
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60b71a3acb46314ab24f82fa10c4ae8
+      internalID: -2175221310970810257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_112
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea00722ea19e99c4d91d674e77a2ba5b
+      internalID: -530770510382754444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_113
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0424815d4fde17542a302838706adc7f
+      internalID: -4496378804439681451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_114
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d143e334f875b144b8787191f6c800cf
+      internalID: -411795490738389432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_115
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bacfa049fb99014aac8b297c02f0cfe
+      internalID: -1438752086948489855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_116
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2548cb10bbdfe4d41a5c2f2f87e365ec
+      internalID: -7640210029088539531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_117
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f43823a5d926d49929e867fede8a5b
+      internalID: 6495856633871309430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_118
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a9aa01b3787d140a6f9d8c2c118368
+      internalID: 6758806486964509751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcCemetPNG_119
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 3.333334
+        width: 16
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f298c2333e3f4344fa6cfae415a6adaf
+      internalID: 7590886595652471337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
