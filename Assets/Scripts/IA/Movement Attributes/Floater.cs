@@ -5,20 +5,23 @@ using UnityEngine;
 /// <summary>
 /// The Floater can float, fly or levitate. 
 /// An entity with this behaviour will oscilate a given distance.
-/// You should place the entity in the *Lowest* point of the oscilation.
 /// </summary>
 /// 
-public enum MovementAxis{ //Axis in which a Floater can move
-    X,
-    Y
-};
 
+    //TODO: hacer que el movimiento sea empezando por el centro, si no está hecho ya
 public class Floater : MonoBehaviour {
-
+    
+    protected enum MovementAxis
+    { 
+        X,
+        Y
+    };                   //Axis in which a Floater can move
     public float movementDistance = 4f;              //Total distance you want to cover in unity units
     public float movementSpeed = 1f;                 //Unity units per second in which the enemy will move
     public float delayTime = 0.1f;                   //Delay in Realtime Seconds the entity will wait at the ends of each path
-    [SerializeField] private MovementAxis axis = MovementAxis.Y;       // Axis you want to float on
+    
+    [SerializeField] 
+    private MovementAxis movementAxis = MovementAxis.Y;       // Axis you want to float on
 
     //Private movement attributes
 
@@ -35,10 +38,10 @@ public class Floater : MonoBehaviour {
         towardsUpperLimit = true;
         Setup();
         //iTween.MoveBy(gameObject, iTween.Hash(StrAxis, movementDistance, "easeType", "easeInOutSine", "loopType", "pingPong", "delay", delayTime));
-        if(axis == MovementAxis.Y) { 
+        if(movementAxis == MovementAxis.Y) { 
             StartCoroutine("FloatMovementInYAxis");
         }
-        else if (axis == MovementAxis.X)
+        else if (movementAxis == MovementAxis.X)
         {
             StartCoroutine("FloatMovementInXAxis");
         }
@@ -46,13 +49,13 @@ public class Floater : MonoBehaviour {
 
     void Setup()
     {
-        if (axis == MovementAxis.Y) {
+        if (movementAxis == MovementAxis.Y) {
             //We set the limits for Y
             upperLimit = transform.position.y + (movementDistance / 2f);
             lowerLimit = transform.position.y - (movementDistance / 2f);
             current = transform.position.y;
         }
-        else if(axis == MovementAxis.X)
+        else if(movementAxis == MovementAxis.X)
         {
             //We set the limits for X
             upperLimit = transform.position.x + (movementDistance / 2f);
@@ -151,7 +154,7 @@ public class Floater : MonoBehaviour {
     {
         // Draws a blue line from this transform to the target
         Gizmos.color = Color.blue;
-        switch (axis)
+        switch (movementAxis)
         {
             case MovementAxis.X:
                 float posAuxX = transform.position.x - movementDistance / 2;
