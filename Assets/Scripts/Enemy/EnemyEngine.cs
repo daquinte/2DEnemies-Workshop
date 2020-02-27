@@ -123,6 +123,12 @@ public class EnemyEngine : MonoBehaviour
 		accel = Vector3.zero;
 	}
 
+
+	private void EnemyMovement()
+	{
+
+	}
+
 	/// <summary>
 	/// Flips the enemy
 	/// </summary>

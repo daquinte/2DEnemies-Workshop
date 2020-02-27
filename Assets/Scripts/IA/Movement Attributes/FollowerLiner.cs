@@ -13,33 +13,17 @@ public class FollowerLiner : Liner
         "before sending player pos to Liner component")]
     public float timeToRefresh;
 
-    [SerializeField]
-    private LinerType linerType;
-
-    private Liner liner;
     private float currentTime;
 
-
-    void Start()
-    {
-        currentTime = 0f;
-
-        liner = GetComponent<Liner>();
-        if(liner == null) { 
-            liner = gameObject.AddComponent<Liner>() as Liner;
-            SetLinerType(linerType);
-        }
-        if (rotateTowardsTarget)
-            RotateToTarget();
-    }
 
     // Update is called once per frame
     void Update()
     {
         currentTime += Time.time;
-        if(currentTime >= timeToRefresh)
+        if (currentTime >= timeToRefresh)
         {
             SetTargetPosition(enemyEngine.enemyTarget.transform.position);
+            currentTime = 0;
         }
 
         //Move according to current liner configuration

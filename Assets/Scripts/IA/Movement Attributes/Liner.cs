@@ -9,10 +9,11 @@ using UnityEngine;
 /// </summary>
 public class Liner : MovementBehaviour
 {
-   
+
     [Tooltip("Whether you want the entity to rotate or not")]
     public bool rotateTowardsTarget;
 
+    [Tooltip("Time to reach the target Point")]
     public float timeToReachTarget;
 
 
@@ -24,22 +25,25 @@ public class Liner : MovementBehaviour
     protected float t;                                    //temp t value for steering
     protected Vector3 targetPoint;                        //The end point of the line
 
-    private CineticLiner testCinetic;
+    //Cinematic attributes
+    private Vector3 startPosition;
+
 
     // Start is called before the first frame update
     void Start()
-    {     
+    {
         targetPoint = enemyEngine.GetTargetPosition();
         if (rotateTowardsTarget)
         {
             RotateToTarget();
         }
 
-        if(linerType == LinerType.Constant)
+        if (linerType == LinerType.Constant)
         {
-            testCinetic = new CineticLiner();
+            SetUpCinematicAttributes();
             Debug.Log("CienticLiner creado!");
         }
+        else { enemyEngine.RegistrerBehaviour(this); }
     }
 
     void Update()
@@ -50,7 +54,10 @@ public class Liner : MovementBehaviour
         {
             case LinerType.Constant:
                 //TODO: Resetea la posicion al 0,0 al iniciar
-                transform.position = testCinetic.GetMovement(targetPoint, timeToReachTarget);
+                transform.position = CinematicLiner();
+                break;
+            case LinerType.Acelerated:
+
                 break;
         }
     }
@@ -59,47 +66,92 @@ public class Liner : MovementBehaviour
     {
         t = 0;
         targetPoint = new Vector3(pos.x, pos.y);
+        startPosition = transform.position;
+
+        if (rotateTowardsTarget) RotateToTarget();
     }
 
     protected void SetLinerType(LinerType lt)
     {
         linerType = lt;
     }
-    
+
 
     /// <summary>
-    /// This method is called from the enemy engine and it does hell of a lot of things!!!!
+    /// This method is called from the enemy engine TODO: ver si lo voy a usar
     /// </summary>
     /// <returns></returns>
     public override Vector2 GetMovement()
     {
-        Debug.Log("Si sale esto, está mal");
+        Debug.Log("Get movement from external call...");
         //Tengo que devolver cinetica o fisica según toque.
-        Vector2 aaa = Vector2.zero;
+        Vector2 externalMovement = Vector2.zero;
         switch (linerType)
         {
             case LinerType.Constant:
-                aaa = testCinetic.GetMovement(targetPoint, timeToReachTarget);
+                externalMovement = CinematicLiner();
+                break;
+            case LinerType.Acelerated:
+                externalMovement = PhysicsLiner();
                 break;
         }
 
-        return aaa;
+        return externalMovement;
 
     }
 
 
+    #region Physics Movement
+
+    private Vector2 PhysicsLiner()
+    {
+        //TODO: Ajustar directamente la posición: si estás dentro de un rango X, fuerzas que se ponga por código 
+        if (transform.position != targetPoint)
+        {
+            Vector2 steering = Vector2.zero;
+
+            Vector3 desiredVelocity = targetPoint - transform.position;
+            desiredVelocity.Normalize();
+            desiredVelocity *= 5;
+
+            //A la velocidad que llevase, tengo que aplicarle la mía
+            steering = desiredVelocity - enemyEngine.GetVelocity();
+
+            // And then smoothing it out and applying it to the character
+            //steering = Vector3.SmoothDamp(steering, desiredVelocity, ref velocity, smoothTime);
+            t += Time.deltaTime / timeToReachTarget;
+            steering = Vector3.Lerp(steering, desiredVelocity, t);
+            lastMovement = steering;
+        }
+        else
+        {
+            lastMovement = Vector3.zero;
+        }
+        return lastMovement;
+    }
+    #endregion
+
+    #region Cinematic Movement
+    /// <summary>
+    /// Starts cinematic Liner
+    /// </summary>
+    private void SetUpCinematicAttributes()
+    {
+        startPosition = transform.position;
+        t = 0;
+    }
 
     /// <summary>
-    /// Gizmos for the editor.
-    /// Draw a yellow sphere at the targets's position
-    /// Draw a blue line to check the route
+    /// Cinematic movement for a Liner component
     /// </summary>
-    private void OnDrawGizmosSelected()
+    /// <returns></returns>
+    private Vector2 CinematicLiner()
     {
-        Gizmos.color = Color.blue;
-        //Gizmos.DrawLine(transform.position, enemyEngine.GetTargetPosition());
+        t += Time.deltaTime / timeToReachTarget;
+        return Vector2.Lerp(startPosition, targetPoint, t);
     }
 
+    #endregion
 
     /// <summary>
     /// Rotates the entity to face the current target.
@@ -118,6 +170,18 @@ public class Liner : MovementBehaviour
             transform.rotation = (Quaternion.Euler(0, 180, -AngleDeg));
         }
         else transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 180);
+    }
+
+
+    /// <summary>
+    /// Gizmos for the editor.
+    /// Draw a yellow sphere at the targets's position
+    /// Draw a blue line to check the route
+    /// </summary>
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        //Gizmos.DrawLine(transform.position, enemyEngine.GetTargetPosition());
     }
 
 }
