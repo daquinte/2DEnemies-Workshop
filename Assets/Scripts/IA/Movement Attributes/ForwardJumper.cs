@@ -51,9 +51,13 @@ public class ForwardJumper : MovementBehaviour
     {
         if (canJump)
         {
-            jumper.Jump();                              //Jump!         
-            rb2d.velocity += bullet.GetMovement();
-            canJump = false;                            //We shall not jump until next timer states so
+            jumper.Jump();                              //Jump!     
+
+            //Where do we jump now to get to the target?    
+            int mod = (this.transform.position.x > enemyEngine.enemyTarget.transform.position.x) ? 1 : -1; 
+            
+            rb2d.velocity += bullet.GetMovement() * mod;    //Move towards target
+            canJump = false;                                //We shall not jump until next timer states so
         }
         else
         {

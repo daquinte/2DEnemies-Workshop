@@ -83,7 +83,7 @@ public class Liner : MovementBehaviour
     /// <returns></returns>
     public override Vector2 GetMovement()
     {
-        Debug.Log("Get movement from external call...");
+        Debug.Log("[LINER] Get movement from external call...");
         //Tengo que devolver cinetica o fisica según toque.
         Vector2 externalMovement = Vector2.zero;
         switch (linerType)
@@ -125,6 +125,7 @@ public class Liner : MovementBehaviour
         }
         else
         {
+            transform.position = enemyEngine.enemyTarget.transform.position;
             lastMovement = Vector3.zero;
         }
         return lastMovement;

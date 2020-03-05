@@ -10,7 +10,7 @@ using UnityEngine;
 public class FollowerLiner : Liner
 {
     [Tooltip("Time that this component will wait " +
-        "before sending player pos to Liner component")]
+        "before sending player position to Liner component")]
     public float timeToRefresh;
 
     private float currentTime;

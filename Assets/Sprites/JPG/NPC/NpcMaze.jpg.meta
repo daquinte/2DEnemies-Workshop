@@ -1,7 +1,307 @@
 fileFormatVersion: 2
 guid: db09974c1797915449064f5636d73892
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -134986833484298182
+    second: NpcMaze_0
+  - first:
+      213: 7072934695540986770
+    second: NpcMaze_1
+  - first:
+      213: -5733693153303306445
+    second: NpcMaze_2
+  - first:
+      213: -6186759749986701699
+    second: NpcMaze_3
+  - first:
+      213: 2993760067631172382
+    second: NpcMaze_4
+  - first:
+      213: 904780177741941542
+    second: NpcMaze_5
+  - first:
+      213: 5414322526852242982
+    second: NpcMaze_6
+  - first:
+      213: 2489420835625471209
+    second: NpcMaze_7
+  - first:
+      213: -3293213131802169659
+    second: NpcMaze_8
+  - first:
+      213: -1718395518067766932
+    second: NpcMaze_9
+  - first:
+      213: 4606703739465803559
+    second: NpcMaze_10
+  - first:
+      213: 7775627885353265126
+    second: NpcMaze_11
+  - first:
+      213: -9048919036445995604
+    second: NpcMaze_12
+  - first:
+      213: 4719562197779691890
+    second: NpcMaze_13
+  - first:
+      213: -375920614369419291
+    second: NpcMaze_14
+  - first:
+      213: 1644368721926720215
+    second: NpcMaze_15
+  - first:
+      213: 6805547243248032399
+    second: NpcMaze_16
+  - first:
+      213: 5716544717815416743
+    second: NpcMaze_17
+  - first:
+      213: -4597755943469223109
+    second: NpcMaze_18
+  - first:
+      213: 3413017887488578209
+    second: NpcMaze_19
+  - first:
+      213: -2284708102537502460
+    second: NpcMaze_20
+  - first:
+      213: 5216980872745588080
+    second: NpcMaze_21
+  - first:
+      213: -4566167571104068658
+    second: NpcMaze_22
+  - first:
+      213: -953144970969671792
+    second: NpcMaze_23
+  - first:
+      213: -8871118713141986858
+    second: NpcMaze_24
+  - first:
+      213: 5374434981028156016
+    second: NpcMaze_25
+  - first:
+      213: 4318947618588990795
+    second: NpcMaze_26
+  - first:
+      213: 2734815352642912407
+    second: NpcMaze_27
+  - first:
+      213: -4061633554814885656
+    second: NpcMaze_28
+  - first:
+      213: 8768700608507644285
+    second: NpcMaze_29
+  - first:
+      213: -5285254191409862554
+    second: NpcMaze_30
+  - first:
+      213: 8052567942365609447
+    second: Rueda1Izq
+  - first:
+      213: -6193870761819194172
+    second: Rueda2Izq
+  - first:
+      213: 7757789852714311340
+    second: NpcMaze_33
+  - first:
+      213: -5740686962295354819
+    second: NpcMaze_34
+  - first:
+      213: -2062792098849976297
+    second: NpcMaze_35
+  - first:
+      213: -4464845139215298081
+    second: NpcMaze_37
+  - first:
+      213: 5467555882845399243
+    second: NpcMaze_38
+  - first:
+      213: 2073795570044061443
+    second: NpcMaze_39
+  - first:
+      213: -2298455289150249495
+    second: NpcMaze_40
+  - first:
+      213: 7510978442520401692
+    second: NpcMaze_41
+  - first:
+      213: 2593393935065509937
+    second: NpcMaze_42
+  - first:
+      213: -3497926173470394504
+    second: NpcMaze_43
+  - first:
+      213: 4009425460243375975
+    second: NpcMaze_50
+  - first:
+      213: -7491737177795362235
+    second: NpcMaze_51
+  - first:
+      213: 8957554554013459924
+    second: NpcMaze_52
+  - first:
+      213: -6107688544771715326
+    second: NpcMaze_53
+  - first:
+      213: -7440506820236841400
+    second: NpcMaze_60
+  - first:
+      213: 6074481477402490063
+    second: NpcMaze_65
+  - first:
+      213: -285478497296376023
+    second: NpcMaze_66
+  - first:
+      213: 7587624129411848951
+    second: NpcMaze_67
+  - first:
+      213: -1321781736789253335
+    second: NpcMaze_68
+  - first:
+      213: -2638686792941307525
+    second: NpcMaze_69
+  - first:
+      213: -8693810960639906610
+    second: NpcMaze_70
+  - first:
+      213: 1439304367038144036
+    second: NpcMaze_71
+  - first:
+      213: 2632013931341275810
+    second: NpcMaze_72
+  - first:
+      213: 5337446858506929138
+    second: NpcMaze_73
+  - first:
+      213: -3146656520330517843
+    second: NpcMaze_74
+  - first:
+      213: -9178593549881486373
+    second: NpcMaze_75
+  - first:
+      213: -1639826579885086762
+    second: NpcMaze_76
+  - first:
+      213: 6227545454447191512
+    second: NpcMaze_77
+  - first:
+      213: 6143708170266917759
+    second: NpcMaze_78
+  - first:
+      213: 8340445566769437020
+    second: NpcMaze_79
+  - first:
+      213: -919979370738310433
+    second: NpcMaze_80
+  - first:
+      213: -3115962607205644812
+    second: NpcMaze_81
+  - first:
+      213: 1107792762454490351
+    second: NpcMaze_82
+  - first:
+      213: 7641049264028708165
+    second: NpcMaze_83
+  - first:
+      213: 107773006620384258
+    second: NpcMaze_84
+  - first:
+      213: -4270252988385342573
+    second: NpcMaze_85
+  - first:
+      213: 1034077465737900265
+    second: NpcMaze_86
+  - first:
+      213: 5280473737652415158
+    second: NpcMaze_87
+  - first:
+      213: -1004790357462997041
+    second: NpcMaze_88
+  - first:
+      213: -156734389527085084
+    second: NpcMaze_89
+  - first:
+      213: -3625450292601053273
+    second: NpcMaze_90
+  - first:
+      213: -3114289811365877922
+    second: NpcMaze_91
+  - first:
+      213: 6991991255351853012
+    second: NpcMaze_92
+  - first:
+      213: 6539104742413389522
+    second: NpcMaze_93
+  - first:
+      213: -2037407052120649896
+    second: NpcMaze_94
+  - first:
+      213: 5138230426669610610
+    second: NpcMaze_95
+  - first:
+      213: -7297395940688802097
+    second: NpcMaze_96
+  - first:
+      213: -1505689626935272271
+    second: NpcMaze_97
+  - first:
+      213: -3847108833824444893
+    second: NpcMaze_98
+  - first:
+      213: 6053951324113904283
+    second: NpcMaze_99
+  - first:
+      213: 3684313042653763928
+    second: NpcMaze_100
+  - first:
+      213: -6749349703409043285
+    second: NpcMaze_101
+  - first:
+      213: 638134974276271689
+    second: NpcMaze_102
+  - first:
+      213: 6330018965296142664
+    second: NpcMaze_103
+  - first:
+      213: 8496134407993781371
+    second: NpcMaze_104
+  - first:
+      213: -4487826210587324487
+    second: NpcMaze_105
+  - first:
+      213: 6946398191386110617
+    second: NpcMaze_106
+  - first:
+      213: 3513426111427071612
+    second: NpcMaze_107
+  - first:
+      213: 6123044451360295320
+    second: NpcMaze_108
+  - first:
+      213: -4579139629125075864
+    second: NpcMaze_109
+  - first:
+      213: 5740882282867469400
+    second: NpcMaze_110
+  - first:
+      213: 4399189319794713423
+    second: NpcMaze_111
+  - first:
+      213: -1463181049328729905
+    second: NpcMaze_112
+  - first:
+      213: -1326938237758088932
+    second: NpcMaze_113
+  - first:
+      213: -6868551941938222611
+    second: NpcMaze_114
+  - first:
+      213: -6238383617427151408
+    second: NpcMaze_115
+  - first:
+      213: -5271054423590187830
+    second: NpcMaze_116
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +340,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +370,2133 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: NpcMaze_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d00f58ba273508f479ddac422f09b8e7
+      internalID: -134986833484298182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39573c9603ed1a4caca6dc3ea2c62be
+      internalID: 7072934695540986770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c770663dc9ac840afefc9f26919918
+      internalID: -5733693153303306445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda4968dc548c4045a8be16188431b11
+      internalID: -6186759749986701699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349380bf26649d2448920c8bba75b8f3
+      internalID: 2993760067631172382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ff12d5f5abef145980d295e3d7ed09
+      internalID: 904780177741941542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f267b5291de2744a84037147f4cea4
+      internalID: 5414322526852242982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9c924f8e766cd46abcf335713e55c4
+      internalID: 2489420835625471209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81a091a480008543bc95d13abeb2452
+      internalID: -3293213131802169659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d32a507bb05f6440a88e3daef58fc17
+      internalID: -1718395518067766932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_10
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1148811e4ef3e3a43a27b0f5860aaa4d
+      internalID: 4606703739465803559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_11
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79bc9194d7d512a43a47b88018309e17
+      internalID: 7775627885353265126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 170.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be06953a9527a445bc8f81bacac4943
+      internalID: -9048919036445995604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19dfba2fcfb575f4bbb84dd2f1d029c8
+      internalID: 4719562197779691890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_14
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baefc36de0c96584bbc3e000c6616aea
+      internalID: -375920614369419291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0efc65860ef71d459e58dbacc89d063
+      internalID: 1644368721926720215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a841e66761113b498151288265db248
+      internalID: 6805547243248032399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6097b9bb06ecb24db8f9294954217e9
+      internalID: 5716544717815416743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_18
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6cbea1fdd4eebb4bb3967bebfbef5cd
+      internalID: -4597755943469223109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_19
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c5f48cb0bc0d44187b3ddf3a6152c7
+      internalID: 3413017887488578209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_20
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b787de719dcb245be0b60d4c67bd12
+      internalID: -2284708102537502460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_21
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86dbaf36d10f4364bac5f72590941675
+      internalID: 5216980872745588080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_22
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 989a50960513365498fa89f86a879f72
+      internalID: -4566167571104068658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_23
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d865a2b6a202dbc40bc721129c823db5
+      internalID: -953144970969671792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_24
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4b657dea2ccfe4ebd2cd9c755ba650
+      internalID: -8871118713141986858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_25
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 149.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ce88e6e6ec31d439b4a9368ecc30af
+      internalID: 5374434981028156016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498200bf1942e024abd6f254b3766232
+      internalID: 4318947618588990795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_27
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 128.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47750e1ea2b3df46a8185e15fc1c0de
+      internalID: 2734815352642912407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_28
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb01f9937a44d14f839f601539de1b1
+      internalID: -4061633554814885656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_29
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 128.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f9354c204af7c469fcfb66caac28b8
+      internalID: 8768700608507644285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_30
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99ac0f7a1965cb4793f4483247d4d18
+      internalID: -5285254191409862554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rueda1Izq
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 112
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427eb9311e3c08a48b51e1a4cdb28d36
+      internalID: 8052567942365609447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rueda2Izq
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 112
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fdd9bc8b7ee55645a2c04d010f718f4
+      internalID: -6193870761819194172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_33
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 112
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bafc2f53b59a6db44bbdca3806043356
+      internalID: 7757789852714311340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4c4b52a1d342e47a68a598e3153c03
+      internalID: -5740686962295354819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_35
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 128.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15bebdf7937edb542937f236a9349b44
+      internalID: -2062792098849976297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_37
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 117
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a11f1c375ca495469dfac2d5d705e8f
+      internalID: -4464845139215298081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_38
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128.66667
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7738a029375555a4b844ad37929f8b64
+      internalID: 5467555882845399243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 107.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a0a228c192b2343855677c17cbe56d
+      internalID: 2073795570044061443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_40
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 107.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4cd86bd2cd9014b87ccbaa1b88524b
+      internalID: -2298455289150249495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_41
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 107.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62690f9280522754798e23d45a6e5755
+      internalID: 7510978442520401692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_42
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 107.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d378264c54071154e8c37244dcffc4b9
+      internalID: 2593393935065509937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_43
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 107.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1851c2b423edc44580c85cffa4a3817
+      internalID: -3497926173470394504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_50
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 107.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562e204352edd024cacac25cadae0da7
+      internalID: 4009425460243375975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_51
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 107.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc549f55dca86443897a4bda1dc4f08
+      internalID: -7491737177795362235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 87
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b83b2ab8f255b24988abf7e51b8cccd
+      internalID: 8957554554013459924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_53
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 87
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62806b1842e35534fae9b3c14c79ff0b
+      internalID: -6107688544771715326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_60
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 88
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ae64fdc151ce341be61a5dd61fbb34
+      internalID: -7440506820236841400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02bc20df953c2844a8bc2f79844db256
+      internalID: 6074481477402490063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_66
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415b7cc5af549ac4fa167a18c77b1027
+      internalID: -285478497296376023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_67
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323097e09d86c274a95bb0edfc23010c
+      internalID: 7587624129411848951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_68
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff87f8f4f64d7a40ac1746af9638f92
+      internalID: -1321781736789253335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_69
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8296b7cc6faad48a16e3ef960c1bbd
+      internalID: -2638686792941307525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_70
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94dc08ac0d0865740ae79157c547a4ee
+      internalID: -8693810960639906610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_71
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61efca7088415364ab30876f9239dcb4
+      internalID: 1439304367038144036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_72
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb53ee995609c544e82b984a3e9be0c6
+      internalID: 2632013931341275810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_73
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f70c75c1268d64a8a8ac2dbddc7ad6
+      internalID: 5337446858506929138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_74
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48e068bc5896f74d805de66d6c61f91
+      internalID: -3146656520330517843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_75
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e69938ff37407a46b880eb6f02dcdf5
+      internalID: -9178593549881486373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_76
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00bd002400186cc468786ce893791cdd
+      internalID: -1639826579885086762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_77
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 65.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023abfbc1cee2674db6d81eeea5ef718
+      internalID: 6227545454447191512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947b09c827a485a468bda7aa87b63361
+      internalID: 6143708170266917759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_79
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7619c2bf7210343984af36a371b003
+      internalID: 8340445566769437020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_80
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb2a7f36e7a7ea47b1a79c419d38c60
+      internalID: -919979370738310433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_81
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c0bc144f3fa4543b7078ddccac1bd0
+      internalID: -3115962607205644812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_82
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02566019e956304cbd4e2c654899ac3
+      internalID: 1107792762454490351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_83
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379ad42e8d9250349885e28c9d91ee04
+      internalID: 7641049264028708165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_84
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752c79027287b0a4b852262ac1106517
+      internalID: 107773006620384258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_85
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3615ad84ba29ac4daa118968e323f37
+      internalID: -4270252988385342573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_86
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dcf75f934e38c344ab155e530af9940
+      internalID: 1034077465737900265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_87
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073d3b0cddc2bf34f803a0c53a4aba26
+      internalID: 5280473737652415158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_88
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a588f6828bf5a8649a904012416ae9d8
+      internalID: -1004790357462997041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_89
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d33645a2355fc46967485f6d4d791c
+      internalID: -156734389527085084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_90
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 44.666664
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16a6c8bd4000824ab13e119448114bb
+      internalID: -3625450292601053273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18f13f2181bed942b991a90c76a77f5
+      internalID: -3114289811365877922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_92
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47bfd1046077dc43b79d215416462d1
+      internalID: 6991991255351853012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_93
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c11b69ab4e90884a9bd332b2152367c
+      internalID: 6539104742413389522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_94
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af80585f16fa971428142d8faa3ae730
+      internalID: -2037407052120649896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_95
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380a7e50ea7022f459e5cb925aa79e19
+      internalID: 5138230426669610610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_96
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b085f7c79720a43a12972fc040a76d
+      internalID: -7297395940688802097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_97
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ad16bce9feab94dbff593e9c56d71c
+      internalID: -1505689626935272271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_98
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea190fe641aa57341be7895f3c06713d
+      internalID: -3847108833824444893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_99
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ec0ee34359d674f8e98f6dfe4aa3f4
+      internalID: 6053951324113904283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_100
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5925f57ba57cfb4aa4bf621ad069d74
+      internalID: 3684313042653763928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_101
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea19ed252ddc4d94a959a9aab05927b9
+      internalID: -6749349703409043285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_102
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff972702507c13348b95e2f25f0a7727
+      internalID: 638134974276271689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_103
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 23.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c2d752deb2a624cafcd8a5a04d4847
+      internalID: 6330018965296142664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df273845ccdeecf419baa2e17931de99
+      internalID: 8496134407993781371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_105
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5bbf7bea6d45c640afd7f87cc6657ee
+      internalID: -4487826210587324487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_106
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116bf5c038019ed4ea638ef50a8f3b3a
+      internalID: 6946398191386110617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_107
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da881c9617bba944a277dc7e67e5dea
+      internalID: 3513426111427071612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_108
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96eefd97f4f94c44bda3dc9dc8c5a92
+      internalID: 6123044451360295320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_109
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ee22388d9628f4eb668b013a98ef3c
+      internalID: -4579139629125075864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_110
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef8bf6569e0d3f47b2f93f234927bac
+      internalID: 5740882282867469400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_111
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90524d71825b15b48b23e8c3030fabeb
+      internalID: 4399189319794713423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_112
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb2667aee23b664ab7b42bc18ef2ac2
+      internalID: -1463181049328729905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_113
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a689e560ab622449a9b596363964b7
+      internalID: -1326938237758088932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_114
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1022a7f952d1a514288bd7e8b51708d6
+      internalID: -6868551941938222611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_115
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f104c0136272b94fa7f3d58938c8878
+      internalID: -6238383617427151408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcMaze_116
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 2.666666
+        width: 24.615385
+        height: 21.333334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a862a631d99fa42ad99c3ec61cac43
+      internalID: -5271054423590187830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
