@@ -38,4 +38,10 @@ public class RaycastSensor : Sensor
             sensorActive = false;
         }
     }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawLine(originPoint.position, rayDirection);
+    }
 }

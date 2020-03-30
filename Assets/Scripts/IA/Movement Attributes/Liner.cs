@@ -179,10 +179,10 @@ public class Liner : MovementBehaviour
     /// Draw a yellow sphere at the targets's position
     /// Draw a blue line to check the route
     /// </summary>
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        //Gizmos.DrawLine(transform.position, enemyEngine.GetTargetPosition());
+        Gizmos.DrawLine(transform.position, enemyEngine.GetTargetPosition());
     }
 
 }

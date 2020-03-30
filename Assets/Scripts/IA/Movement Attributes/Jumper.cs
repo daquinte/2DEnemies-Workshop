@@ -12,8 +12,12 @@ using UnityEngine;
 public class Jumper : MonoBehaviour
 {
     //Public attributes
+
     [SerializeField]
     private float jumpHeight = 1f;                            //How high you want this entity to jump
+
+    [SerializeField]
+    private float jumpTime = 1f;                              //How high you want this entity to jump
 
 
     /// <summary>
@@ -22,6 +26,7 @@ public class Jumper : MonoBehaviour
     public void Jump()
     {
         float jumpForce = CalculateJumpSpeed();
+        Debug.Log("JUMP FORCE: " + jumpForce);
         GetComponent<Rigidbody2D>().velocity += Vector2.up * jumpForce;
     }
 
@@ -42,7 +47,7 @@ public class Jumper : MonoBehaviour
     /// <returns>A float with the initial speed</returns>
     private float CalculateJumpSpeed()
     {
-        Debug.Log(Physics2D.gravity.magnitude);
-        return Mathf.Sqrt(2 * jumpHeight * Physics2D.gravity.magnitude);
+        //return Mathf.Sqrt(2 * jumpHeight * Physics2D.gravity.magnitude);
+        return ((2 * jumpHeight) / jumpTime);
     }
 }

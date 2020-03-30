@@ -12,7 +12,7 @@ public class EnemyEngine : MonoBehaviour
 	public GameObject enemyTarget = null;
 
 	[Tooltip("Distance in which we consider the enemy has reached the player")]
-	public float stopDistance = 0.2f;
+	public float stopDistance = 1f;
 
 	[Tooltip("Maximum velocity in which an enemy can move")]
 	public float maxVelocity = 5.0f;

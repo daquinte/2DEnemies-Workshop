@@ -34,9 +34,7 @@ public class Bumper : AbstractChangeDir
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("aaa");
         ChangeDir();
-
     }
 
     private void OnDrawGizmosSelected()

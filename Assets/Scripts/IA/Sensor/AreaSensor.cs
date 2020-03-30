@@ -4,10 +4,10 @@ using UnityEngine;
 
 
 
-public class TriggerSensor : Sensor
-{ 
-    public BoxCollider2D[] Colliders;
-    
+public class AreaSensor : Sensor
+{
+    public BoxCollider2D[] AreaList;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         sensorActive = true;
@@ -29,7 +29,16 @@ public class TriggerSensor : Sensor
 
     protected override void OnSensorExit()
     {
+        base.OnSensorExit();
+    }
 
+    private void OnDrawGizmosSelected()
+    {
+        foreach (BoxCollider2D c in AreaList)
+        {
+            Vector2 center = new Vector2(c.transform.position.x, c.transform.position.y);
+            Gizmos.DrawWireCube(center, c.size);
+        }
     }
 
 }

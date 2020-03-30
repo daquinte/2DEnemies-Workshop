@@ -16,8 +16,11 @@ public class Floater : MonoBehaviour {
         X,
         Y
     };                   //Axis in which a Floater can move
-    public float movementDistance = 4f;              //Total distance you want to cover in unity units
-    public float movementSpeed = 1f;                 //Unity units per second in which the enemy will move
+
+    [Tooltip("Wave amplitude of this movement")]
+    public float movementAmplitude = 4f;             //Total distance you want to cover in unity units
+
+    [Tooltip("Amount of time that the enemy will wait at the edges")]
     public float delayTime = 0.1f;                   //Delay in Realtime Seconds the entity will wait at the ends of each path
     
     [SerializeField] 
@@ -37,7 +40,6 @@ public class Floater : MonoBehaviour {
     void Start () {
         towardsUpperLimit = true;
         Setup();
-        //iTween.MoveBy(gameObject, iTween.Hash(StrAxis, movementDistance, "easeType", "easeInOutSine", "loopType", "pingPong", "delay", delayTime));
         if(movementAxis == MovementAxis.Y) { 
             StartCoroutine("FloatMovementInYAxis");
         }
@@ -51,15 +53,15 @@ public class Floater : MonoBehaviour {
     {
         if (movementAxis == MovementAxis.Y) {
             //We set the limits for Y
-            upperLimit = transform.position.y + (movementDistance / 2f);
-            lowerLimit = transform.position.y - (movementDistance / 2f);
+            upperLimit = transform.position.y + (movementAmplitude / 2f);
+            lowerLimit = transform.position.y - (movementAmplitude / 2f);
             current = transform.position.y;
         }
         else if(movementAxis == MovementAxis.X)
         {
             //We set the limits for X
-            upperLimit = transform.position.x + (movementDistance / 2f);
-            lowerLimit = transform.position.x - (movementDistance / 2f);
+            upperLimit = transform.position.x + (movementAmplitude / 2f);
+            lowerLimit = transform.position.x - (movementAmplitude / 2f);
             current = transform.position.x;
         }
     }
@@ -84,7 +86,7 @@ public class Floater : MonoBehaviour {
             {
                 if (transform.position.y != upperLimit)
                 {
-                    current = Mathf.MoveTowards(current, upperLimit, movementSpeed * Time.deltaTime);
+                    current = Mathf.MoveTowards(current, upperLimit, Time.deltaTime);
                 }
                 else { 
                     towardsUpperLimit = false;
@@ -96,7 +98,7 @@ public class Floater : MonoBehaviour {
             {
                 if (transform.position.y != lowerLimit)
                 {
-                    current = Mathf.MoveTowards(current, lowerLimit, movementSpeed * Time.deltaTime);
+                    current = Mathf.MoveTowards(current, lowerLimit, Time.deltaTime);
                 }
                 else { 
                     towardsUpperLimit = true;
@@ -118,7 +120,7 @@ public class Floater : MonoBehaviour {
             {
                 if (transform.position.x != upperLimit)
                 {
-                    current = Mathf.MoveTowards(current, upperLimit, movementSpeed * Time.deltaTime);
+                    current = Mathf.MoveTowards(current, upperLimit, Time.deltaTime);
                 }
                 else
                 {
@@ -131,7 +133,7 @@ public class Floater : MonoBehaviour {
             {
                 if (transform.position.x != lowerLimit)
                 {
-                    current = Mathf.MoveTowards(current, lowerLimit, movementSpeed * Time.deltaTime);
+                    current = Mathf.MoveTowards(current, lowerLimit, Time.deltaTime);
                 }
                 else
                 {
@@ -157,12 +159,12 @@ public class Floater : MonoBehaviour {
         switch (movementAxis)
         {
             case MovementAxis.X:
-                float posAuxX = transform.position.x - movementDistance / 2;
-                Gizmos.DrawLine(transform.position, new Vector3(posAuxX + movementDistance, transform.position.y));    
+                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x - movementAmplitude / 2, transform.position.y));    
+                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + movementAmplitude / 2, transform.position.y));    
                 break;
             case MovementAxis.Y:
-                float posAuxY = transform.position.y - movementDistance / 2;
-                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, posAuxY + movementDistance));
+                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - movementAmplitude / 2));
+                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + movementAmplitude / 2));
                 break;
         }
       
