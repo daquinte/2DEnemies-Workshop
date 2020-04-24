@@ -23,6 +23,7 @@ public class Faller : MonoBehaviour
     public IEnumerator FallDown()
     {
         yield return new WaitForSecondsRealtime(timeBeforeFall);
+        GetComponent<Animator>().SetTrigger("Fall");
         ModifyGravityScale(gravity);
         yield return null;
     }

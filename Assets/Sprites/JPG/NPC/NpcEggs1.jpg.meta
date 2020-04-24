@@ -1,7 +1,133 @@
 fileFormatVersion: 2
 guid: d663fc416c1d2634a80f617e9b489d82
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2761857980310006585
+    second: Elefante1
+  - first:
+      213: -2988430486863628774
+    second: Elefante2
+  - first:
+      213: -4071263383474663530
+    second: Elefante3
+  - first:
+      213: -6599777875807727843
+    second: ElefanteAngry1
+  - first:
+      213: 6122032300981349345
+    second: ElefanteAngry2
+  - first:
+      213: 5787750775840444750
+    second: ElefanteAngry3
+  - first:
+      213: -2343988820103670858
+    second: NpcEggs1_6
+  - first:
+      213: -6798674256392970053
+    second: NpcEggs1_7
+  - first:
+      213: -4497625641759671192
+    second: NpcEggs1_8
+  - first:
+      213: 3551742798945408690
+    second: NpcEggs1_9
+  - first:
+      213: -1724900005503413453
+    second: NpcEggs1_10
+  - first:
+      213: 3303183245230134048
+    second: NpcEggs1_11
+  - first:
+      213: 8692166128358303580
+    second: NpcEggs1_12
+  - first:
+      213: 2504185635182742053
+    second: NpcEggs1_13
+  - first:
+      213: 9135298796361151014
+    second: NpcEggs1_14
+  - first:
+      213: -7691311291536971354
+    second: NpcEggs1_15
+  - first:
+      213: -511539608390288555
+    second: NpcEggs1_16
+  - first:
+      213: -2268102767726241408
+    second: NpcEggs1_17
+  - first:
+      213: 5669583919985874021
+    second: NpcEggs1_18
+  - first:
+      213: -8712621254180767475
+    second: NpcEggs1_19
+  - first:
+      213: 3453112552197841351
+    second: NpcEggs1_20
+  - first:
+      213: -4308115396217815009
+    second: NpcEggs1_21
+  - first:
+      213: -6863911204167823962
+    second: Critter_G_Izq_0
+  - first:
+      213: 2124108181375850969
+    second: Critter_G_Izq_1
+  - first:
+      213: -3527648866435013735
+    second: Critter_G_Izq_2
+  - first:
+      213: -8553956170207376777
+    second: NpcEggs1_25
+  - first:
+      213: 8290571214000738935
+    second: NpcEggs1_26
+  - first:
+      213: -6225519164113663378
+    second: NpcEggs1_27
+  - first:
+      213: 8750895447565918892
+    second: NpcEggs1_28
+  - first:
+      213: 5688835556599657953
+    second: NpcEggs1_29
+  - first:
+      213: 4991741035006351601
+    second: NpcEggs1_30
+  - first:
+      213: 1741668130803892309
+    second: NpcEggs1_31
+  - first:
+      213: 1486267166030135562
+    second: NpcEggs1_32
+  - first:
+      213: 1929847429722447682
+    second: NpcEggs1_33
+  - first:
+      213: -5164248786796944217
+    second: NpcEggs1_34
+  - first:
+      213: 1964833426870353301
+    second: NpcEggs1_42
+  - first:
+      213: 8783248165405981873
+    second: NpcEggs1_43
+  - first:
+      213: 2537364449151763481
+    second: NpcEggs1_53
+  - first:
+      213: -8755216840467430591
+    second: NpcEggs1_54
+  - first:
+      213: 5542390523776857548
+    second: NpcEggs1_64
+  - first:
+      213: -520005282887248239
+    second: NpcEggs1_65
+  - first:
+      213: 2637797927862084759
+    second: NpcEggs1_35
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +166,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +196,516 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Elefante1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 89
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff0616334241fd4caa829ddf2482f3d
+      internalID: 2761857980310006585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elefante2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 88
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d44cc579a6a8444b97789a6e77b8c08
+      internalID: -2988430486863628774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elefante3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 89
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd50313ffbac0da49b5f51f175cc4615
+      internalID: -4071263383474663530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElefanteAngry1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 88
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bfd71cdc204be04d8d9c6811e113e89
+      internalID: -6599777875807727843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElefanteAngry2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 88
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8845600a983034458edc3d44ad32d1c
+      internalID: 6122032300981349345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElefanteAngry3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 89
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d93abfaf88858545ac19b6d678320f3
+      internalID: 5787750775840444750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1b38c527d05564fb7e737eb38dd540
+      internalID: 3303183245230134048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578fa7a49f0059b4ba6fb75d1505b10e
+      internalID: 8692166128358303580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_13
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 65
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3384611d7581b4b4d9d0b94ebc7f70d3
+      internalID: 2504185635182742053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Critter_G_Izq_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fece04165f626034b88efd2b2f908d08
+      internalID: -6863911204167823962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Critter_G_Izq_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 49
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b45010fb40ab064da610539370a72ce
+      internalID: 2124108181375850969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Critter_G_Izq_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b77d74b692a0dfb41be4617b858bb0d4
+      internalID: -3527648866435013735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716efcb6f84ace0419f4cca18fa0bbc2
+      internalID: 1929847429722447682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_34
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 33
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4a2a9b4ca430b429ab815a0d9b4823
+      internalID: -5164248786796944217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_53
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90569c6a733eb7244b5c1abd944574b7
+      internalID: 2537364449151763481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_54
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 21.333334
+        width: 29.09091
+        height: 18.666666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af2da15a06facc428873771cc8353d8
+      internalID: -8755216840467430591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_64
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 11
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38129ff4763e629409041ec08263a2e1
+      internalID: 5542390523776857548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_65
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ee39bc3ac0b9a43a5686708a05fe97
+      internalID: -520005282887248239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_35
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6482738f30bd3a14596b4d04349e1b99
+      internalID: 2637797927862084759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 6
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f34bd1dec580843ba296cf7af0de78
+      internalID: -6798674256392970053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86d93f9d5491e4458d2c02bf9599436
+      internalID: -2343988820103670858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b356e684faa0dcf47989737b38ca0797
+      internalID: -4497625641759671192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NpcEggs1_9
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 65
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0013871925b38914b9160464f1ff9601
+      internalID: 3551742798945408690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

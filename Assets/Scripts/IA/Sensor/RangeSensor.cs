@@ -35,11 +35,11 @@ public class RangeSensor : Sensor
         if (targetType == Target.Player)
         {
             target = GameManager.instance.GetLevelManager().GetPlayer();
-        }
-        else if (target == null)
-        {
-            Debug.LogWarning("Target is null! Please, especify the target in the Inspector.");
-        }
+            if (target == null)
+            {
+                Debug.LogWarning("Player is null! Please, create a player if there is none.");
+            }
+        }      
         else { target = customTarget; }
     }
 
@@ -69,11 +69,7 @@ public class RangeSensor : Sensor
 
     override protected void OnSensorActive()
     {
-        base.OnSensorActive();   
-        foreach (MonoBehaviour monoBehaviour in deactivateComponents)
-        {
-            monoBehaviour.enabled = false;      
-        }
+        base.OnSensorActive();  
     }
 
     override protected void OnSensorExit()

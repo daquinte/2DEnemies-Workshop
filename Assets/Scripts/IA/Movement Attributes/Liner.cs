@@ -43,7 +43,10 @@ public class Liner : MovementBehaviour
             SetUpCinematicAttributes();
             Debug.Log("CienticLiner creado!");
         }
-        else { enemyEngine.RegistrerBehaviour(this); }
+        else { 
+            //A Cinematic movement needs physics involved
+            enemyEngine.RegistrerBehaviour(this); 
+        }
     }
 
     void Update()
@@ -53,11 +56,14 @@ public class Liner : MovementBehaviour
         switch (linerType)
         {
             case LinerType.Constant:
-                //TODO: Resetea la posicion al 0,0 al iniciar
                 transform.position = CinematicLiner();
                 break;
             case LinerType.Acelerated:
-
+                float dist = Vector3.Distance(transform.position, enemyEngine.enemyTarget.transform.position);
+                if(dist < 5)
+                {
+                    //STOP 
+                }
                 break;
         }
     }

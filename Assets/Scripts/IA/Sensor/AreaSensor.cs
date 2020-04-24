@@ -6,18 +6,26 @@ using UnityEngine;
 
 public class AreaSensor : Sensor
 {
+    [Tooltip("List of Trigger Box Colliders for this behaviour")]
     public BoxCollider2D[] AreaList;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        sensorActive = true;
-        OnSensorActive();
+        
+        if (!collision.gameObject.layer.Equals(GameManager.instance.GetGroundLayer()))
+        {
+            sensorActive = true;
+            OnSensorActive();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        sensorActive = false;
-        OnSensorExit();
+        if (!collision.gameObject.layer.Equals(GameManager.instance.GetGroundLayer()))
+        {
+            sensorActive = false;
+            OnSensorExit();
+        }
     }
 
     /*Senson Methods*/

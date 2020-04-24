@@ -25,6 +25,7 @@ public class ForwardJumper : MovementBehaviour
     private Bullet bullet;                              //This object´s Bullet component
     private GameObject groundPoint;                     //A position marking where to check if the player is grounded. Created dinamically.
     private Rigidbody2D rb2d;                           //This object´s rigidbody 
+    private Animator jumpAnimator;                      //This object´s animator
 
     private bool canJump;                               //¿Are you touching the ground, and your delay is over?
     private float lastJumpTimer;                        //Tracks the last frame in which you jumped
@@ -37,13 +38,26 @@ public class ForwardJumper : MovementBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        jumpAnimator = GetComponent<Animator>();
+        jumpAnimator.SetBool("Alert", true);
         rb2d = GetComponent<Rigidbody2D>();
         canJump = true;
         lastJumpTimer = Time.deltaTime;
         groundMask = (LayerMask.GetMask("Ground"));
         SetUpGroundPoint();
         SetUpComponents();
+        
+    }
+
+    private void OnEnable()
+    {
+        jumpAnimator.SetBool("Alert", true);
+    }
+
+    private void OnDisable()
+    {
+        jumpAnimator.SetBool("Alert", false);
+        jumpAnimator.SetBool("Jumping", false);
     }
 
 
@@ -51,6 +65,7 @@ public class ForwardJumper : MovementBehaviour
     {
         if (canJump)
         {
+            
             jumper.Jump();                              //Jump!     
 
             //Where do we jump now to get to the target?    
@@ -65,6 +80,7 @@ public class ForwardJumper : MovementBehaviour
             {
                 //Cast a sphere of 0.2f radius from the groundPoint to check for ground
                 RaycastHit2D groundRay = Physics2D.Raycast(groundPoint.transform.position, Vector2.down, groundCheckRadius, groundMask);
+
                 if (groundRay.collider != null)
                 {
                     canJump = true;
@@ -95,6 +111,7 @@ public class ForwardJumper : MovementBehaviour
         jumper = gameObject.AddComponent(typeof(Jumper)) as Jumper;
         Debug.Log("Jumper Height: " + jumpHeight);
         jumper.SetJumpHeight(jumpHeight);
+        jumper.SetAsForwardJumper();
 
         //Bullet
         bullet = gameObject.AddComponent(typeof(Bullet)) as Bullet;
@@ -118,6 +135,14 @@ public class ForwardJumper : MovementBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(center, radius);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == GameManager.instance.GetGroundLayer())
+        {
+            jumper.StopJumpAnimation();
+        }
     }
 
     public override Vector2 GetMovement()

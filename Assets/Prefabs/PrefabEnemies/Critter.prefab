@@ -16,13 +16,13 @@ GameObject:
   - component: {fileID: 7775288377908171436}
   - component: {fileID: 915187330}
   - component: {fileID: 263396589}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Critter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7775288377908171432
 Transform:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
-  jumpForce: 4
+  jumpHeight: 8
   delayBetweenJumps: 2
 --- !u!95 &263396589
 Animator:

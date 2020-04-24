@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// TODO: Comentar y añadir al docu
+/// TODO: Comentar
 /// </summary>
 public class WanderLiner : Liner
 {
@@ -21,7 +21,7 @@ public class WanderLiner : Liner
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.time;
+        currentTime += Time.deltaTime;
         if (currentTime >= timeToRefresh)
         {
             SetTargetPosition(Random.insideUnitCircle * randomRadius);

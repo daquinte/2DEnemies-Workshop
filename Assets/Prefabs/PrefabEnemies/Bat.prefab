@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 4560940722512842801}
   - component: {fileID: 4560940722512842800}
   - component: {fileID: 4560940722512842802}
+  - component: {fileID: 1335447528}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4560940722512842807
 Transform:
   m_ObjectHideFlags: 0
@@ -96,8 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 6
-  DamagePopup: {fileID: 114923832989802518, guid: b3c831932b6ae0e44a356452b2d0364e,
-    type: 3}
   OnDeathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -138,7 +137,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff957f6ad373151439810e114940ba4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDistance: 4
-  movementSpeed: 1
+  movementAmplitude: 6
   delayTime: 0.3
-  axis: 1
+  movementAxis: 1
+--- !u!95 &1335447528
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4560940722512842805}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8954bf96023d8364ba4849b8b7311b0d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

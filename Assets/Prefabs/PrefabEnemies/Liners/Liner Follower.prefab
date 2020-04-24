@@ -15,13 +15,13 @@ GameObject:
   - component: {fileID: 8868519397960886652}
   - component: {fileID: 8868519398666560009}
   - component: {fileID: 8868519397959719453}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Liner Follower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5739240707218767432
 Transform:
   m_ObjectHideFlags: 0

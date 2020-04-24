@@ -15,13 +15,13 @@ GameObject:
   - component: {fileID: 3798415081817023572}
   - component: {fileID: 1209187}
   - component: {fileID: 1981986838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Liner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3798415081817023575
 Transform:
   m_ObjectHideFlags: 0
@@ -144,9 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3e11105da2e8c40b153d0f9ca43684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
   rotateTowardsTarget: 1
-  time: 1
+  timeToReachTarget: 6
+  linerType: 0
 --- !u!114 &1209187
 MonoBehaviour:
   m_ObjectHideFlags: 0

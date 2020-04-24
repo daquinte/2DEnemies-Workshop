@@ -15,13 +15,13 @@ GameObject:
   - component: {fileID: 585682450102207490}
   - component: {fileID: 585682449266446199}
   - component: {fileID: 3798415081068342079}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Liner Cinematic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4365797225152370755
 Transform:
   m_ObjectHideFlags: 0
@@ -180,5 +180,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateTowardsTarget: 1
-  timeToReachTarget: 4
-  linerType: 1
+  timeToReachTarget: 6
+  linerType: 0

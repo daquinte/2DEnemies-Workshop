@@ -18,7 +18,21 @@ public class Jumper : MonoBehaviour
 
     [SerializeField]
     private float jumpTime = 1f;                              //How high you want this entity to jump
+    
+    private bool isForwardJumped = false;
 
+    private Animator jumpAnimator;
+
+
+    private void Start()
+    {
+        jumpAnimator = this.GetComponent<Animator>();
+        //If the Jumper acts on its own
+        if (!isForwardJumped)
+        {
+            Jump();
+        }
+    }
 
     /// <summary>
     /// Apply an impulse force to the GameObject to make it jump
@@ -26,8 +40,13 @@ public class Jumper : MonoBehaviour
     public void Jump()
     {
         float jumpForce = CalculateJumpSpeed();
-        Debug.Log("JUMP FORCE: " + jumpForce);
         GetComponent<Rigidbody2D>().velocity += Vector2.up * jumpForce;
+        jumpAnimator.SetBool("Jumping", true);
+    }
+
+    public void StopJumpAnimation()
+    {
+        jumpAnimator.SetBool("Jumping", false);
     }
 
     /// <summary>
@@ -37,6 +56,15 @@ public class Jumper : MonoBehaviour
     public void SetJumpHeight(float jh)
     {
         jumpHeight = jh;
+    }
+
+    /// <summary>
+    /// Establishes that this component is part of a Forward Jumper, 
+    /// thus the Jump method is called externally
+    /// </summary>
+    public void SetAsForwardJumper()
+    {
+        isForwardJumped = true;
     }
 
     /// <summary>

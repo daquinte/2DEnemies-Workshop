@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour {
         return (levelManagerInstance != null) ? levelManagerInstance : null;
     }
 
+    //Returns the physics layer for the ground
+    public int GetGroundLayer()
+    {
+       return LayerMask.NameToLayer("Ground");
+    }
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

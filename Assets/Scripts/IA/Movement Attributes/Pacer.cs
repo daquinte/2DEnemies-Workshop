@@ -12,15 +12,13 @@ using UnityEngine;
 /// 
 public class Pacer : AbstractChangeDir {
 
-    private GameObject raycastEmitter;                  //GameObject you throw the raycast from. Created dinamically.
-    private int groundLayerMask;                        //Ground layer for raycast
+    [SerializeField] private LayerMask m_WhatIsGround;           //A mask determining what is ground for this entity
+    private GameObject raycastEmitter;                           //GameObject you throw the raycast from. Created dinamically.
 
     // Start is called before the first frame update
     void Start()
     {
-        groundLayerMask = (LayerMask.GetMask("Ground"));
-        Setup();
-      
+        Setup();     
     }
 
     /// <summary>
@@ -53,7 +51,7 @@ public class Pacer : AbstractChangeDir {
     /// </summary>
     protected override void Check()
     {
-        RaycastHit2D groundRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, 2, groundLayerMask);
+        RaycastHit2D groundRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, 2, m_WhatIsGround);
         if (groundRay.collider == null)
         {
             ChangeDir();

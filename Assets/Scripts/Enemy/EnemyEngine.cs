@@ -96,6 +96,11 @@ public class EnemyEngine : MonoBehaviour
 		enemyBehaviours.Add(mb);
 	}
 
+	protected void SetupEntityAsPhysical()
+	{
+
+	}
+
 	private void updatePosition()
 	{
 		foreach (MovementBehaviour sb in enemyBehaviours)
