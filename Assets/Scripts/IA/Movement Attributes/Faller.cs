@@ -11,12 +11,13 @@ using UnityEngine;
 /// </summary>
 public class Faller : MonoBehaviour
 {
-    public int gravity;                                 //Gravity that will be applied for the fall.
-    public float timeBeforeFall = 0.1f;                 //Time, in unscaled seconds, the enemy will wait before the fall
+    public int gravity = 1;                             //Gravity that will be applied for the fall.
+    public float timeBeforeFall = 1f;                 //Time, in unscaled seconds, the enemy will wait before the fall
 
     // Start is called before the first frame update
     void Start()
     {
+        ModifyGravityScale(0);
         StartCoroutine(FallDown());
     }
 

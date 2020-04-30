@@ -11,10 +11,9 @@ public class FollowerLiner : Liner
 {
     [Tooltip("Time that this component will wait " +
         "before sending player position to Liner component")]
-    public float timeToRefresh;
+    public float timeToRefresh = 0.4f;
 
-    private float currentTime;
-
+    private float currentTime = 2f;
 
     // Update is called once per frame
     void Update()
@@ -22,7 +21,7 @@ public class FollowerLiner : Liner
         currentTime += Time.time;
         if (currentTime >= timeToRefresh)
         {
-            SetTargetPosition(enemyEngine.enemyTarget.transform.position);
+            SetTargetPosition(enemyEngine.GetTargetPosition());
             currentTime = 0;
         }
 

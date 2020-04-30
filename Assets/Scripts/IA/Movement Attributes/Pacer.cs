@@ -33,7 +33,7 @@ public class Pacer : AbstractChangeDir {
         raycastEmitter = new GameObject("raycastEmitter");
 
         Renderer rend = GetComponent<Renderer>();
-        raycastEmitter.transform.position = new Vector3(GOTransform.position.x - 1.5f, GOTransform.position.y);
+        raycastEmitter.transform.position = new Vector3(GOTransform.position.x - rend.bounds.extents.x, GOTransform.position.y);
         raycastEmitter.transform.parent = gameObject.transform;
 
     }

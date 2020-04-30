@@ -9,8 +9,9 @@ public class AbstractChangeDir : MonoBehaviour
     protected enum InitialMovement { Right, Left };
 
     private InitialMovement initialMovement = InitialMovement.Left;
-    public float movementSpeed = 0.1f;
+    public float movementSpeed = 3f;
 
+    private float pMovementSpeed;
     /// <summary>
     /// Setup of the direcion, dependant on he initial movement.
     /// </summary>
@@ -28,7 +29,7 @@ public class AbstractChangeDir : MonoBehaviour
             dir = (initialMovement == InitialMovement.Left) ? 1f : -1f;
 
         }
-        movementSpeed *= dir;
+        pMovementSpeed = movementSpeed * dir;
     }
 
 
@@ -38,7 +39,7 @@ public class AbstractChangeDir : MonoBehaviour
     /// </summary>
     protected void MoveForward()
     {
-        transform.Translate(Vector2.right * movementSpeed * Time.deltaTime);
+        transform.Translate(Vector2.right * pMovementSpeed * Time.deltaTime);
     }
 
     /// <summary>
@@ -51,7 +52,7 @@ public class AbstractChangeDir : MonoBehaviour
 
 
     /// <summary>
-    /// Method that will be overrided in each sensor
+    /// Method that will be overrided
     /// </summary>
     protected virtual void Check() {}
 }

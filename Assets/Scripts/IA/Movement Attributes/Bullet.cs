@@ -12,17 +12,18 @@ using UnityEngine;
 public class Bullet : MovementBehaviour
 {
 
-    public bool collideWithWalls = true; //TODO: problema, si desactivo el boxcollider siempre no va a chocar con el jugador!!!
+    public bool collideWithWalls = true;
 
     [SerializeField]
-    private float bulletSpeed = 0.5f;
+    private bool cancelGravity = true;
 
-    
+    [SerializeField]
+    private float bulletSpeed = 2.5f;
+
 
     public void Start()
     {
-        if (!collideWithWalls) 
-                GetComponent<BoxCollider2D>().enabled = false;
+    
         GetComponent<Rigidbody2D>().velocity = -transform.right * bulletSpeed;
         
     }
@@ -39,5 +40,34 @@ public class Bullet : MovementBehaviour
     public void SetBulletSpeed(float newSpeed)
     {
         bulletSpeed = newSpeed;
+    }
+
+    //Makes the bullet behaviour be affected by gravity
+    public void SetAsGravityBullet()
+    {
+        cancelGravity = false;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            Debug.Log("[Bullet] Player hit!");
+        }
+    }
+
+
+    private void SetupBullet()
+    {
+        if (!collideWithWalls)
+        {
+            //Si el enemigo tiene esto activado su boxcollider pasará a ser TRIGGER y comprobará colisiones por trigger en lugar de por bounding box!!!
+            GetComponent<BoxCollider2D>().isTrigger = true;
+        }
+
+        if (cancelGravity)
+        { 
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+        }
     }
 }

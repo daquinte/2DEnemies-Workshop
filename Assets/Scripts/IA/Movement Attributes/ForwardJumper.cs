@@ -11,20 +11,19 @@ public class ForwardJumper : MovementBehaviour
 {
     //Public attributes
     [Tooltip("Lateral speed movement. 0 = Jumper")] //TODO: make a log warning if == 0? could be nice
-    public float movementSpeed;
+    public float movementSpeed = 1.5f;
 
     [Tooltip("Max Height to be reached")]
-    public float jumpHeight;
+    public float jumpHeight = 3f;
 
     [Tooltip("Delay the entity stays on the ground before jumping")]
-    public float delayBetweenJumps;                    
+    public float delayBetweenJumps = 0.5f;                    
 
 
     //Private attributes 
     private Jumper jumper;                              //This object´s Jumper component
     private Bullet bullet;                              //This object´s Bullet component
     private GameObject groundPoint;                     //A position marking where to check if the player is grounded. Created dinamically.
-    private Rigidbody2D rb2d;                           //This object´s rigidbody 
     private Animator jumpAnimator;                      //This object´s animator
 
     private bool canJump;                               //¿Are you touching the ground, and your delay is over?
@@ -40,7 +39,7 @@ public class ForwardJumper : MovementBehaviour
     {
         jumpAnimator = GetComponent<Animator>();
         jumpAnimator.SetBool("Alert", true);
-        rb2d = GetComponent<Rigidbody2D>();
+        
         canJump = true;
         lastJumpTimer = Time.deltaTime;
         groundMask = (LayerMask.GetMask("Ground"));
@@ -69,9 +68,9 @@ public class ForwardJumper : MovementBehaviour
             jumper.Jump();                              //Jump!     
 
             //Where do we jump now to get to the target?    
-            int mod = (this.transform.position.x > enemyEngine.enemyTarget.transform.position.x) ? 1 : -1; 
-            
-            rb2d.velocity += bullet.GetMovement() * mod;    //Move towards target
+            int mod = (this.transform.position.x > enemyEngine.GetTargetPosition().x) ? 1 : -1;
+
+            GetComponent<Rigidbody2D>().velocity += bullet.GetMovement() * mod;    //Move towards target
             canJump = false;                                //We shall not jump until next timer states so
         }
         else
@@ -111,11 +110,14 @@ public class ForwardJumper : MovementBehaviour
         jumper = gameObject.AddComponent(typeof(Jumper)) as Jumper;
         Debug.Log("Jumper Height: " + jumpHeight);
         jumper.SetJumpHeight(jumpHeight);
-        jumper.SetAsForwardJumper();
+        
 
         //Bullet
         bullet = gameObject.AddComponent(typeof(Bullet)) as Bullet;
         bullet.SetBulletSpeed(movementSpeed);
+        bullet.SetAsGravityBullet();
+
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     // Draws a wireframe sphere in the Scene view, fully enclosing

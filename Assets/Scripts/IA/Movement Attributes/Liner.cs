@@ -11,10 +11,10 @@ public class Liner : MovementBehaviour
 {
 
     [Tooltip("Whether you want the entity to rotate or not")]
-    public bool rotateTowardsTarget;
+    public bool rotateTowardsTarget = true;
 
     [Tooltip("Time to reach the target Point")]
-    public float timeToReachTarget;
+    public float timeToReachTarget = 2;
 
 
     [SerializeField]
@@ -59,7 +59,7 @@ public class Liner : MovementBehaviour
                 transform.position = CinematicLiner();
                 break;
             case LinerType.Acelerated:
-                float dist = Vector3.Distance(transform.position, enemyEngine.enemyTarget.transform.position);
+                float dist = Vector3.Distance(transform.position, enemyEngine.GetTargetPosition());
                 if(dist < 5)
                 {
                     //STOP 
@@ -131,7 +131,7 @@ public class Liner : MovementBehaviour
         }
         else
         {
-            transform.position = enemyEngine.enemyTarget.transform.position;
+            transform.position = enemyEngine.GetTargetPosition();
             lastMovement = Vector3.zero;
         }
         return lastMovement;
@@ -177,18 +177,6 @@ public class Liner : MovementBehaviour
             transform.rotation = (Quaternion.Euler(0, 180, -AngleDeg));
         }
         else transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 180);
-    }
-
-
-    /// <summary>
-    /// Gizmos for the editor.
-    /// Draw a yellow sphere at the targets's position
-    /// Draw a blue line to check the route
-    /// </summary>
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, enemyEngine.GetTargetPosition());
     }
 
 }

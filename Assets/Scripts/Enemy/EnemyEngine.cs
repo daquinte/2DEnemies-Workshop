@@ -9,16 +9,16 @@ public class EnemyEngine : MonoBehaviour
 {
 
 	[Tooltip("Objetivo que tendrá el enemigo. Si es null, se asignará el jugador")]
-	public GameObject enemyTarget = null;
+	protected GameObject enemyTarget = null;
 
 	[Tooltip("Distance in which we consider the enemy has reached the player")]
-	public float stopDistance = 1f;
+	protected float stopDistance = 1f;
 
 	[Tooltip("Maximum velocity in which an enemy can move")]
-	public float maxVelocity = 5.0f;
+	protected float maxVelocity = 5.0f;
 
 	[Tooltip("Maximum acceleration that can be applied to an enemy")]
-	public float maxAccel = 5.0f;
+	protected float maxAccel = 5.0f;
 
 	/// <summary>
 	/// List with every component that composes an enemy behaviour
@@ -51,6 +51,13 @@ public class EnemyEngine : MonoBehaviour
 
 		isMoving = false;
 		isFacingLeft = true;
+
+		//Set Layer to enemy is it isn´t
+		if(gameObject.layer == 0)
+		{
+			gameObject.layer = LayerMask.NameToLayer("Enemy");
+		}
+
 		if (enemyTarget != null)
 		{
 			isMoving = true;

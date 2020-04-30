@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bumper : AbstractChangeDir
 {
     [Range(1.0f, 5.0f)]
-    public float colliderWidth;
+    public float colliderWidth = 2f;
     
     // Start is called before the first frame update
     void Start()
@@ -17,10 +17,13 @@ public class Bumper : AbstractChangeDir
     void Setup()
     {
         SetupDir();
-       
+
+        Renderer rend = GetComponent<Renderer>();
         BoxCollider2D bumperCollider = gameObject.AddComponent<BoxCollider2D>();
-        bumperCollider.transform.position = new Vector3(this.transform.position.x, this.transform.position.y);
-        bumperCollider.size = new Vector2(colliderWidth, bumperCollider.size.y);
+        //La equivalencia base es 3 ancho -> 0.6
+        //Entonce 3 ancho -> 0.6 
+        //        cw      -> X
+        bumperCollider.size = new Vector2(colliderWidth*0.6f/3, colliderWidth * 0.6f / 3);
         bumperCollider.isTrigger = true;
     }
 
@@ -40,8 +43,7 @@ public class Bumper : AbstractChangeDir
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        //TODO: revisar
-       // Gizmos.DrawLine(transform.position, new Vector2(transform.position.x + colliderWidth, transform.position.y));
+        Gizmos.DrawWireCube(transform.position, new Vector3(colliderWidth, colliderWidth));
     }
 
 }

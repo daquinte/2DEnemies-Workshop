@@ -20,6 +20,9 @@ public class Floater : MonoBehaviour {
     [Tooltip("Wave amplitude of this movement")]
     public float movementAmplitude = 4f;             //Total distance you want to cover in unity units
 
+    [Tooltip("Movement Speed of this movement")]
+    public float movementSpeed = 5f;   
+
     [Tooltip("Amount of time that the enemy will wait at the edges")]
     public float delayTime = 0.1f;                   //Delay in Realtime Seconds the entity will wait at the ends of each path
     
@@ -86,7 +89,7 @@ public class Floater : MonoBehaviour {
             {
                 if (transform.position.y != upperLimit)
                 {
-                    current = Mathf.MoveTowards(current, upperLimit, Time.deltaTime);
+                    current = Mathf.MoveTowards(current, upperLimit, Time.deltaTime * movementSpeed);
                 }
                 else { 
                     towardsUpperLimit = false;
@@ -98,7 +101,7 @@ public class Floater : MonoBehaviour {
             {
                 if (transform.position.y != lowerLimit)
                 {
-                    current = Mathf.MoveTowards(current, lowerLimit, Time.deltaTime);
+                    current = Mathf.MoveTowards(current, lowerLimit, Time.deltaTime * movementSpeed);
                 }
                 else { 
                     towardsUpperLimit = true;
@@ -120,7 +123,7 @@ public class Floater : MonoBehaviour {
             {
                 if (transform.position.x != upperLimit)
                 {
-                    current = Mathf.MoveTowards(current, upperLimit, Time.deltaTime);
+                    current = Mathf.MoveTowards(current, upperLimit, Time.deltaTime * movementSpeed);
                 }
                 else
                 {
@@ -133,7 +136,7 @@ public class Floater : MonoBehaviour {
             {
                 if (transform.position.x != lowerLimit)
                 {
-                    current = Mathf.MoveTowards(current, lowerLimit, Time.deltaTime);
+                    current = Mathf.MoveTowards(current, lowerLimit, Time.deltaTime * movementSpeed);
                 }
                 else
                 {
