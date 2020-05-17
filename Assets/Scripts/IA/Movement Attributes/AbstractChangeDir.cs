@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class AbstractChangeDir : MonoBehaviour
 {
+    //Public movement speed for this components
+    public float movementSpeed = 3f;
+
     //Enumerator to calcule the direction of the entity
     protected enum InitialMovement { Right, Left };
 
     private InitialMovement initialMovement = InitialMovement.Left;
-    public float movementSpeed = 3f;
+
 
     private float pMovementSpeed;
     /// <summary>

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 public enum RangeSensorType { Horizontal, Vertical, DistanceBased }
-public enum Target { Player, Custom }
+
 
 /// <summary>
 /// This class works as a distance or range sensor between this entity and some target GameObject
@@ -17,14 +17,8 @@ public class RangeSensor : Sensor
     public RangeSensorType sensorType;
 
     [Tooltip("Range, in Unity units, the sensor will value")]
-    public float detectionRange = 1.0f;
+    public float detectionRange = 3.0f;
 
-
-    public Target targetType;
-
-
-    [Tooltip("The target in case you don´t want the target to be the Player. If that´s so, please select Custom in the Target Type")]
-    public GameObject customTarget;
 
 
     private GameObject target;
@@ -32,15 +26,13 @@ public class RangeSensor : Sensor
     // Start is called before the first frame update
     void Start()
     {
-        if (targetType == Target.Player)
+
+        target = GameManager.instance.GetLevelManager().GetPlayer();
+        if (target == null)
         {
-            target = GameManager.instance.GetLevelManager().GetPlayer();
-            if (target == null)
-            {
-                Debug.LogWarning("Player is null! Please, create a player if there is none.");
-            }
-        }      
-        else { target = customTarget; }
+            Debug.LogWarning("Player is null! Please, create a player if there is none.");
+        }
+
     }
 
     // Update is called once per frame
@@ -69,7 +61,7 @@ public class RangeSensor : Sensor
 
     override protected void OnSensorActive()
     {
-        base.OnSensorActive();  
+        base.OnSensorActive();
     }
 
     override protected void OnSensorExit()
@@ -79,11 +71,11 @@ public class RangeSensor : Sensor
             monoBehaviour.enabled = false;
         }
 
-       /* 
-        foreach (MonoBehaviour monoBehaviour in deactivateComponents)
-        {
-            monoBehaviour.enabled = true;      
-        }*/ //No neceseariamente quiero activar todos los componentes que quiero desactivar.
+        /* 
+         foreach (MonoBehaviour monoBehaviour in deactivateComponents)
+         {
+             monoBehaviour.enabled = true;      
+         }*/ //No neceseariamente quiero activar todos los componentes que quiero desactivar.
     }
 
 
@@ -108,7 +100,7 @@ public class RangeSensor : Sensor
             Gizmos.DrawLine(transform.position, new Vector2(x, y - detectionRange));
         }
 
-        if(sensorType == RangeSensorType.DistanceBased)
+        if (sensorType == RangeSensorType.DistanceBased)
         {
             Gizmos.DrawWireSphere(transform.position, detectionRange);
         }

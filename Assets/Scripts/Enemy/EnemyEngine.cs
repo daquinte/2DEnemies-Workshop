@@ -79,8 +79,6 @@ public class EnemyEngine : MonoBehaviour
     {
 		if (isMoving)
 			updatePosition();
-		float distance = (GetTargetPosition() - transform.position).magnitude;
-		isMoving = distance > stopDistance;
 	}
 
 
@@ -103,10 +101,6 @@ public class EnemyEngine : MonoBehaviour
 		enemyBehaviours.Add(mb);
 	}
 
-	protected void SetupEntityAsPhysical()
-	{
-
-	}
 
 	private void updatePosition()
 	{
@@ -135,11 +129,6 @@ public class EnemyEngine : MonoBehaviour
 		accel = Vector3.zero;
 	}
 
-
-	private void EnemyMovement()
-	{
-
-	}
 
 	/// <summary>
 	/// Flips the enemy

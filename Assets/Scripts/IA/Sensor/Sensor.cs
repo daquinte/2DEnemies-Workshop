@@ -19,7 +19,15 @@ public class Sensor : MonoBehaviour
 
     protected bool sensorActive;        //Sometimes I just want the sensor to track this information so any components (previously active) can ask.
 
-
+    private void Awake()
+    {
+        //We have to make sure that all components that are meant to be activated
+        //are deactivated by default
+        foreach (MonoBehaviour monoBehaviour in activateComponents)
+        {
+            monoBehaviour.enabled = false;
+        }
+    }
     /*Methods*/
     public bool GetSensorActive()
     {

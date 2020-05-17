@@ -18,14 +18,22 @@ public class Bullet : MovementBehaviour
     private bool cancelGravity = true;
 
     [SerializeField]
-    private float bulletSpeed = 2.5f;
+    private float bulletSpeed = 1.5f;
+
+    private Rigidbody2D RB2D;
+    private Vector3 m_Velocity = Vector3.zero;
 
 
     public void Start()
     {
-    
-        GetComponent<Rigidbody2D>().velocity = -transform.right * bulletSpeed;
+        SetupBullet();
+    }
+
+    public void FixedUpdate()
+    {
         
+        RB2D.velocity = new Vector2(-bulletSpeed, RB2D.velocity.y);
+
     }
 
     /// <summary>
@@ -50,7 +58,7 @@ public class Bullet : MovementBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Debug.Log("[Bullet] Player hit!");
         }
@@ -59,15 +67,24 @@ public class Bullet : MovementBehaviour
 
     private void SetupBullet()
     {
+
         if (!collideWithWalls)
         {
             //Si el enemigo tiene esto activado su boxcollider pasará a ser TRIGGER y comprobará colisiones por trigger en lugar de por bounding box!!!
             GetComponent<BoxCollider2D>().isTrigger = true;
         }
 
-        if (cancelGravity)
-        { 
-            GetComponent<Rigidbody2D>().gravityScale = 0;
+        RB2D = GetComponent<Rigidbody2D>();
+        if (RB2D != null)
+        {
+            if (cancelGravity)
+            {
+                GetComponent<Rigidbody2D>().gravityScale = 0;
+            }
+
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+
+
     }
 }

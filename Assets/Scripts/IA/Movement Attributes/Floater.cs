@@ -8,11 +8,13 @@ using UnityEngine;
 /// </summary>
 /// 
 
-    //TODO: hacer que el movimiento sea empezando por el centro, si no está hecho ya
-public class Floater : MonoBehaviour {
-    
+[RequireComponent(typeof(Rigidbody2D))]
+
+public class Floater : MonoBehaviour
+{
+
     protected enum MovementAxis
-    { 
+    {
         X,
         Y
     };                   //Axis in which a Floater can move
@@ -21,12 +23,15 @@ public class Floater : MonoBehaviour {
     public float movementAmplitude = 4f;             //Total distance you want to cover in unity units
 
     [Tooltip("Movement Speed of this movement")]
-    public float movementSpeed = 5f;   
+    public float movementAcceleration = 1.5f;
+
+    [Tooltip("Time to reach the target Point")]
+    public float timeToCompleteMovement = 4;
 
     [Tooltip("Amount of time that the enemy will wait at the edges")]
-    public float delayTime = 0.1f;                   //Delay in Realtime Seconds the entity will wait at the ends of each path
-    
-    [SerializeField] 
+    public float delayTime = 0.8f;                   //Delay in Realtime Seconds the entity will wait at the ends of each path
+
+    [SerializeField]
     private MovementAxis movementAxis = MovementAxis.Y;       // Axis you want to float on
 
     //Private movement attributes
@@ -35,40 +40,89 @@ public class Floater : MonoBehaviour {
     private float lowerLimit;
     private float current;
 
-    
-    private bool towardsUpperLimit;
 
-    
+    private bool towardsUpperLimit;
+    //REWORK
+    private Vector3 targetFloaterPosition;
+    private Rigidbody2D RB2D;
+    protected float t;                                    //temp t value for steering
+
+    private bool isMoving = true;
+
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         towardsUpperLimit = true;
         Setup();
-        if(movementAxis == MovementAxis.Y) { 
-            StartCoroutine("FloatMovementInYAxis");
-        }
-        else if (movementAxis == MovementAxis.X)
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (isMoving)
         {
-            StartCoroutine("FloatMovementInXAxis");
+            t += Time.deltaTime / timeToCompleteMovement;
+            RB2D.velocity = new Vector2(RB2D.velocity.x, Vector2.Lerp(transform.position, targetFloaterPosition, t).y);
+
+            float dist;
+            if (movementAxis == MovementAxis.Y)
+            {
+                dist = Mathf.Abs(targetFloaterPosition.y - transform.position.y);
+            }
+            else
+            {
+                dist = Mathf.Abs(targetFloaterPosition.x - transform.position.x);
+            }
+
+            if (dist < 0.8)
+            {
+                //STOP
+                isMoving = false;
+                RB2D.Sleep();
+                towardsUpperLimit = !towardsUpperLimit;
+                StartCoroutine(WaitForSeconds(delayTime));
+
+            }
         }
     }
 
     void Setup()
     {
-        if (movementAxis == MovementAxis.Y) {
+        if (movementAxis == MovementAxis.Y)
+        {
             //We set the limits for Y
             upperLimit = transform.position.y + (movementAmplitude / 2f);
             lowerLimit = transform.position.y - (movementAmplitude / 2f);
-            current = transform.position.y;
+            targetFloaterPosition = new Vector3(transform.position.x, upperLimit);
         }
-        else if(movementAxis == MovementAxis.X)
+        else if (movementAxis == MovementAxis.X)
         {
             //We set the limits for X
             upperLimit = transform.position.x + (movementAmplitude / 2f);
             lowerLimit = transform.position.x - (movementAmplitude / 2f);
-            current = transform.position.x;
+            targetFloaterPosition = new Vector3(upperLimit, transform.position.y);
         }
+
+        RB2D = GetComponent<Rigidbody2D>();
+        RB2D.gravityScale = 0;
     }
 
+    private void OnWaitForSecondsEnd()
+    {
+        float hey = towardsUpperLimit ? upperLimit : lowerLimit;
+
+        if (movementAxis == MovementAxis.Y)
+        {
+            targetFloaterPosition = new Vector3(transform.position.x, hey);
+        }
+        else if (movementAxis == MovementAxis.X)
+        {
+            targetFloaterPosition = new Vector3(hey, transform.position.y);
+        }
+        RB2D.WakeUp();
+        isMoving = true;
+    }
 
     /// <summary>
     /// Called then the component is disabled.
@@ -79,79 +133,13 @@ public class Floater : MonoBehaviour {
         StopAllCoroutines();
     }
 
-    //TODO: Unir FloatMovement in X/Y Axis de alguna manera
-    //TODO: Quitar coroutinas
 
-    IEnumerator FloatMovementInYAxis()
+    IEnumerator WaitForSeconds(float seconds)
     {
-        while (true) { 
-            if (towardsUpperLimit)
-            {
-                if (transform.position.y != upperLimit)
-                {
-                    current = Mathf.MoveTowards(current, upperLimit, Time.deltaTime * movementSpeed);
-                }
-                else { 
-                    towardsUpperLimit = false;
-                    yield return new WaitForSecondsRealtime(delayTime);
-                }
-            }
-            //Then you´re going for rhe lower
-            else if (!towardsUpperLimit)
-            {
-                if (transform.position.y != lowerLimit)
-                {
-                    current = Mathf.MoveTowards(current, lowerLimit, Time.deltaTime * movementSpeed);
-                }
-                else { 
-                    towardsUpperLimit = true;
-                    yield return new WaitForSecondsRealtime(delayTime);
-                }
-            }
-
-            transform.position = new Vector3(transform.position.x, current);
-            yield return null;
-        }
-
+        yield return new WaitForSeconds(seconds);
+        OnWaitForSecondsEnd();
+        yield return null;
     }
-
-    IEnumerator FloatMovementInXAxis()
-    {
-        while (true)
-        {
-            if (towardsUpperLimit)
-            {
-                if (transform.position.x != upperLimit)
-                {
-                    current = Mathf.MoveTowards(current, upperLimit, Time.deltaTime * movementSpeed);
-                }
-                else
-                {
-                    towardsUpperLimit = false;
-                    yield return new WaitForSecondsRealtime(delayTime);
-                }
-            }
-            //Then you´re going for rhe lower
-            else if (!towardsUpperLimit)
-            {
-                if (transform.position.x != lowerLimit)
-                {
-                    current = Mathf.MoveTowards(current, lowerLimit, Time.deltaTime * movementSpeed);
-                }
-                else
-                {
-                    towardsUpperLimit = true;
-                    yield return new WaitForSecondsRealtime(delayTime);
-                }
-            }
-
-            transform.position = new Vector3(current, transform.position.y);
-            yield return null;
-        }
-
-    }
-
-
     /// <summary>
     /// Gizmos for the Floater behaviour
     /// </summary>
@@ -162,15 +150,50 @@ public class Floater : MonoBehaviour {
         switch (movementAxis)
         {
             case MovementAxis.X:
-                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x - movementAmplitude / 2, transform.position.y));    
-                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + movementAmplitude / 2, transform.position.y));    
+                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x - movementAmplitude / 2, transform.position.y));
+                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + movementAmplitude / 2, transform.position.y));
                 break;
             case MovementAxis.Y:
                 Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - movementAmplitude / 2));
                 Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + movementAmplitude / 2));
                 break;
         }
-      
+
     }
 
+
+    /* public override Vector2 GetMovement()
+     {
+         Vector2 movement = Vector2.zero;
+         if (isMoving)
+         {
+             t += Time.deltaTime / timeToCompleteMovement;
+             movement = Vector2.Lerp(transform.position, targetFloaterPosition, t);
+
+             float dist;
+             if (movementAxis == MovementAxis.Y)
+             {
+                 dist = Mathf.Abs(targetFloaterPosition.y - transform.position.y);
+             }
+             else
+             {
+                 dist = Mathf.Abs(targetFloaterPosition.x - transform.position.x);
+             }
+
+             if (dist < 0.8)
+             {
+                 //STOP
+                 isMoving = false;
+                 RB2D.Sleep();
+                 towardsUpperLimit = !towardsUpperLimit;
+                 StartCoroutine(WaitForSeconds(delayTime));
+
+             }
+
+
+         }
+
+         return movement;
+
+     }*/
 }

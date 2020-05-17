@@ -16,6 +16,8 @@ public class Liner : MovementBehaviour
     [Tooltip("Time to reach the target Point")]
     public float timeToReachTarget = 2;
 
+    [Tooltip("Acceleration")]
+    public float Acceleration = 1f;
 
     [SerializeField]
     private LinerType linerType = LinerType.Constant;
@@ -27,6 +29,9 @@ public class Liner : MovementBehaviour
 
     //Cinematic attributes
     private Vector3 startPosition;
+
+    //Acelerated attributes
+    private Rigidbody2D RB2D;
 
 
     // Start is called before the first frame update
@@ -43,9 +48,10 @@ public class Liner : MovementBehaviour
             SetUpCinematicAttributes();
             Debug.Log("CienticLiner creado!");
         }
-        else { 
+        else {
             //A Cinematic movement needs physics involved
-            enemyEngine.RegistrerBehaviour(this); 
+            RB2D = gameObject.AddComponent<Rigidbody2D>();
+            RB2D.gravityScale = 0;
         }
     }
 
@@ -59,10 +65,12 @@ public class Liner : MovementBehaviour
                 transform.position = CinematicLiner();
                 break;
             case LinerType.Acelerated:
+                RB2D.velocity = PhysicsLiner();
                 float dist = Vector3.Distance(transform.position, enemyEngine.GetTargetPosition());
-                if(dist < 5)
+                if(dist < 1)
                 {
-                    //STOP 
+                    //STOP
+                    GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 }
                 break;
         }
@@ -111,30 +119,10 @@ public class Liner : MovementBehaviour
 
     private Vector2 PhysicsLiner()
     {
-        //TODO: Ajustar directamente la posición: si estás dentro de un rango X, fuerzas que se ponga por código 
-        if (transform.position != targetPoint)
-        {
-            Vector2 steering = Vector2.zero;
+        Vector2 dir = enemyEngine.GetTargetPosition() - transform.position;
 
-            Vector3 desiredVelocity = targetPoint - transform.position;
-            desiredVelocity.Normalize();
-            desiredVelocity *= 5;
-
-            //A la velocidad que llevase, tengo que aplicarle la mía
-            steering = desiredVelocity - enemyEngine.GetVelocity();
-
-            // And then smoothing it out and applying it to the character
-            //steering = Vector3.SmoothDamp(steering, desiredVelocity, ref velocity, smoothTime);
-            t += Time.deltaTime / timeToReachTarget;
-            steering = Vector3.Lerp(steering, desiredVelocity, t);
-            lastMovement = steering;
-        }
-        else
-        {
-            transform.position = enemyEngine.GetTargetPosition();
-            lastMovement = Vector3.zero;
-        }
-        return lastMovement;
+        //V = vo + a*t
+        return dir * Acceleration * timeToReachTarget;
     }
     #endregion
 
@@ -179,4 +167,8 @@ public class Liner : MovementBehaviour
         else transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 180);
     }
 
+
+
+
+    
 }

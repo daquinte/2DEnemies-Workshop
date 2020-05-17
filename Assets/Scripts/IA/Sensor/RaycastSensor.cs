@@ -6,42 +6,34 @@ public class RaycastSensor : Sensor
 {
 
     [Tooltip("Position the ray will fire from")]
-    public Transform originPoint;
+    public Vector3 originPoint;
 
     [Tooltip("Direction the ray will follow")]
     public Vector2 rayDirection;
-
-    public float raycastDistance;
-
-    [Tooltip("Especifies the layer the ray will collide on.")]
-    public LayerMask layerMask;
-
 
     private int layer;
     // Start is called before the first frame update
     void Start()
     {
-        layer = LayerMask.GetMask(LayerMask.LayerToName(layerMask));
+        layer = LayerMask.GetMask("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D sensorRay = Physics2D.Raycast(originPoint.position, rayDirection, raycastDistance, layerMask);
-        if(sensorRay.collider == null)
+        RaycastHit2D sensorRay = Physics2D.Raycast(originPoint, rayDirection, rayDirection.magnitude, layer);
+        Debug.Log(rayDirection.magnitude);
+        Debug.DrawRay(originPoint, rayDirection, Color.green);
+        if(sensorRay.collider != null)
         {
             sensorActive = true;
-        }
-
-        else if (sensorActive && sensorRay.collider != null)
-        {
-            sensorActive = false;
+            OnSensorActive();
         }
     }
 
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawLine(originPoint.position, rayDirection);
+        Gizmos.DrawLine(originPoint, rayDirection);
     }
 }

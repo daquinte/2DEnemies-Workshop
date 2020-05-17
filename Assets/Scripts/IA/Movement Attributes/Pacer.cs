@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(RaycastSensor))]
 
+[RequireComponent(typeof(Rigidbody2D))]
 
 /// <summary>
 /// The enemy moves in a straight line, in the direction you specify, 
@@ -12,12 +12,25 @@ using UnityEngine;
 /// 
 public class Pacer : AbstractChangeDir {
 
-    [SerializeField] private LayerMask m_WhatIsGround;           //A mask determining what is ground for this entity
-    private GameObject raycastEmitter;                           //GameObject you throw the raycast from. Created dinamically.
+    
+    private LayerMask m_WhatIsGround;           //A mask determining what is ground for this entity
+
+    private GameObject raycastEmitter;          //GameObject you throw the raycast from. Created dinamically.
 
     // Start is called before the first frame update
     void Start()
     {
+        int g = LayerMask.GetMask("Ground");
+        if(g == 0)
+        {
+            g = LayerMask.GetMask("ground");
+            if (g == 0)
+            {
+                Debug.LogWarning("[Pacer] A Ground layer is required for this behaviour to work!");
+            }
+        }
+        m_WhatIsGround = g;
+
         Setup();     
     }
 
@@ -26,15 +39,14 @@ public class Pacer : AbstractChangeDir {
     /// </summary>
     void Setup()
     {
-        base.SetupDir();
+        SetupDir();
 
         //Place the Transform you cast rays from
-        Transform GOTransform = transform;
         raycastEmitter = new GameObject("raycastEmitter");
 
         Renderer rend = GetComponent<Renderer>();
-        raycastEmitter.transform.position = new Vector3(GOTransform.position.x - rend.bounds.extents.x, GOTransform.position.y);
-        raycastEmitter.transform.parent = gameObject.transform;
+        raycastEmitter.transform.position = new Vector3(raycastEmitter.transform.position.x - rend.bounds.extents.x, raycastEmitter.transform.position.y);
+        raycastEmitter.transform.parent   = gameObject.transform;
 
     }
 

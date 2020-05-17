@@ -6,9 +6,27 @@ using UnityEngine;
 
 public class AreaSensor : Sensor
 {
-    [Tooltip("List of Trigger Box Colliders for this behaviour")]
-    public BoxCollider2D[] AreaList;
+    
+    public Vector2 AreaPosition;
+    public Vector2 AreaWidth;
 
+    private BoxCollider2D sensorCollider;
+    private const float BoxColliderModifier = 0.2f;
+
+    private void Start()
+    {
+        SetupAreaSensor();
+    }
+
+    private void SetupAreaSensor()
+    {
+        //1 -> 0.2
+        //aP -> x
+        sensorCollider = gameObject.AddComponent<BoxCollider2D>();
+        sensorCollider.isTrigger = true;
+        sensorCollider.offset = new Vector2(AreaPosition.x * BoxColliderModifier, AreaPosition.y * BoxColliderModifier);
+        sensorCollider.size = new Vector2(AreaWidth.x * BoxColliderModifier, AreaWidth.y * BoxColliderModifier);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -42,11 +60,7 @@ public class AreaSensor : Sensor
 
     private void OnDrawGizmosSelected()
     {
-        foreach (BoxCollider2D c in AreaList)
-        {
-            Vector2 center = new Vector2(c.transform.position.x, c.transform.position.y);
-            Gizmos.DrawWireCube(center, c.size);
-        }
+        Gizmos.DrawWireCube(AreaPosition, AreaWidth);
     }
 
 }

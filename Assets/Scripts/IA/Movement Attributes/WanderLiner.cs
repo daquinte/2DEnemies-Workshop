@@ -7,8 +7,8 @@ using UnityEngine;
 /// </summary>
 public class WanderLiner : Liner
 {
-    public float randomRadius = 5f;
-    public float timeToRefresh = 1f;
+    public float randomRadius = 10f;
+    public float timeToRefresh = 3f;
    
 
     private float currentTime;
