@@ -45,6 +45,6 @@ public class Faller : MonoBehaviour
     {
         // Draws a blue line from this transform to the target
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 2));
+        //Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 2));
     }
 }

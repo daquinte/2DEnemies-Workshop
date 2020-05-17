@@ -57,8 +57,8 @@ public class ForwardJumper : MovementBehaviour
 
     private void OnDisable()
     {
-        jumpAnimator.SetBool("Alert", false);
-        jumpAnimator.SetBool("Jumping", false);
+        //jumpAnimator.SetBool("Alert", false);
+        //jumpAnimator.SetBool("Jumping", false);
     }
 
 
@@ -102,17 +102,8 @@ public class ForwardJumper : MovementBehaviour
         groundPoint.transform.position = new Vector2(transform.position.x, rend.bounds.min.y);
         groundPoint.transform.parent = gameObject.transform;
 
-        //Layer set up
-        int g = LayerMask.GetMask("Ground");
-        if (g == 0)
-        {
-            g = LayerMask.GetMask("ground");
-            if (g == 0)
-            {
-                Debug.LogWarning("[Forward Jumper] A Ground layer is required for this behaviour to work!");
-            }
-        }
-        m_WhatIsGround = g;
+        
+        m_WhatIsGround = GameManager.instance.GetGroundLayer();
     }
 
     /// <summary>
@@ -131,6 +122,7 @@ public class ForwardJumper : MovementBehaviour
         bullet = gameObject.AddComponent(typeof(Bullet)) as Bullet;
         bullet.SetBulletSpeed(movementSpeed);
         bullet.SetAsGravityBullet();
+        bullet.SetAsForwardJumperComponent();
 
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }

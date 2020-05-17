@@ -29,25 +29,24 @@ public class Floater : MonoBehaviour
     public float timeToCompleteMovement = 4;
 
     [Tooltip("Amount of time that the enemy will wait at the edges")]
-    public float delayTime = 0.8f;                   //Delay in Realtime Seconds the entity will wait at the ends of each path
+    public float delayTime = 0.8f;                                      //Delay in Realtime Seconds the entity will wait at the ends of each path
 
     [SerializeField]
-    private MovementAxis movementAxis = MovementAxis.Y;       // Axis you want to float on
+    private MovementAxis movementAxis = MovementAxis.Y;                 // Axis you want to float on
 
     //Private movement attributes
 
-    private float upperLimit;
-    private float lowerLimit;
-    private float current;
+    private float upperLimit;                                           //"Higher" limit of the movement
+    private float lowerLimit;                                           //"Lower" limit of the movement
+    private float t;                                                    //temp t value for steering
+        
+    private bool towardsUpperLimit;                                     //Are you going towards the upperLimit?
+    private bool isMoving = true;                                       //Are you moving right now, at all?
+    private Vector3 targetFloaterPosition;                              //Position you´re moving towards
 
 
-    private bool towardsUpperLimit;
-    //REWORK
-    private Vector3 targetFloaterPosition;
-    private Rigidbody2D RB2D;
-    protected float t;                                    //temp t value for steering
+    private Rigidbody2D RB2D;                                           //Self Rigidbody
 
-    private bool isMoving = true;
 
 
     // Use this for initialization
@@ -140,8 +139,9 @@ public class Floater : MonoBehaviour
         OnWaitForSecondsEnd();
         yield return null;
     }
+    
     /// <summary>
-    /// Gizmos for the Floater behaviour
+    /// EDITOR ONLY - Gizmos for the Floater behaviour
     /// </summary>
     private void OnDrawGizmosSelected()
     {
@@ -160,40 +160,4 @@ public class Floater : MonoBehaviour
         }
 
     }
-
-
-    /* public override Vector2 GetMovement()
-     {
-         Vector2 movement = Vector2.zero;
-         if (isMoving)
-         {
-             t += Time.deltaTime / timeToCompleteMovement;
-             movement = Vector2.Lerp(transform.position, targetFloaterPosition, t);
-
-             float dist;
-             if (movementAxis == MovementAxis.Y)
-             {
-                 dist = Mathf.Abs(targetFloaterPosition.y - transform.position.y);
-             }
-             else
-             {
-                 dist = Mathf.Abs(targetFloaterPosition.x - transform.position.x);
-             }
-
-             if (dist < 0.8)
-             {
-                 //STOP
-                 isMoving = false;
-                 RB2D.Sleep();
-                 towardsUpperLimit = !towardsUpperLimit;
-                 StartCoroutine(WaitForSeconds(delayTime));
-
-             }
-
-
-         }
-
-         return movement;
-
-     }*/
 }

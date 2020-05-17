@@ -122,7 +122,8 @@ public class Liner : MovementBehaviour
         Vector2 dir = enemyEngine.GetTargetPosition() - transform.position;
 
         //V = vo + a*t
-        return dir * Acceleration * timeToReachTarget;
+        t += Time.deltaTime / timeToReachTarget;
+        return dir * Acceleration * t;
     }
     #endregion
 

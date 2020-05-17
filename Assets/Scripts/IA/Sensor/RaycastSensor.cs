@@ -15,7 +15,7 @@ public class RaycastSensor : Sensor
     // Start is called before the first frame update
     void Start()
     {
-        layer = LayerMask.GetMask("Player");
+        layer = GameManager.instance.GetPlayerLayer();
     }
 
     // Update is called once per frame
@@ -34,6 +34,7 @@ public class RaycastSensor : Sensor
 
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.red;
         Gizmos.DrawLine(originPoint, rayDirection);
     }
 }

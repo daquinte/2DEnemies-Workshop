@@ -20,16 +20,7 @@ public class Pacer : AbstractChangeDir {
     // Start is called before the first frame update
     void Start()
     {
-        int g = LayerMask.GetMask("Ground");
-        if(g == 0)
-        {
-            g = LayerMask.GetMask("ground");
-            if (g == 0)
-            {
-                Debug.LogWarning("[Pacer] A Ground layer is required for this behaviour to work!");
-            }
-        }
-        m_WhatIsGround = g;
+        m_WhatIsGround = GameManager.instance.GetGroundLayer();
 
         Setup();     
     }
@@ -45,7 +36,7 @@ public class Pacer : AbstractChangeDir {
         raycastEmitter = new GameObject("raycastEmitter");
 
         Renderer rend = GetComponent<Renderer>();
-        raycastEmitter.transform.position = new Vector3(raycastEmitter.transform.position.x - rend.bounds.extents.x, raycastEmitter.transform.position.y);
+        raycastEmitter.transform.position = new Vector3(transform.position.x - rend.bounds.extents.x, raycastEmitter.transform.position.y);
         raycastEmitter.transform.parent   = gameObject.transform;
 
     }

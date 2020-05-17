@@ -20,8 +20,8 @@ public class Bullet : MovementBehaviour
     [SerializeField]
     private float bulletSpeed = 1.5f;
 
-    private Rigidbody2D RB2D;
-    private Vector3 m_Velocity = Vector3.zero;
+    private Rigidbody2D RB2D;                       //This component´s rigid body
+    private bool isForwardJumper = false;           //Is this component a sub-component of a Forward Jumper?
 
 
     public void Start()
@@ -31,9 +31,8 @@ public class Bullet : MovementBehaviour
 
     public void FixedUpdate()
     {
-        
-        RB2D.velocity = new Vector2(-bulletSpeed, RB2D.velocity.y);
-
+        if(!isForwardJumper)
+            RB2D.velocity = new Vector2(-bulletSpeed, RB2D.velocity.y);
     }
 
     /// <summary>
@@ -65,6 +64,16 @@ public class Bullet : MovementBehaviour
     }
 
 
+    /// <summary>
+    /// Sets this component as an essential part of a Forward Jumper
+    /// Thus this component will not update itself but will provide the movement
+    /// for the Forward Jumper behaviour
+    /// </summary>
+    public void SetAsForwardJumperComponent()
+    {
+        isForwardJumper = true;
+    }
+
     private void SetupBullet()
     {
 
@@ -87,4 +96,5 @@ public class Bullet : MovementBehaviour
 
 
     }
+
 }
