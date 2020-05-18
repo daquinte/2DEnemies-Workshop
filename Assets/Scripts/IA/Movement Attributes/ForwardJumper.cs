@@ -15,7 +15,7 @@ public class ForwardJumper : MovementBehaviour
     public float movementSpeed = 1.5f;
 
     [Tooltip("Max Height to be reached")]
-    public float jumpHeight = 5f;
+    public float jumpHeight = 3f;
 
     [Tooltip("Delay the entity stays on the ground before jumping")]
     public float delayBetweenJumps = 1.5f;                    
