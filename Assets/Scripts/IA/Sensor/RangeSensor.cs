@@ -46,7 +46,7 @@ public class RangeSensor : Sensor
                 else if (sensorActive) OnSensorExit();
                 break;
             case RangeSensorType.Vertical:
-                if (Mathf.Abs(transform.position.y - target.transform.position.y) > detectionRange) //TODO: mayor?
+                if (Mathf.Abs(transform.position.y - target.transform.position.y) > detectionRange)
                     OnSensorActive();
                 else if (sensorActive) OnSensorExit();
                 break;
@@ -66,10 +66,7 @@ public class RangeSensor : Sensor
 
     override protected void OnSensorExit()
     {
-        foreach (MonoBehaviour monoBehaviour in activateComponents)
-        {
-            monoBehaviour.enabled = false;
-        }
+        base.OnSensorExit();
 
         /* 
          foreach (MonoBehaviour monoBehaviour in deactivateComponents)

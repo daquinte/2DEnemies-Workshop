@@ -19,12 +19,14 @@ public class Faller : MonoBehaviour
     {
         ModifyGravityScale(0);
         StartCoroutine(FallDown());
+
+        GetComponent<Rigidbody2D>().freezeRotation = true;
     }
 
     public IEnumerator FallDown()
     {
-        yield return new WaitForSecondsRealtime(timeBeforeFall);
-        GetComponent<Animator>().SetTrigger("Fall");
+        yield return new WaitForSeconds(timeBeforeFall);
+        //GetComponent<Animator>().SetTrigger("Fall");
         ModifyGravityScale(gravity);
         yield return null;
     }

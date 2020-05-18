@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyEngine))]
 
 /// <summary>
 /// This component combines a jumper behaviour with a bullet behaviour.

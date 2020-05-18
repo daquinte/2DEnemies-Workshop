@@ -22,7 +22,6 @@ public class RaycastSensor : Sensor
     void Update()
     {
         RaycastHit2D sensorRay = Physics2D.Raycast(originPoint, rayDirection, rayDirection.magnitude, layer);
-        Debug.Log(rayDirection.magnitude);
         Debug.DrawRay(originPoint, rayDirection, Color.green);
         if(sensorRay.collider != null)
         {

@@ -14,8 +14,12 @@ public class Sensor : MonoBehaviour
     [Tooltip("Components list you would like to enable when trigger is active. Enter a size and drag the components from this inspector window")]
     public List <MonoBehaviour> activateComponents;
 
-    [Tooltip("Components list you would like to disable when trigger is active. Enter a size and drag the components from this inspector window")]
+    public bool CopyAllComponentsToDeactivateList;
+
+   [Tooltip("Components list you would like to disable when trigger is active. Enter a size and drag the components from this inspector window")]
     public List <MonoBehaviour> deactivateComponents;
+
+   
 
     protected bool sensorActive;        //Sometimes I just want the sensor to track this information so any components (previously active) can ask.
 
@@ -23,25 +27,39 @@ public class Sensor : MonoBehaviour
     {
         //We have to make sure that all components that are meant to be activated
         //are deactivated by default
-        foreach (MonoBehaviour monoBehaviour in activateComponents)
+        foreach (MonoBehaviour movementBehaviour in activateComponents)
         {
-            monoBehaviour.enabled = false;
+            //movementBehaviour.SetInactiveAfterStart = true;
+            movementBehaviour.enabled = false;
+            if(movementBehaviour.GetComponent<Rigidbody2D>() != null)
+            {
+                movementBehaviour.GetComponent<Rigidbody2D>().gravityScale = 0;
+            }
+
+            if (CopyAllComponentsToDeactivateList)
+            {
+                deactivateComponents.Add(movementBehaviour);
+            }
+
         }
     }
     /*Methods*/
-    public bool GetSensorActive()
-    {
-        return sensorActive;
-    }
 
     protected virtual void OnSensorActive() {
 
         sensorActive = true;
-        foreach (MonoBehaviour monoBehaviour in activateComponents)
+        foreach (MonoBehaviour movementBehaviour in activateComponents)
         {
-            monoBehaviour.enabled = true;
+            movementBehaviour.enabled = true;
+            //movementBehaviour.SetInactiveAfterStart = false;   //It can start as intended
         }
     }
-    protected virtual void OnSensorExit() { sensorActive = false; }
+    protected virtual void OnSensorExit() { 
+        sensorActive = false;
+        foreach (MonoBehaviour movementBehaviour in deactivateComponents)
+        {
+            movementBehaviour.enabled = false;
+        }
+    }
 
 }

@@ -14,6 +14,8 @@ public abstract class MovementBehaviour : MonoBehaviour
 {
 
     protected EnemyEngine enemyEngine;                  //Instance of the enemy engine
+
+    public bool SetInactiveAfterStart = false;               //Should this behaviour shut itself up after Start()? Used in all Sensors, to set up the behaviour when needed.
     
     // Start is called before the first frame update
     public void Awake()
@@ -29,4 +31,8 @@ public abstract class MovementBehaviour : MonoBehaviour
     public abstract Vector2 GetMovement();
 
     protected Vector2 lastMovement; //???
+
+    private void OnEnable()
+    {
+    }
 }
