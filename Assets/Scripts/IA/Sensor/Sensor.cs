@@ -12,14 +12,14 @@ public class Sensor : MonoBehaviour
     /*Attributes*/
 
     [Tooltip("Components list you would like to enable when trigger is active. Enter a size and drag the components from this inspector window")]
-    public List <MonoBehaviour> activateComponents;
+    public List<MonoBehaviour> activateComponents;
 
-    public bool CopyAllComponentsToDeactivateList;
+    public bool CopyComponentsToDeactivateList;
+    [Tooltip("Components list you would like to disable when trigger is active. Enter a size and drag the components from this inspector window")]
+    public List<MonoBehaviour> deactivateComponents;
 
-   [Tooltip("Components list you would like to disable when trigger is active. Enter a size and drag the components from this inspector window")]
-    public List <MonoBehaviour> deactivateComponents;
+    [Space(2)]
 
-   
 
     protected bool sensorActive;        //Sometimes I just want the sensor to track this information so any components (previously active) can ask.
 
@@ -31,12 +31,12 @@ public class Sensor : MonoBehaviour
         {
             //movementBehaviour.SetInactiveAfterStart = true;
             movementBehaviour.enabled = false;
-            if(movementBehaviour.GetComponent<Rigidbody2D>() != null)
+            if (movementBehaviour.GetComponent<Rigidbody2D>() != null)
             {
                 movementBehaviour.GetComponent<Rigidbody2D>().gravityScale = 0;
             }
 
-            if (CopyAllComponentsToDeactivateList)
+            if (CopyComponentsToDeactivateList)
             {
                 deactivateComponents.Add(movementBehaviour);
             }
@@ -45,7 +45,8 @@ public class Sensor : MonoBehaviour
     }
     /*Methods*/
 
-    protected virtual void OnSensorActive() {
+    protected virtual void OnSensorActive()
+    {
 
         sensorActive = true;
         foreach (MonoBehaviour movementBehaviour in activateComponents)
@@ -54,7 +55,8 @@ public class Sensor : MonoBehaviour
             //movementBehaviour.SetInactiveAfterStart = false;   //It can start as intended
         }
     }
-    protected virtual void OnSensorExit() { 
+    protected virtual void OnSensorExit()
+    {
         sensorActive = false;
         foreach (MonoBehaviour movementBehaviour in deactivateComponents)
         {

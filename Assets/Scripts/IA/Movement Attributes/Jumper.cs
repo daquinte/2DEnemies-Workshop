@@ -40,7 +40,7 @@ public class Jumper : MonoBehaviour
     {
         float jumpForce = CalculateJumpSpeed();
         GetComponent<Rigidbody2D>().velocity += Vector2.up * jumpForce;
-        jumpAnimator.SetBool("Jumping", true);
+        //jumpAnimator.SetBool("Jumping", true);
     }
 
     public void StopJumpAnimation()

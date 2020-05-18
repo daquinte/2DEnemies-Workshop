@@ -7,7 +7,8 @@ using UnityEngine;
 public class AreaSensor : Sensor
 {
     
-    public Vector2 AreaPosition;
+    [Tooltip("This position is relagtive to the center of the entity")]
+    public Vector2 LocalAreaPosition;
     public Vector2 AreaWidth;
 
     private BoxCollider2D sensorCollider;
@@ -24,7 +25,7 @@ public class AreaSensor : Sensor
         //aP -> x
         sensorCollider = gameObject.AddComponent<BoxCollider2D>();
         sensorCollider.isTrigger = true;
-        sensorCollider.offset = new Vector2(AreaPosition.x * BoxColliderModifier, AreaPosition.y * BoxColliderModifier);
+        sensorCollider.offset = new Vector2(LocalAreaPosition.x * BoxColliderModifier, LocalAreaPosition.y * BoxColliderModifier);
         sensorCollider.size = new Vector2(AreaWidth.x * BoxColliderModifier, AreaWidth.y * BoxColliderModifier);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,11 +40,13 @@ public class AreaSensor : Sensor
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.gameObject.layer.Equals(GameManager.instance.GetGroundLayer()))
-        {
-            sensorActive = false;
-            OnSensorExit();
-        }
+        if (sensorActive) {
+            if (!collision.gameObject.layer.Equals(GameManager.instance.GetGroundLayer()))
+            {
+                sensorActive = false;
+                OnSensorExit();
+            }
+        }      
     }
 
     /*Senson Methods*/
@@ -60,7 +63,8 @@ public class AreaSensor : Sensor
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireCube(AreaPosition, AreaWidth);
+        Vector2 boxPosition = new Vector2(transform.position.x + LocalAreaPosition.x, transform.position.y + LocalAreaPosition.y);
+        Gizmos.DrawWireCube(boxPosition, AreaWidth);
     }
 
 }
