@@ -16,11 +16,12 @@ public class Liner : MovementBehaviour
     [Tooltip("Time to reach the target Point")]
     public float timeToReachTarget = 2;
 
-    [Tooltip("Acceleration")]
-    public float Acceleration = 1f;
-
+    [Tooltip("Decides the Liner type")]
     [SerializeField]
     private LinerType linerType = LinerType.Constant;
+
+    [Tooltip("Acceleration")]
+    public float Acceleration = 1f;
 
     protected enum LinerType { Acelerated, Constant };
 
@@ -66,8 +67,8 @@ public class Liner : MovementBehaviour
                 break;
             case LinerType.Acelerated:
                 RB2D.velocity = PhysicsLiner();
-                float dist = Vector3.Distance(transform.position, enemyEngine.GetTargetPosition());
-                if(dist < 1)
+                float dist = Vector3.Distance(transform.position, targetPoint);
+                if(dist < 1.5f)
                 {
                     //STOP
                     GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
@@ -119,7 +120,7 @@ public class Liner : MovementBehaviour
 
     private Vector2 PhysicsLiner()
     {
-        Vector2 dir = enemyEngine.GetTargetPosition() - transform.position;
+        Vector2 dir = targetPoint - transform.position;
 
         //V = vo + a*t
         t += Time.deltaTime / timeToReachTarget;

@@ -14,11 +14,11 @@ public class Bullet : MovementBehaviour
 
     public bool collideWithWalls = true;
 
-    [SerializeField]
-    private bool cancelGravity = true;
+    public bool enableGravity = false;
 
+    [Tooltip("Movement in Unity units/second")]
     [SerializeField]
-    private float bulletSpeed = 1.5f;
+    public float bulletSpeed = 1.5f;
 
     private Rigidbody2D RB2D;                       //This component´s rigid body
     private bool isForwardJumper = false;           //Is this component a sub-component of a Forward Jumper?
@@ -52,7 +52,7 @@ public class Bullet : MovementBehaviour
     //Makes the bullet behaviour be affected by gravity
     public void SetAsGravityBullet()
     {
-        cancelGravity = false;
+        enableGravity = true;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -86,7 +86,7 @@ public class Bullet : MovementBehaviour
         RB2D = GetComponent<Rigidbody2D>();
         if (RB2D != null)
         {
-            if (cancelGravity)
+            if (!enableGravity)
             {
                 GetComponent<Rigidbody2D>().gravityScale = 0;
             }

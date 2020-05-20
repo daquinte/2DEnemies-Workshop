@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+
 public class Bumper : AbstractChangeDir
 {
-
-    
 
     [Range(1.0f, 5.0f)]
     public float colliderWidth = 2f;
@@ -21,7 +21,10 @@ public class Bumper : AbstractChangeDir
         SetupDir();
 
         Renderer rend = GetComponent<Renderer>();
+        GetComponent<Rigidbody2D>().freezeRotation = true;
+
         BoxCollider2D bumperCollider = gameObject.AddComponent<BoxCollider2D>();
+
         //La equivalencia base es 3 ancho -> 0.6
         //Entonce 3 ancho -> 0.6 
         //        cw      -> X
@@ -38,7 +41,10 @@ public class Bumper : AbstractChangeDir
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ChangeDir();
+        if (!collision.gameObject.layer.Equals(GameManager.instance.GetGroundLayer()))
+        {
+            ChangeDir();
+        }
     }
 
     private void OnDrawGizmosSelected()

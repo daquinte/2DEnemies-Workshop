@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114932006411198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17, y: -1.73, z: 0}
+  m_LocalPosition: {x: -0.17, y: -2.74, z: 0}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 4630514028672728}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287326553681156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.33, y: -0.67, z: 0}
+  m_LocalPosition: {x: 2.44, y: -0.67, z: 0}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 4630514028672728}
@@ -107,9 +107,10 @@ GameObject:
   - component: {fileID: 114854235808486710}
   - component: {fileID: 114277470758442762}
   - component: {fileID: 114838857434074408}
-  m_Layer: 0
+  - component: {fileID: 311846652}
+  m_Layer: 8
   m_Name: Quote
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 1864209637579622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.94, y: -3.3, z: 0}
-  m_LocalScale: {x: 0.575, y: 0.595, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 4179682816220518}
   - {fileID: 4200668734659148}
@@ -193,18 +194,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10891342, y: -1.02}
+  m_Offset: {x: -0.2290672, y: -1.5246418}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.4, y: 4.9}
+    oldSize: {x: 5.3125, y: 7.65625}
     newSize: {x: 3.4, y: 4.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.88030076, y: 1.3466325}
+  m_Size: {x: 2.5528743, y: 2.355916}
   m_EdgeRadius: 0
 --- !u!58 &58331986444081230
 CircleCollider2D:
@@ -219,9 +220,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09, y: 0.38}
+  m_Offset: {x: -0.089999884, y: 0.759705}
   serializedVersion: 2
-  m_Radius: 0.8621091
+  m_Radius: 1.5265925
 --- !u!50 &50573442428879352
 Rigidbody2D:
   serializedVersion: 4
@@ -261,7 +262,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 4294967295
   m_GroundCheck: {fileID: 4200668734659148}
   m_CeilingCheck: {fileID: 4179682816220518}
   m_CrouchDisableCollider: {fileID: 0}
@@ -287,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea738e47816c234d9eedd22fadccaec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 80
+  runSpeed: 100
 --- !u!114 &114277470758442762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,10 +302,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 6
-  damageText: {fileID: 0}
   OnDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 311846652}
+        m_MethodName: OnPlayerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114838857434074408
@@ -319,5 +330,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cff350594bb7534e9fdb120313d8f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 4713724148466378}
+  bulletPrefab: {fileID: 1689282586517736, guid: 98d19ed8c29ad234db6bb56b543bd157,
+    type: 3}
+--- !u!114 &311846652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864209637579622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32157cf7856f7c4daeeccb998748630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

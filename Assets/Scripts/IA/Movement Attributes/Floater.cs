@@ -62,16 +62,19 @@ public class Floater : MonoBehaviour
         if (isMoving)
         {
             t += Time.deltaTime / timeToCompleteMovement;
-            RB2D.velocity = new Vector2(RB2D.velocity.x, Vector2.Lerp(transform.position, targetFloaterPosition, t).y);
 
             float dist;
             if (movementAxis == MovementAxis.Y)
             {
                 dist = Mathf.Abs(targetFloaterPosition.y - transform.position.y);
+                RB2D.velocity = new Vector2(RB2D.velocity.x, Vector2.Lerp(transform.position, targetFloaterPosition, t).y);
+
             }
             else
             {
                 dist = Mathf.Abs(targetFloaterPosition.x - transform.position.x);
+                RB2D.velocity = new Vector2(Vector2.Lerp(transform.position, targetFloaterPosition, t).x, RB2D.velocity.y);
+
             }
 
             if (dist < 0.8)
@@ -146,7 +149,7 @@ public class Floater : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         // Draws a blue line from this transform to the target
-        Gizmos.color = Color.blue;
+        Gizmos.color = Color.red;
         switch (movementAxis)
         {
             case MovementAxis.X:
