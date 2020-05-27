@@ -38,7 +38,7 @@ public class Pacer : AbstractChangeDir {
         raycastEmitter = new GameObject("raycastEmitter");
 
         Renderer rend = GetComponent<Renderer>();
-        raycastEmitter.transform.position = new Vector3(transform.position.x - rend.bounds.extents.x, raycastEmitter.transform.position.y);
+        raycastEmitter.transform.position = new Vector3(transform.position.x - rend.bounds.extents.x, transform.position.y);
         raycastEmitter.transform.parent   = gameObject.transform;
 
     }
@@ -56,10 +56,28 @@ public class Pacer : AbstractChangeDir {
     /// </summary>
     protected override void Check()
     {
-        RaycastHit2D groundRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, 2, m_WhatIsGround);
-        if (groundRay.collider == null)
+        List<RaycastHit2D> rayCastInfo = new List<RaycastHit2D>();
+        ContactFilter2D contactFilter2D = new ContactFilter2D();
+        int sensorRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, contactFilter2D, rayCastInfo, 4);
+        Debug.DrawRay(raycastEmitter.transform.position, Vector2.down, Color.green);
+
+
+        if (sensorRay != 0)
         {
-            ChangeDir();
+            int i = 0;
+            bool floorFound = false;
+
+            while (i < sensorRay)
+            {
+                if (rayCastInfo[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer())
+                {
+                    floorFound = true;
+                }
+                i++;
+            }
+
+            //If my ray did NOT detect any floor, we change dir
+            if (!floorFound) ChangeDir();
         }
     }
 }
