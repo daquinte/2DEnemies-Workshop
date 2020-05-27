@@ -52,6 +52,7 @@ public class Liner : MovementBehaviour
         else {
             //A Cinematic movement needs physics involved
             RB2D = gameObject.AddComponent<Rigidbody2D>();
+            RB2D.freezeRotation = true;
             RB2D.gravityScale = 0;
         }
     }

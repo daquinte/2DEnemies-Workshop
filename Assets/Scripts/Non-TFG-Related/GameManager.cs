@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
-
  
     public  LevelManager levelManager;
     private LevelManager levelManagerInstance;
@@ -35,11 +34,11 @@ public class GameManager : MonoBehaviour {
     public int GetGroundLayer()
     {
         //Layer set up
-        int g = LayerMask.GetMask("Ground");
-        if (g == 0)
+        int g = LayerMask.NameToLayer("Ground");
+        if (g == -1)
         {
-            g = LayerMask.GetMask("ground");
-            if (g == 0)
+            g = LayerMask.NameToLayer("ground");
+            if (g == -1)
             {
                 Debug.LogWarning("[GAME MANAGER WARNING] A Ground layer, set in the platforms, is required for a behaviour to work!");
             }
@@ -50,11 +49,11 @@ public class GameManager : MonoBehaviour {
     public int GetPlayerLayer()
     {
         //Layer set up
-        int g = LayerMask.GetMask("Player");
-        if (g == 0)
+        int g = LayerMask.NameToLayer("Player");
+        if (g == -1)
         {
-            g = LayerMask.GetMask("player");
-            if (g == 0)
+            g = LayerMask.NameToLayer("player");
+            if (g == -1)
             {
                 Debug.LogWarning("[GAME MANAGER WARNING] A Player layer, set in the Quote game object, is required for a behaviour to work!");
             }

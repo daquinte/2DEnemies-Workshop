@@ -7,7 +7,7 @@ public class RaycastSensor : Sensor
 
     //[Tooltip("Position the ray will fire from")]
     //public Vector2 LocalRaycastPoint;
-
+    [Space(10)]
     [Tooltip("Allow the line of sight to see through terrain?")]
     public bool SeeThroughWalls = false;
 
@@ -27,33 +27,35 @@ public class RaycastSensor : Sensor
     // Update is called once per frame
     void Update()
     {
-        //We update the rayposition
-        //Vector2 RayPosition = new Vector2(transform.position.x + LocalRaycastPoint.x, transform.position.y + LocalRaycastPoint.y);
+        List<RaycastHit2D> rayCastInfo = new List<RaycastHit2D>();
+        ContactFilter2D contactFilter2D = new ContactFilter2D();
+        int sensorRay = Physics2D.Raycast(transform.position, RayDirection, contactFilter2D, rayCastInfo, RayDirection.magnitude);
+        Debug.DrawRay(transform.position, RayDirection, Color.green);
+       
 
-        if (!SeeThroughWalls)
+        if (sensorRay != 0)
         {
-            List<RaycastHit2D> rayCastInfo = new List<RaycastHit2D>();
-            ContactFilter2D contactFilter2D = new ContactFilter2D();
-            int sensorRay = Physics2D.Raycast(transform.position, RayDirection, contactFilter2D, rayCastInfo, RayDirection.magnitude);
-            Debug.DrawRay(transform.position, RayDirection, Color.green);
-            if (sensorRay != 0)
+            int i = 0;
+            bool stop = false;
+
+            while (i < sensorRay && !stop)
             {
-                foreach (RaycastHit2D raycastHit2D in rayCastInfo)
+                if (rayCastInfo[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer() && !SeeThroughWalls)
                 {
-                    //TODO
+                    //Stop looking
+                    stop = true;
                 }
-            }
-        }
-        else
-        {
-            RaycastHit2D sensorRayNoWalls = Physics2D.Raycast(transform.position, RayDirection, RayDirection.magnitude, layer);
-            Debug.DrawRay(transform.position, RayDirection, Color.green);
-            if (sensorRayNoWalls.collider != null)
-            {
-                OnSensorDetection();
+                else if (rayCastInfo[i].collider.gameObject.layer == GameManager.instance.GetPlayerLayer())
+                {
+                    OnSensorDetection();
+                    //Stop looking
+                    stop = true;
+                }
+                i++;
             }
         }
     }
+
 
     private void OnSensorDetection()
     {

@@ -29,18 +29,23 @@ public class Sensor : MonoBehaviour
         //are deactivated by default
         foreach (MonoBehaviour movementBehaviour in activateComponents)
         {
-            //movementBehaviour.SetInactiveAfterStart = true;
-            movementBehaviour.enabled = false;
-            if (movementBehaviour.GetComponent<Rigidbody2D>() != null)
+            if(movementBehaviour != null)
             {
-                movementBehaviour.GetComponent<Rigidbody2D>().gravityScale = 0;
-            }
+                movementBehaviour.enabled = false;
+                if (movementBehaviour.GetComponent<Rigidbody2D>() != null)
+                {
+                    movementBehaviour.GetComponent<Rigidbody2D>().gravityScale = 0;
+                }
 
-            if (CopyComponentsToDeactivateList)
+                if (CopyComponentsToDeactivateList)
+                {
+                    deactivateComponents.Add(movementBehaviour);
+                }
+            }
+            else
             {
-                deactivateComponents.Add(movementBehaviour);
+                Debug.Log("[Sensor] Size is bigger than the listed components. Please, add them to the list in the editor.");
             }
-
         }
     }
     /*Methods*/

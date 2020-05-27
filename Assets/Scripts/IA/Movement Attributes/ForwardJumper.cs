@@ -15,10 +15,10 @@ public class ForwardJumper : MovementBehaviour
     public float movementSpeed = 1.5f;
 
     [Tooltip("Max Height to be reached")]
-    public float jumpHeight = 3f;
+    public float jumpHeight = 4f;
 
     [Tooltip("Delay the entity stays on the ground before jumping")]
-    public float delayBetweenJumps = 1.5f;                    
+    public float jumpDelay = 1.5f;                    
 
 
     //Private attributes 
@@ -31,8 +31,6 @@ public class ForwardJumper : MovementBehaviour
     private float lastJumpTimer;                        //Tracks the last frame in which you jumped
     private float groundCheckRadius = 0.2f;             //Radius of the sphere we use to track the ground.
 
-    LayerMask m_WhatIsGround;                               //Ground layer
-
 
 
     // Start is called before the first frame update
@@ -44,7 +42,6 @@ public class ForwardJumper : MovementBehaviour
         canJump = true;
         lastJumpTimer = Time.deltaTime;
         
-        SetUpGroundPoint();
         SetUpComponents();
         
     }
@@ -76,34 +73,38 @@ public class ForwardJumper : MovementBehaviour
         }
         else
         {
-            if (Time.time - lastJumpTimer > delayBetweenJumps)
+            if (Time.time - lastJumpTimer > jumpDelay)
             {
-                //Cast a sphere of 0.2f radius from the groundPoint to check for ground
-                RaycastHit2D groundRay = Physics2D.Raycast(groundPoint.transform.position, Vector2.down, groundCheckRadius, m_WhatIsGround);
+                //Cast a 2-width box into the ground. The box is so that the entity doesn´t get stuck in platform´s edges
+                //((which used to happen and was pretty annoying))
 
-                if (groundRay.collider != null)
+                List<RaycastHit2D> groundRay = new List<RaycastHit2D>();
+                ContactFilter2D contactFilter2D = new ContactFilter2D();
+                int groundRayCount = Physics2D.BoxCast(groundPoint.transform.position, new Vector2(2, groundCheckRadius), 0f, Vector2.down, contactFilter2D, groundRay, groundCheckRadius);
+
+                if (groundRayCount != 0)
                 {
-                    canJump = true;
+                    int i = 0;
+                    bool stop = false;
+
+                    while (i < groundRayCount && !stop)
+                    {
+                        if(groundRay[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer())
+                        {
+                            canJump = true;
+                            lastJumpTimer = Time.time;
+                            stop = true;
+                        }
+                        i++;
+                    }
+                        
+
                 }
 
-                lastJumpTimer = Time.time;
             }
         }
     }
 
-    /// <summary>
-    /// Sets the point which will track if you are on the ground or not.
-    /// </summary>
-    private void SetUpGroundPoint()
-    {
-        groundPoint = new GameObject("JumperGroundPoint");
-        Renderer rend = GetComponent<Renderer>();
-        groundPoint.transform.position = new Vector2(transform.position.x, rend.bounds.min.y);
-        groundPoint.transform.parent = gameObject.transform;
-
-        
-        m_WhatIsGround = GameManager.instance.GetGroundLayer();
-    }
 
     /// <summary>
     /// Sets up the required components for this behaviour
@@ -114,8 +115,7 @@ public class ForwardJumper : MovementBehaviour
         jumper = gameObject.AddComponent(typeof(Jumper)) as Jumper;
         Debug.Log("Jumper Height: " + jumpHeight);
         jumper.SetJumpHeight(jumpHeight);
-        jumper.SetAsForwardJumper();
-
+        jumper.SetAsForwardJumperComponent(out groundPoint);
 
         //Bullet
         bullet = gameObject.AddComponent(typeof(Bullet)) as Bullet;

@@ -11,13 +11,13 @@ using UnityEngine;
 /// </summary>
 public class Bullet : MovementBehaviour
 {
-
+    [Tooltip("Do you want collision with walls?")]
     public bool collideWithWalls = true;
 
+    [Tooltip("Do you want gravity enabled?")]
     public bool enableGravity = false;
 
     [Tooltip("Movement in Unity units/second")]
-    [SerializeField]
     public float bulletSpeed = 1.5f;
 
     private Rigidbody2D RB2D;                       //This component´s rigid body
@@ -74,12 +74,16 @@ public class Bullet : MovementBehaviour
         isForwardJumper = true;
     }
 
+    /// <summary>
+    /// Setups this component´s logitics. 
+    /// Checks if it should collide will 
+    /// </summary>
     private void SetupBullet()
     {
 
         if (!collideWithWalls)
         {
-            //Si el enemigo tiene esto activado su boxcollider pasará a ser TRIGGER y comprobará colisiones por trigger en lugar de por bounding box!!!
+            //
             GetComponent<BoxCollider2D>().isTrigger = true;
         }
 
@@ -90,7 +94,6 @@ public class Bullet : MovementBehaviour
             {
                 GetComponent<Rigidbody2D>().gravityScale = 0;
             }
-
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
