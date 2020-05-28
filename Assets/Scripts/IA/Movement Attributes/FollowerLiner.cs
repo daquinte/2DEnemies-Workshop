@@ -29,5 +29,3 @@ public class FollowerLiner : Liner
         transform.position = GetMovement();
     }
 }
-
-//TODO: TEST

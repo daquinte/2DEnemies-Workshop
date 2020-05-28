@@ -10,7 +10,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class Floater : MonoBehaviour
+public class Floater : MovementBehaviour
 {
 
     protected enum MovementAxis
@@ -162,5 +162,10 @@ public class Floater : MonoBehaviour
                 break;
         }
 
+    }
+
+    public override Vector2 GetMovement()
+    {
+        throw new System.NotImplementedException();
     }
 }

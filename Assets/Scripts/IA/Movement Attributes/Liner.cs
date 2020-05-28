@@ -39,24 +39,44 @@ public class Liner : MovementBehaviour
     void Start()
     {
         targetPoint = enemyEngine.GetTargetPosition();
+        SetupLiner();
+    }
+
+
+    private void SetupLiner()
+    {
+        //This makes sure that whenever this two components interact, they do it correctly
+        if (GetComponent<Bullet>() != null && GetComponent<FollowerLiner>() == null)
+        {
+            linerType = LinerType.Acelerated;
+        }
+
+        //Rotates the entity towards player if requested
         if (rotateTowardsTarget)
         {
             RotateToTarget();
         }
 
+        //Cinematic set up
         if (linerType == LinerType.Constant)
         {
             SetUpCinematicAttributes();
             Debug.Log("CienticLiner creado!");
         }
-        else {
+
+        //Accelerated set up
+        else
+        {
             //A Cinematic movement needs physics involved
-            RB2D = gameObject.AddComponent<Rigidbody2D>();
+            RB2D = GetComponent<Rigidbody2D>();
+            if (RB2D == null)
+            {
+                RB2D = gameObject.AddComponent<Rigidbody2D>();
+            }
             RB2D.freezeRotation = true;
             RB2D.gravityScale = 0;
         }
     }
-
     void Update()
     {
         //Tengo que devolver cinetica o fisica según toque.
@@ -69,7 +89,7 @@ public class Liner : MovementBehaviour
             case LinerType.Acelerated:
                 RB2D.velocity = PhysicsLiner();
                 float dist = Vector3.Distance(transform.position, targetPoint);
-                if(dist < 1.5f)
+                if (dist < 1.5f)
                 {
                     //STOP
                     GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
@@ -173,5 +193,5 @@ public class Liner : MovementBehaviour
 
 
 
-    
+
 }

@@ -9,7 +9,7 @@ using UnityEngine;
 /// A Faller enemy will drop itself down when a certain condition is met.
 /// The condition usually is given by the detection range.
 /// </summary>
-public class Faller : MonoBehaviour
+public class Faller : MovementBehaviour
 {
     public float    appliedGravity = 2.5f;                             //Gravity that will be applied for the fall.
     public float    delayTime = 0.5f;                      //Time, in unscaled seconds, the enemy will wait before the fall
@@ -48,5 +48,10 @@ public class Faller : MonoBehaviour
         // Draws a blue line from this transform to the target
         Gizmos.color = Color.cyan;
         //Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 2));
+    }
+
+    public override Vector2 GetMovement()
+    {
+        throw new System.NotImplementedException();
     }
 }

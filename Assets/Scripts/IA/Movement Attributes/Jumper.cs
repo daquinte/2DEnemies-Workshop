@@ -9,7 +9,7 @@ using UnityEngine;
 /// Jumps as high ad the "jump force" variable.
 /// You can especify the delay between jumps, as well as the jump force. 
 /// </summary>
-public class Jumper : MonoBehaviour
+public class Jumper : MovementBehaviour
 {
     //Public attributes
 
@@ -141,5 +141,10 @@ public class Jumper : MonoBehaviour
         //return Mathf.Sqrt(2 * jumpHeight * Physics2D.gravity.magnitude);
         jumpForce = ((2 * jumpHeight) / jumpTime);
         gravityScale = (2 * jumpHeight) / Mathf.Sqrt(jumpTime);
+    }
+
+    public override Vector2 GetMovement()
+    {
+        throw new System.NotImplementedException();
     }
 }
