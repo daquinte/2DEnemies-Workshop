@@ -12,7 +12,6 @@ using UnityEngine;
 
 public class Floater : MovementBehaviour
 {
-
     protected enum MovementAxis
     {
         X,

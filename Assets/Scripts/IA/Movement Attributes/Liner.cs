@@ -18,7 +18,7 @@ public class Liner : MovementBehaviour
 
     [Tooltip("Decides the Liner type")]
     [SerializeField]
-    private LinerType linerType = LinerType.Constant;
+    protected LinerType linerType = LinerType.Constant;
 
     [Tooltip("Acceleration")]
     public float Acceleration = 1f;
@@ -61,7 +61,7 @@ public class Liner : MovementBehaviour
         if (linerType == LinerType.Constant)
         {
             SetUpCinematicAttributes();
-            Debug.Log("CienticLiner creado!");
+            //Debug.Log("CienticLiner creado!");
         }
 
         //Accelerated set up
@@ -119,7 +119,7 @@ public class Liner : MovementBehaviour
     /// <returns></returns>
     public override Vector2 GetMovement()
     {
-        Debug.Log("[LINER] Get movement from external call...");
+        //Debug.Log("[LINER] Get movement from external call...");
         //Tengo que devolver cinetica o fisica según toque.
         Vector2 externalMovement = Vector2.zero;
         switch (linerType)

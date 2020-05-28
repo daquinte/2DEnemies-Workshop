@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 114838857434074408}
   - component: {fileID: 311846652}
   m_Layer: 8
-  m_Name: Quote
+  m_Name: Jugador
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21db69cde2308b445969bcbcad422091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 700
+  m_JumpForce: 800
   m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
   m_AirControl: 1

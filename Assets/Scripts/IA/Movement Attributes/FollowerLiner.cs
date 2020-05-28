@@ -9,6 +9,7 @@ using UnityEngine;
 /// </summary>
 public class FollowerLiner : Liner
 {
+    [Space(5)]
     [Tooltip("Time that this component will wait " +
         "before sending player position to Liner component")]
     public float timeToRefresh = 0.4f;
@@ -26,6 +27,14 @@ public class FollowerLiner : Liner
         }
 
         //Move according to current liner configuration
-        transform.position = GetMovement();
+        if (linerType == LinerType.Acelerated)
+        {
+            GetComponent<Rigidbody2D>().velocity = GetMovement();
+        }
+        else if (linerType == LinerType.Constant)
+        {
+            transform.position = GetMovement();
+        }
     }
 }
+
