@@ -27,6 +27,7 @@ public class RaycastSensor : Sensor
     // Update is called once per frame
     void Update()
     {
+        base.CheckForDeactivateStateChange();
         List<RaycastHit2D> rayCastInfo = new List<RaycastHit2D>();
         ContactFilter2D contactFilter2D = new ContactFilter2D();
         int sensorRay = Physics2D.Raycast(transform.position, RayDirection, contactFilter2D, rayCastInfo, RayDirection.magnitude);

@@ -21,6 +21,11 @@ public class AreaSensor : Sensor
         
     }
 
+    private void Update()
+    {
+        base.CheckForDeactivateStateChange();
+    }
+
     private void SetupAreaSensor()
     {
         if(AreaWidth.x == 0 || AreaWidth.y == 0)

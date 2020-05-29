@@ -12,9 +12,11 @@ using UnityEngine;
 public class Jumper : MovementBehaviour
 {
     //Public attributes
+    [Tooltip("Delay between jumps")]
+    [SerializeField]
+    private float jumpDelay = 1.2f;                              //Delay between jumps
 
-    public float jumpDelay = 1.2f;                              //Delay between jumps
-
+    [Tooltip("How high you want this entity to jump")]
     [SerializeField]
     private float jumpHeight = 4f;                              //How high you want this entity to jump
 
@@ -26,7 +28,7 @@ public class Jumper : MovementBehaviour
     private float lastJumpTimer;                                //Tracks the last frame in which you jumped
     private float jumpForce = 0f;                               //Total force of this jump
     private float gravityScale = 0f;
-    private float groundCheckRadius = 0.2f;             //Radius of the sphere we use to track the ground.
+    private float groundCheckRadius = 0.5f;                     //Radius of the sphere we use to track the ground.
 
     private GameObject groundPoint;
     private Animator jumpAnimator;
@@ -115,6 +117,15 @@ public class Jumper : MovementBehaviour
     public void SetJumpHeight(float jh)
     {
         jumpHeight = jh;
+    }
+
+    /// <summary>
+    /// Sets the JumpHeight
+    /// </summary>
+    /// <param name="jh">new Jumper Height</param>
+    public void SetJumpDelay(float jd)
+    {
+        jumpDelay = jd;
     }
 
     /// <summary>

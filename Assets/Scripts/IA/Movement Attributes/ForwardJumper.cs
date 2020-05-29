@@ -18,7 +18,10 @@ public class ForwardJumper : MovementBehaviour
     public float jumpHeight = 4f;
 
     [Tooltip("Delay the entity stays on the ground before jumping")]
-    public float jumpDelay = 1.5f;                    
+    public float jumpDelay = 1.5f;
+
+    [Tooltip("Time that this component will wait before sending player position to Jumper component")]
+    public float timeToRefresh = 1f;
 
 
     //Private attributes 
@@ -27,9 +30,12 @@ public class ForwardJumper : MovementBehaviour
     private GameObject groundPoint;                     //A position marking where to check if the player is grounded. Created dinamically.
     private Animator jumpAnimator;                      //This object´s animator
 
-    private bool canJump;                               //¿Are you touching the ground, and your delay is over?
+    private bool canJump;                               //Are you touching the ground, and your delay is over?
+    private bool updatePlayerPosition = true;           //Can you update player position?
+
+    private int jumperModifier;                                 //Modifies the direction of the jump
     private float lastJumpTimer;                        //Tracks the last frame in which you jumped
-    private float groundCheckRadius = 0.2f;             //Radius of the sphere we use to track the ground.
+    private float groundCheckRadius = 0.5f;             //Radius of the sphere we use to track the ground.
 
 
 
@@ -65,10 +71,16 @@ public class ForwardJumper : MovementBehaviour
             
             jumper.Jump();  //Jump!     
 
-            //Where do we jump now to get to the target?    
-            int mod = (this.transform.position.x > enemyEngine.GetTargetPosition().x) ? 1 : -1;
+            if (updatePlayerPosition)
+            {
+                //Where do we jump now to get to the target?    
+                jumperModifier = (transform.position.x > enemyEngine.GetTargetPosition().x) ? 1 : -1;
+                RotateToTarget();
+                updatePlayerPosition = false;
+                StartCoroutine(SetTargetPositionAfterSeconds());
+            }
 
-            GetComponent<Rigidbody2D>().velocity += bullet.GetMovement() * mod;    //Move towards target
+            GetComponent<Rigidbody2D>().velocity += bullet.GetMovement() * jumperModifier;    //Move towards target
             canJump = false;                                //We shall not jump until next timer states so
         }
         else
@@ -97,8 +109,6 @@ public class ForwardJumper : MovementBehaviour
                         }
                         i++;
                     }
-                        
-
                 }
 
             }
@@ -156,5 +166,11 @@ public class ForwardJumper : MovementBehaviour
     public override Vector2 GetMovement()
     {
         throw new System.NotImplementedException();
+    }
+
+    IEnumerator SetTargetPositionAfterSeconds()
+    {
+        yield return new WaitForSecondsRealtime(timeToRefresh);
+        updatePlayerPosition = true;
     }
 }

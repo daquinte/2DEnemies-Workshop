@@ -10,20 +10,19 @@ using UnityEngine;
 public class FollowerLiner : Liner
 {
     [Space(5)]
-    [Tooltip("Time that this component will wait " +
-        "before sending player position to Liner component")]
+    [Tooltip("Time that this component will wait before sending player position to Liner component")]
     public float timeToRefresh = 0.4f;
 
-    private float currentTime = 2f;
-
+    private bool updatePlayerPosition = true;
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.time;
-        if (currentTime >= timeToRefresh)
+       
+        if (updatePlayerPosition)
         {
             SetTargetPosition(enemyEngine.GetTargetPosition());
-            currentTime = 0;
+            updatePlayerPosition = false;
+            StartCoroutine(SetTargetPositionAfterSeconds());
         }
 
         //Move according to current liner configuration
@@ -35,6 +34,12 @@ public class FollowerLiner : Liner
         {
             transform.position = GetMovement();
         }
+    }
+
+    IEnumerator SetTargetPositionAfterSeconds()
+    {
+        yield return new WaitForSecondsRealtime(timeToRefresh);
+        updatePlayerPosition = true;
     }
 }
 

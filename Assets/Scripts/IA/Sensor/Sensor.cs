@@ -8,19 +8,20 @@ using UnityEditor;
 /// </summary>
 public class Sensor : MonoBehaviour
 {
+    public bool DeactivateOnSensorExit;
+    [Space(2)] //To separate base Sensor from any other sensor
 
     /*Attributes*/
     [Tooltip("Autofill all movement components in this sensor´s activateComponents list")]
-    public bool autoFill;
+    private bool autoFill = true;
 
     [Tooltip("Components list you would like to enable when trigger is active. Enter a size and drag the components from this inspector window")]
-    public List<MonoBehaviour> activateComponents;
+    private List<MonoBehaviour> activateComponents;
 
-    public bool AutoFillDeactivateList;
+ 
     [Tooltip("Components list you would like to disable when trigger is active. Enter a size and drag the components from this inspector window")]
-    public List<MonoBehaviour> deactivateComponents;
+    private List<MonoBehaviour> deactivateComponents;
 
-    [Space(2)]
 
     protected bool sensorActive;        //Sometimes I just want the sensor to track this information so any components (previously active) can ask.
 
@@ -49,6 +50,8 @@ public class Sensor : MonoBehaviour
         }
         else
         {
+            activateComponents = new List<MonoBehaviour>();
+            deactivateComponents = new List<MonoBehaviour>();
             //Everything that seems like a movement component goes into the list
             //That includes Abstract dir and Movement
             if(activateComponents.Count != 0)
@@ -71,6 +74,17 @@ public class Sensor : MonoBehaviour
             }
         }
     }
+
+    protected void CheckForDeactivateStateChange()
+    {
+        if(DeactivateOnSensorExit && deactivateComponents.Count == 0)
+        {
+            foreach (MonoBehaviour movementBehaviour in activateComponents)
+            {
+                deactivateComponents.Add(movementBehaviour);
+            }
+        }
+    }
     /*Methods*/
 
     private void ComponentSetup(MonoBehaviour movementBehaviour)
@@ -83,7 +97,7 @@ public class Sensor : MonoBehaviour
             movementBehaviour.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
 
-        if (AutoFillDeactivateList)
+        if (DeactivateOnSensorExit)
         {
             deactivateComponents.Add(movementBehaviour);
         }
@@ -108,7 +122,10 @@ public class Sensor : MonoBehaviour
         sensorActive = false;
         foreach (MonoBehaviour movementBehaviour in deactivateComponents)
         {
-            movementBehaviour.enabled = false;
+            if (movementBehaviour != null)
+            {
+                movementBehaviour.enabled = false;
+            }
         }
     }
 

@@ -38,6 +38,7 @@ public class RangeSensor : Sensor
     // Update is called once per frame
     void Update()
     {
+        base.CheckForDeactivateStateChange();
         switch (sensorType)
         {
             case RangeSensorType.Horizontal:

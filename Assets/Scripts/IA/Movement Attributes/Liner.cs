@@ -89,7 +89,7 @@ public class Liner : MovementBehaviour
             case LinerType.Acelerated:
                 RB2D.velocity = PhysicsLiner();
                 float dist = Vector3.Distance(transform.position, targetPoint);
-                if (dist < 1.5f)
+                if (dist < 1.2f)
                 {
                     //STOP
                     GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
@@ -170,28 +170,5 @@ public class Liner : MovementBehaviour
     }
 
     #endregion
-
-    /// <summary>
-    /// Rotates the entity to face the current target.
-    /// Common to all liner components.
-    /// </summary>
-    protected void RotateToTarget()
-    {
-        // Get Angle in Radians
-        float AngleRad = Mathf.Atan2(targetPoint.y - transform.position.y, targetPoint.x - transform.position.x);
-        // Get Angle in Degrees
-        float AngleDeg = (180 / Mathf.PI) * AngleRad;
-        // Rotate Object
-
-        if (enemyEngine.GetTargetPosition().x > transform.position.x)
-        {
-            transform.rotation = (Quaternion.Euler(0, 180, -AngleDeg));
-        }
-        else transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 180);
-    }
-
-
-
-
 
 }

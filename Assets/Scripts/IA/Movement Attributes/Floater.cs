@@ -41,16 +41,17 @@ public class Floater : MovementBehaviour
         
     private bool towardsUpperLimit;                                     //Are you going towards the upperLimit?
     private bool isMoving = true;                                       //Are you moving right now, at all?
+    private bool drawEditorGizmos = true;                                       //Are you moving right now, at all?
     private Vector3 targetFloaterPosition;                              //Position you´re moving towards
+    private Vector3 positionOnStart;                                    //Position on start for Gizmos purposes
 
-
-    private Rigidbody2D RB2D;                                           //Self Rigidbody
-
+     private Rigidbody2D RB2D;                                           //Self Rigidbody
 
 
     // Use this for initialization
     void Start()
     {
+        drawEditorGizmos = false;
         towardsUpperLimit = true;
         Setup();
 
@@ -76,7 +77,7 @@ public class Floater : MovementBehaviour
 
             }
 
-            if (dist < 0.8)
+            if (dist < 0.25)
             {
                 //STOP
                 isMoving = false;
@@ -90,6 +91,7 @@ public class Floater : MovementBehaviour
 
     void Setup()
     {
+        positionOnStart = transform.position;
         if (movementAxis == MovementAxis.Y)
         {
             //We set the limits for Y
@@ -147,17 +149,20 @@ public class Floater : MovementBehaviour
     /// </summary>
     private void OnDrawGizmosSelected()
     {
-        // Draws a blue line from this transform to the target
+
+        Vector3 gizmosPosition = (drawEditorGizmos) ? transform.position : positionOnStart;
+
+        // Draws a line from this transform to the target
         Gizmos.color = Color.red;
         switch (movementAxis)
         {
             case MovementAxis.X:
-                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x - movementAmplitude / 2, transform.position.y));
-                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + movementAmplitude / 2, transform.position.y));
-                break;
-            case MovementAxis.Y:
-                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - movementAmplitude / 2));
-                Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + movementAmplitude / 2));
+                Gizmos.DrawLine(transform.position, new Vector3(gizmosPosition.x - movementAmplitude / 2, gizmosPosition.y));
+                Gizmos.DrawLine(transform.position, new Vector3(gizmosPosition.x + movementAmplitude / 2, gizmosPosition.y));
+                break;                                          
+            case MovementAxis.Y:                                
+                Gizmos.DrawLine(transform.position, new Vector3(gizmosPosition.x, gizmosPosition.y - movementAmplitude / 2));
+                Gizmos.DrawLine(transform.position, new Vector3(gizmosPosition.x, gizmosPosition.y + movementAmplitude / 2));
                 break;
         }
 

@@ -30,6 +30,25 @@ public abstract class MovementBehaviour : MonoBehaviour
     //Get the movement
     public abstract Vector2 GetMovement();
 
+    /// <summary>
+    /// Rotates the entity to face the current target.
+    /// Common to all liner components.
+    /// </summary>
+    protected void RotateToTarget()
+    {
+        // Get Angle in Radians
+        float AngleRad = Mathf.Atan2(enemyEngine.GetTargetPosition().y - transform.position.y, enemyEngine.GetTargetPosition().x - transform.position.x);
+        // Get Angle in Degrees
+        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        // Rotate Object
+
+        if (enemyEngine.GetTargetPosition().x > transform.position.x)
+        {
+            transform.rotation = (Quaternion.Euler(0, 180, -AngleDeg));
+        }
+        else transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 180);
+    }
+
     protected Vector2 lastMovement; //???
 
     private void OnEnable()

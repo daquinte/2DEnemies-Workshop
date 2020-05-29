@@ -32,6 +32,7 @@ public class Pacer : AbstractChangeDir {
     {
         SetupDir();
 
+        GetComponent<Rigidbody2D>().gravityScale = 1;
         GetComponent<Rigidbody2D>().freezeRotation = true;
 
         //Place the Transform you cast rays from
