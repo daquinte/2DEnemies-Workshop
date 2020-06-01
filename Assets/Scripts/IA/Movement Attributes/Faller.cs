@@ -46,8 +46,8 @@ public class Faller : MovementBehaviour
     private void OnDrawGizmosSelected()
     {
         // Draws a blue line from this transform to the target
-        Gizmos.color = Color.cyan;
-        //Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 2));
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 10));
     }
 
     public override Vector2 GetMovement()

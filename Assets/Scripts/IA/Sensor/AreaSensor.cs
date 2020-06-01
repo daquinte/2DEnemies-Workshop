@@ -76,6 +76,7 @@ public class AreaSensor : Sensor
 
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.cyan;
         Vector2 boxPosition = new Vector2(transform.position.x + LocalAreaPosition.x, transform.position.y + LocalAreaPosition.y);
         Gizmos.DrawWireCube(boxPosition, AreaWidth);
     }

@@ -78,7 +78,7 @@ public class RaycastSensor : Sensor
     {
         if (!turnOffGizmos)
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.cyan;
             Vector2 GizmosRayDirection = new Vector2(transform.position.x + RayDirection.x, transform.position.y + RayDirection.y);
             Gizmos.DrawLine(transform.position, GizmosRayDirection);
         }

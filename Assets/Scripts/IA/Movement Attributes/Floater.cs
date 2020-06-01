@@ -34,9 +34,7 @@ public class Floater : MovementBehaviour
     private Vector2 UpPoint;
     private Vector2 DownPoint;
     private Vector3 targetFloaterPosition;                              //Position you´re moving towards
-    private Vector3 positionOnStart;                                    //Position on start for Gizmos purposes
 
-    private float t;                                                    //temp t value for steering
     private float upperLimit;
     private float lowerLimit;
 
@@ -59,8 +57,6 @@ public class Floater : MovementBehaviour
     }
     void Setup()
     {
-        positionOnStart = transform.position;
-
         if (movementAxis == MovementAxis.Y)
         {
             //We set the limits for Y

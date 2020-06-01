@@ -24,7 +24,7 @@ public class Bullet : MovementBehaviour
 
     [Tooltip("Direction in which the bullet will move")]
     [SerializeField]
-    private MovementDirection movementDirection;
+    private MovementDirection movementDirection = MovementDirection.Up;
 
     [Tooltip("Movement in Unity units/second")]
     public float bulletSpeed = 1.5f;
@@ -130,4 +130,13 @@ public class Bullet : MovementBehaviour
 
     }
 
+    /// <summary>
+    /// Gizmos for the Faller behaviour
+    /// </summary>
+    private void OnDrawGizmosSelected()
+    {
+        // Draws a blue line from this transform to the target
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 10));
+    }
 }

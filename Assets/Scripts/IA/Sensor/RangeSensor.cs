@@ -47,7 +47,7 @@ public class RangeSensor : Sensor
                 else if (sensorActive) OnSensorExit();
                 break;
             case RangeSensorType.Vertical:
-                if (Mathf.Abs(transform.position.y - target.transform.position.y) > detectionRange)
+                if (Mathf.Abs(target.transform.position.y - transform.position.y) > detectionRange)
                     OnSensorActive();
                 else if (sensorActive) OnSensorExit();
                 break;
@@ -83,7 +83,7 @@ public class RangeSensor : Sensor
     /// </summary>
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.cyan;
         float x = transform.position.x;
         float y = transform.position.y;
         if (sensorType == RangeSensorType.Horizontal)
