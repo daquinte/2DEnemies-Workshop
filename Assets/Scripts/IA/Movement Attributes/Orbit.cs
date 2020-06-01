@@ -11,22 +11,33 @@ public class Orbit : MonoBehaviour
     public float radius = 2.0f;
     [Tooltip("speed of the orbitational movement")]
     public float radiusSpeed = 0.5f;
-    /*[Tooltip("Do you want this object to rotate?")]
-    public bool rotateWithOrbit;*/
     [Tooltip("Rotation speed for this entity")]
     public float rotationSpeed = 80.0f;
+    [Space(5)]
+    [Tooltip("Do you want this object to rotate?")]
+    public bool rotateWithOrbit = true;
+    [Tooltip("Do you want this object to collide?")]
+    public bool collideWithTerrain = false;
 
     private Vector2 desiredPosition;
     // Start is called before the first frame update
     void Start()
     {
+        if (collideWithTerrain)
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb == null) {
+                rb = gameObject.AddComponent<Rigidbody2D>();
+            }
+            rb.gravityScale = 0;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        transform.RotateAround(orbitationalCenter, Vector3.forward * -180, rotationSpeed * Time.deltaTime);
+        float mod = (rotateWithOrbit)? -180 : 1;
+        transform.RotateAround(orbitationalCenter, Vector3.forward * mod, rotationSpeed * Time.deltaTime);
         Vector2 pos = new Vector2(transform.position.x, transform.position.y);
         desiredPosition = (pos - orbitationalCenter).normalized * radius + orbitationalCenter;
         transform.position = Vector2.MoveTowards(transform.position, desiredPosition, Time.deltaTime * radiusSpeed);

@@ -8,7 +8,7 @@ using UnityEditor;
 /// </summary>
 public class Sensor : MonoBehaviour
 {
-    public bool DeactivateOnSensorExit;
+    public bool DeactivateOnExit;
     [Space(2)] //To separate base Sensor from any other sensor
 
     /*Attributes*/
@@ -77,12 +77,16 @@ public class Sensor : MonoBehaviour
 
     protected void CheckForDeactivateStateChange()
     {
-        if(DeactivateOnSensorExit && deactivateComponents.Count == 0)
+        if(DeactivateOnExit && deactivateComponents.Count == 0)
         {
             foreach (MonoBehaviour movementBehaviour in activateComponents)
             {
                 deactivateComponents.Add(movementBehaviour);
             }
+        }
+        else if (!DeactivateOnExit && deactivateComponents.Count != 0)
+        {
+            deactivateComponents.Clear();
         }
     }
     /*Methods*/
@@ -97,7 +101,7 @@ public class Sensor : MonoBehaviour
             movementBehaviour.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
 
-        if (DeactivateOnSensorExit)
+        if (DeactivateOnExit)
         {
             deactivateComponents.Add(movementBehaviour);
         }

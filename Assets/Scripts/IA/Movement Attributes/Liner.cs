@@ -89,7 +89,7 @@ public class Liner : MovementBehaviour
             case LinerType.Acelerated:
                 RB2D.velocity = PhysicsLiner();
                 float dist = Vector3.Distance(transform.position, targetPoint);
-                if (dist < 1.2f)
+                if (dist < 0.4f)
                 {
                     //STOP
                     GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
@@ -144,8 +144,8 @@ public class Liner : MovementBehaviour
         Vector2 dir = targetPoint - transform.position;
 
         //V = vo + a*t
-        t += Time.deltaTime / timeToReachTarget;
-        return dir * Acceleration * t;
+        //t += Time.deltaTime / timeToReachTarget;
+        return dir * (Acceleration / timeToReachTarget);
     }
     #endregion
 

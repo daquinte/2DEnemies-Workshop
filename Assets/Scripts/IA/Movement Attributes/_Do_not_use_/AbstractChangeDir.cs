@@ -14,25 +14,25 @@ public class AbstractChangeDir : MonoBehaviour
     private InitialMovement initialMovement = InitialMovement.Left;
 
 
-    private float pMovementSpeed;
+    protected float pMovementSpeed;
+    protected float pMovementDir = 0f;
+
     /// <summary>
     /// Setup of the direcion, dependant on he initial movement.
     /// </summary>
     protected void SetupDir()
     {
-        //Set the direction (BASE)
-        float dir = 0f;
 
         if (transform.eulerAngles.y == 0)
         {
-            dir = (initialMovement == InitialMovement.Left) ? -1f : 1f;
+            pMovementDir = (initialMovement == InitialMovement.Left) ? -1f : 1f;
         }
         else if (transform.eulerAngles.y == 180)
         {
-            dir = (initialMovement == InitialMovement.Left) ? 1f : -1f;
+            pMovementDir = (initialMovement == InitialMovement.Left) ? 1f : -1f;
 
         }
-        pMovementSpeed = movementSpeed * dir;
+        pMovementSpeed = Mathf.Abs(movementSpeed) * pMovementDir;
     }
 
 
@@ -42,6 +42,11 @@ public class AbstractChangeDir : MonoBehaviour
     /// </summary>
     protected void MoveForward()
     {
+        if(pMovementSpeed != movementSpeed)
+        {
+            pMovementSpeed = Mathf.Abs(movementSpeed) * pMovementDir;
+        }
+
         transform.Translate(Vector2.right * pMovementSpeed * Time.deltaTime);
     }
 

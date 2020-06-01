@@ -11,6 +11,11 @@ using UnityEngine;
 /// </summary>
 public class Bullet : MovementBehaviour
 {
+    private enum MovementDirection
+    {
+        Up, Down, Left, Right
+    };
+
     [Tooltip("Do you want collision with walls?")]
     public bool collideWithWalls = true;
 
@@ -25,11 +30,7 @@ public class Bullet : MovementBehaviour
     public float bulletSpeed = 1.5f;
 
 
-    private enum MovementDirection
-    {
-        Up, Down, Left, Right
-    };                   
-
+ 
 
     private Rigidbody2D RB2D;                       //This component´s rigid body
     private bool isForwardJumper = false;           //Is this component a sub-component of a Forward Jumper?

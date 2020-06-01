@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
 
 public class Bumper : AbstractChangeDir
 {
 
-    public float distanceToTurn = 2f;
+    public float detectionDistance = 2f;
+
+    private GameObject viewPoint;                  //A position marking where to cast the view box. Created dinamically.
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,26 +23,41 @@ public class Bumper : AbstractChangeDir
     {
         SetupDir();
 
-        Renderer rend = GetComponent<Renderer>();
         GetComponent<Rigidbody2D>().freezeRotation = true;
 
-        BoxCollider2D bumperCollider = gameObject.AddComponent<BoxCollider2D>();
+        viewPoint = new GameObject("BumperViewPoint");
+        Renderer rend = GetComponent<Renderer>();
+        viewPoint.transform.position = new Vector2(transform.position.x - rend.bounds.extents.x, transform.position.y);
+        viewPoint.transform.parent = gameObject.transform;
 
-        //Offset en Y = 0
-        //Offset en X 2 -> -0.1 
-        bumperCollider.offset = new Vector3(distanceToTurn*-0.1f/2, 0);
-
-        //Size no es cuadrado
-        //Y = 0.25
-        //X -> 2 -> 0.4
-        bumperCollider.size = new Vector2(distanceToTurn*0.4f/2, 0.25f);
-        bumperCollider.isTrigger = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         MoveForward();
+
+        List<RaycastHit2D> bumperRay = new List<RaycastHit2D>();
+        ContactFilter2D contactFilter2D = new ContactFilter2D();
+        Vector2 dir = (pMovementSpeed < 0) ? Vector2.left : Vector2.right;
+        int PlayerRayCount = Physics2D.BoxCast(viewPoint.transform.position, new Vector2(detectionDistance,1), 0f, dir, contactFilter2D, bumperRay, detectionDistance);
+
+        if (PlayerRayCount != 0)
+        {
+            int i = 0;
+            bool stop = false;
+
+            while (i < PlayerRayCount && !stop)
+            {
+                if (bumperRay[i].collider.gameObject.layer != GameManager.instance.GetGroundLayer() && bumperRay[i].collider.gameObject.name != "BaseEnemy") //Cambiar esto :DD:D
+                {
+                    ChangeDir();
+                    stop = true;
+                }
+                i++;
+            }
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,10 +70,11 @@ public class Bumper : AbstractChangeDir
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Vector3 positionVector = new Vector3(distanceToTurn * -0.1f / 2, transform.position.y);
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x -distanceToTurn, transform.position.y));
-
+        Gizmos.color = Color.green;
+        Renderer rend = GetComponent<Renderer>();
+        Vector2 gizmosPos = new Vector2(transform.position.x - rend.bounds.extents.x, transform.position.y);
+        Vector2 gizmosDistace = new Vector2(gizmosPos.x - detectionDistance, gizmosPos.y);
+        Gizmos.DrawLine(gizmosPos, gizmosDistace);
     }
 
 }

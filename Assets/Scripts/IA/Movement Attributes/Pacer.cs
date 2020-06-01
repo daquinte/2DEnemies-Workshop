@@ -12,16 +12,12 @@ using UnityEngine;
 /// 
 public class Pacer : AbstractChangeDir {
 
-    
-    private LayerMask m_WhatIsGround;           //A mask determining what is ground for this entity
-
+   
     private GameObject raycastEmitter;          //GameObject you throw the raycast from. Created dinamically.
 
     // Start is called before the first frame update
     void Start()
     {
-        m_WhatIsGround = GameManager.instance.GetGroundLayer();
-
         Setup();     
     }
 

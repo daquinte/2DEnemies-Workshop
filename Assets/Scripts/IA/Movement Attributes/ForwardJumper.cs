@@ -27,13 +27,15 @@ public class ForwardJumper : MovementBehaviour
     //Private attributes 
     private Jumper jumper;                              //This object´s Jumper component
     private Bullet bullet;                              //This object´s Bullet component
-    private GameObject groundPoint;                     //A position marking where to check if the player is grounded. Created dinamically.
+    private GameObject groundPoint;                     //A position marking where to check if the enemy is grounded. Created dinamically.
     private Animator jumpAnimator;                      //This object´s animator
+    private Vector2 GizmosPos;                    
 
     private bool canJump;                               //Are you touching the ground, and your delay is over?
     private bool updatePlayerPosition = true;           //Can you update player position?
+    private bool drawEditorGizmos = true;               //Are you moving right now, at all?
 
-    private int jumperModifier;                                 //Modifies the direction of the jump
+    private int jumperModifier;                         //Modifies the direction of the jump
     private float lastJumpTimer;                        //Tracks the last frame in which you jumped
     private float groundCheckRadius = 0.5f;             //Radius of the sphere we use to track the ground.
 
@@ -42,10 +44,12 @@ public class ForwardJumper : MovementBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GizmosPos = new Vector2(transform.position.x, transform.position.y + jumpHeight);   //Highest point
         jumpAnimator = GetComponent<Animator>();
         jumpAnimator.SetBool("Alert", true);
         
         canJump = true;
+        drawEditorGizmos = false;
         lastJumpTimer = Time.deltaTime;
         
         SetUpComponents();
@@ -136,23 +140,23 @@ public class ForwardJumper : MovementBehaviour
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
-    // Draws a wireframe sphere in the Scene view, fully enclosing
-    // the object.
+    
     private void OnDrawGizmosSelected()
     {
 
-        Renderer rend;
+        if (drawEditorGizmos)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + jumpHeight));
+        }
+        else
+        {
+            Gizmos.color = Color.red;
+            GizmosPos = new Vector2(transform.position.x, transform.position.y + jumpHeight);   //Highest point, updated
+            float distance = Vector2.Distance(transform.position, GizmosPos);
+            Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + distance));
+        }
 
-
-        rend = GetComponent<Renderer>();
-
-        // A sphere that fully encloses the bounding box.
-        Vector3 center = rend.bounds.center;
-        float radius = rend.bounds.extents.magnitude;
-
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(center, radius);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

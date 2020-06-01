@@ -77,8 +77,8 @@ public class EnemyEngine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (isMoving)
-			updatePosition();
+		/*if (isMoving)
+			updatePosition();*/
 	}
 
 
@@ -122,7 +122,7 @@ public class EnemyEngine : MonoBehaviour
 			newVelocity *= maxVelocity;
 		}
 		velocity = new Vector3(newVelocity.x, newVelocity.y, 0.0f);
-		transform.position += velocity * Time.deltaTime;
+		//transform.position += velocity * Time.deltaTime;
 
 		// The enemy forward vector is facing up
 		//transform.up = velocity.normalized;

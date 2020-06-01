@@ -20,9 +20,11 @@ public class Jumper : MovementBehaviour
     [SerializeField]
     private float jumpHeight = 4f;                              //How high you want this entity to jump
 
-    
+
     private bool isForwardJumper = false;
     private bool canJump;                                       //¿Are you touching the ground, and your delay is over?
+    private bool drawEditorGizmos = true;                       //Are you moving right now, at all?
+
 
     private float jumpTime = 1f;                                //Time that will take to reach max jump
     private float lastJumpTimer;                                //Tracks the last frame in which you jumped
@@ -30,15 +32,23 @@ public class Jumper : MovementBehaviour
     private float gravityScale = 0f;
     private float groundCheckRadius = 0.5f;                     //Radius of the sphere we use to track the ground.
 
+    private Rigidbody2D RB2D;
     private GameObject groundPoint;
     private Animator jumpAnimator;
+
+    private Vector3 positionOnStart;                                    //Position on start for Gizmos purposes
+    private Vector2 GizmosPos;
 
 
 
     private void Start()
     {
+        GizmosPos = new Vector2(transform.position.x, transform.position.y + jumpHeight);   //Highest point
+        drawEditorGizmos = false;
+        positionOnStart = transform.position;
         jumpAnimator = this.GetComponent<Animator>();
-        GetComponent<Rigidbody2D>().gravityScale = 1;       //while this might seem redundant, we need this component to be affected by physics
+        RB2D = GetComponent<Rigidbody2D>();
+        RB2D.gravityScale = 1;       //while this might seem redundant, we need this component to be affected by physics
 
         if (groundPoint == null)
         {
@@ -72,7 +82,6 @@ public class Jumper : MovementBehaviour
                 if (Time.time - lastJumpTimer > jumpDelay)
                 {
                     CheckIfGrounded();
-
                 }
             }
 
@@ -86,7 +95,7 @@ public class Jumper : MovementBehaviour
     {
         CalculateJumpSpeed();
         //GetComponent<Rigidbody2D>().gravityScale = gravityScale/2;
-        GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpForce;
+        RB2D.velocity = new Vector2(RB2D.velocity.x, jumpForce);
         //jumpAnimator.SetBool("Jumping", true);
     }
 
@@ -134,7 +143,7 @@ public class Jumper : MovementBehaviour
     public void SetAsForwardJumperComponent(out GameObject gp)
     {
         isForwardJumper = true;
-        if(groundPoint == null)
+        if (groundPoint == null)
         {
             SetUpGroundPoint();
         }
@@ -157,5 +166,23 @@ public class Jumper : MovementBehaviour
     public override Vector2 GetMovement()
     {
         throw new System.NotImplementedException();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (!isForwardJumper)
+        {
+            if (drawEditorGizmos)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + jumpHeight));
+            }
+            else
+            {
+                Gizmos.color = Color.red;
+                float distance = Vector2.Distance(transform.position, GizmosPos);
+                Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + distance));
+            }
+        }
     }
 }
