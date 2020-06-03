@@ -10,15 +10,16 @@ using UnityEngine;
 /// but changes direction in response to a trigger.
 /// </summary>
 /// 
-public class Pacer : AbstractChangeDir {
+public class Pacer : AbstractChangeDir
+{
 
-   
+
     private GameObject raycastEmitter;          //GameObject you throw the raycast from. Created dinamically.
 
     // Start is called before the first frame update
     void Start()
     {
-        Setup();     
+        Setup();
     }
 
     /// <summary>
@@ -36,7 +37,7 @@ public class Pacer : AbstractChangeDir {
 
         Renderer rend = GetComponent<Renderer>();
         raycastEmitter.transform.position = new Vector3(transform.position.x - rend.bounds.extents.x, transform.position.y);
-        raycastEmitter.transform.parent   = gameObject.transform;
+        raycastEmitter.transform.parent = gameObject.transform;
 
     }
 
@@ -59,22 +60,20 @@ public class Pacer : AbstractChangeDir {
         Debug.DrawRay(raycastEmitter.transform.position, Vector2.down, Color.green);
 
 
-        if (sensorRay != 0)
+        int i = 0;
+        bool floorFound = false;
+
+        while (i < sensorRay)
         {
-            int i = 0;
-            bool floorFound = false;
-
-            while (i < sensorRay)
+            if (rayCastInfo[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer())
             {
-                if (rayCastInfo[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer())
-                {
-                    floorFound = true;
-                }
-                i++;
+                floorFound = true;
             }
-
-            //If my ray did NOT detect any floor, we change dir
-            if (!floorFound) ChangeDir();
+            i++;
         }
+
+        //If my ray did NOT detect any floor, we change dir
+        if (!floorFound) ChangeDir();
     }
 }
+
