@@ -55,7 +55,7 @@ public class Pacer : AbstractChangeDir {
     {
         List<RaycastHit2D> rayCastInfo = new List<RaycastHit2D>();
         ContactFilter2D contactFilter2D = new ContactFilter2D();
-        int sensorRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, contactFilter2D, rayCastInfo, 4);
+        int sensorRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, contactFilter2D, rayCastInfo, 1);
         Debug.DrawRay(raycastEmitter.transform.position, Vector2.down, Color.green);
 
 
