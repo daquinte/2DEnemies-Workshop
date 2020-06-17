@@ -5,12 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Movements/Bumper")]
+
+//A Bumper enemy advances in a straight line, but changes direction when it encounters a gameobject
 public class Bumper : AbstractChangeDir
 {
 
     public float detectionDistance = 2f;
 
-    private GameObject viewPoint;                  //A position marking where to cast the view box. Created dinamically.
+    private GameObject viewPoint;                                       //A position marking where to cast the view box. Created dinamically.
+
 
 
     // Start is called before the first frame update
@@ -29,7 +34,6 @@ public class Bumper : AbstractChangeDir
         Renderer rend = GetComponent<Renderer>();
         viewPoint.transform.position = new Vector2(transform.position.x - rend.bounds.extents.x, transform.position.y);
         viewPoint.transform.parent = gameObject.transform;
-
     }
 
     // Update is called once per frame
@@ -40,22 +44,28 @@ public class Bumper : AbstractChangeDir
         List<RaycastHit2D> bumperRay = new List<RaycastHit2D>();
         ContactFilter2D contactFilter2D = new ContactFilter2D();
         Vector2 dir = (pMovementSpeed < 0) ? Vector2.left : Vector2.right;
-        int PlayerRayCount = Physics2D.BoxCast(viewPoint.transform.position, new Vector2(detectionDistance,1), 0f, dir, contactFilter2D, bumperRay, detectionDistance);
+        int PlayerRayCount = Physics2D.BoxCast(viewPoint.transform.position, new Vector2(detectionDistance, 0.5f), 0f, dir, contactFilter2D, bumperRay, detectionDistance);
 
-        if (PlayerRayCount != 0)
+        int i = 0;
+        bool stop = false;
+
+        while (i < PlayerRayCount && !stop)
         {
-            int i = 0;
-            bool stop = false;
-
-            while (i < PlayerRayCount && !stop)
+            if (bumperRay[i].collider.gameObject.layer != GameManager.instance.GetGroundLayer() && bumperRay[i].collider.gameObject.name != "BaseEnemy") //TODO: Cambiar esto :DD:D
             {
-                if (bumperRay[i].collider.gameObject.layer != GameManager.instance.GetGroundLayer() && bumperRay[i].collider.gameObject.name != "BaseEnemy") //Cambiar esto :DD:D
+                ChangeDir();
+                Renderer rend = GetComponent<Renderer>();
+                if (pMovementDir < 0)
                 {
-                    ChangeDir();
-                    stop = true;
+                    viewPoint.transform.position = new Vector2(transform.position.x + rend.bounds.extents.x, transform.position.y);
                 }
-                i++;
+                else
+                {
+                    viewPoint.transform.position = new Vector2(transform.position.x - rend.bounds.extents.x, transform.position.y);
+                }
+                stop = true;
             }
+            i++;
         }
 
     }
@@ -65,6 +75,7 @@ public class Bumper : AbstractChangeDir
         if (!collision.gameObject.layer.Equals(GameManager.instance.GetGroundLayer()))
         {
             ChangeDir();
+
         }
     }
 
@@ -72,8 +83,18 @@ public class Bumper : AbstractChangeDir
     {
         Gizmos.color = Color.green;
         Renderer rend = GetComponent<Renderer>();
-        Vector2 gizmosPos = new Vector2(transform.position.x - rend.bounds.extents.x, transform.position.y);
-        Vector2 gizmosDistace = new Vector2(gizmosPos.x - detectionDistance, gizmosPos.y);
+        Vector2 gizmosPos;
+        Vector2 gizmosDistace;
+        if (transform.rotation.y == 0)
+        {
+            gizmosPos = new Vector2(transform.position.x - rend.bounds.extents.x, transform.position.y);
+            gizmosDistace = new Vector2(gizmosPos.x - detectionDistance, gizmosPos.y);
+        }
+        else
+        {
+            gizmosPos = new Vector2(transform.position.x + rend.bounds.extents.x, transform.position.y);
+            gizmosDistace = new Vector2(gizmosPos.x + detectionDistance, gizmosPos.y);
+        }
         Gizmos.DrawLine(gizmosPos, gizmosDistace);
     }
 

@@ -26,7 +26,6 @@ public abstract class MovementBehaviour : MonoBehaviour
     
     }
 
-    //TODO: Rework para que sean los componentes los que usen el motor
     //Get the movement
     public abstract Vector2 GetMovement();
 

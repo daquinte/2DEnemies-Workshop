@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Movements/Liner")]
+
 /// <summary>
 /// The enemy moves in a straight line directly to point of the screen.
 /// If rotateTowardsTarget is active, this component changes the direction of the gameObject to orientate itself.
@@ -14,7 +18,7 @@ public class Liner : MovementBehaviour
     public bool rotateTowardsTarget = true;
 
     [Tooltip("Time to reach the target Point")]
-    public float timeToReachTarget = 2;
+    public float timeToReachTarget = 1;
 
     [Tooltip("Decides the Liner type")]
     [SerializeField]

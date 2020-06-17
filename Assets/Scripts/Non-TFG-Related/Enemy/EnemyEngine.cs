@@ -102,6 +102,38 @@ public class EnemyEngine : MonoBehaviour
 	}
 
 
+	//Returns the physics layer for the ground
+	public int GetGroundLayer()
+	{
+		//Layer set up
+		int g = LayerMask.NameToLayer("Ground");
+		if (g == -1)
+		{
+			g = LayerMask.NameToLayer("ground");
+			if (g == -1)
+			{
+				Debug.LogWarning("[GAME MANAGER WARNING] A Ground layer, set in the platforms, is required for a behaviour to work!");
+			}
+		}
+		return g;
+	}
+
+
+	public int GetPlayerLayer()
+	{
+		//Layer set up
+		int g = LayerMask.NameToLayer("Player");
+		if (g == -1)
+		{
+			g = LayerMask.NameToLayer("player");
+			if (g == -1)
+			{
+				Debug.LogWarning("[GAME MANAGER WARNING] A Player layer, set in the Quote game object, is required for a behaviour to work!");
+			}
+		}
+		return g;
+	}
+
 	private void updatePosition()
 	{
 		foreach (MovementBehaviour sb in enemyBehaviours)

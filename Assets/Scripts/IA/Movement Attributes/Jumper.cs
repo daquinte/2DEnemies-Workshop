@@ -5,6 +5,10 @@ using UnityEngine;
 //We need a Rigidbody in order to apply force to the gameObject
 [RequireComponent(typeof(Rigidbody2D))]
 
+
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Movements/Jumper")]
+
 /// <summary>
 /// Jumps as high ad the "jump force" variable.
 /// You can especify the delay between jumps, as well as the jump force. 
@@ -29,14 +33,12 @@ public class Jumper : MovementBehaviour
     private float jumpTime = 1f;                                //Time that will take to reach max jump
     private float lastJumpTimer;                                //Tracks the last frame in which you jumped
     private float jumpForce = 0f;                               //Total force of this jump
-    private float gravityScale = 0f;
     private float groundCheckRadius = 0.5f;                     //Radius of the sphere we use to track the ground.
 
     private Rigidbody2D RB2D;
     private GameObject groundPoint;
     private Animator jumpAnimator;
 
-    private Vector3 positionOnStart;                                    //Position on start for Gizmos purposes
     private Vector2 GizmosPos;
 
 
@@ -45,7 +47,6 @@ public class Jumper : MovementBehaviour
     {
         GizmosPos = new Vector2(transform.position.x, transform.position.y + jumpHeight);   //Highest point
         drawEditorGizmos = false;
-        positionOnStart = transform.position;
         jumpAnimator = this.GetComponent<Animator>();
         RB2D = GetComponent<Rigidbody2D>();
         RB2D.gravityScale = 1;       //while this might seem redundant, we need this component to be affected by physics
@@ -94,7 +95,6 @@ public class Jumper : MovementBehaviour
     public void Jump()
     {
         CalculateJumpSpeed();
-        //GetComponent<Rigidbody2D>().gravityScale = gravityScale/2;
         RB2D.velocity = new Vector2(RB2D.velocity.x, jumpForce);
         //jumpAnimator.SetBool("Jumping", true);
     }
@@ -160,7 +160,7 @@ public class Jumper : MovementBehaviour
     {
         //return Mathf.Sqrt(2 * jumpHeight * Physics2D.gravity.magnitude);
         jumpForce = ((2 * jumpHeight) / jumpTime);
-        gravityScale = (2 * jumpHeight) / Mathf.Sqrt(jumpTime);
+        RB2D.gravityScale = jumpHeight / 5;   //5 max heigh == 1 gravity, so we make the rule of three
     }
 
     public override Vector2 GetMovement()

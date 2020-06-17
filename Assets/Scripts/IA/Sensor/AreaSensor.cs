@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Sensors/AreaSensor")]
 
 public class AreaSensor : Sensor
 {
@@ -77,7 +78,7 @@ public class AreaSensor : Sensor
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
-        Vector2 boxPosition = new Vector2(transform.position.x + LocalAreaPosition.x, transform.position.y + LocalAreaPosition.y);
+        Vector2 boxPosition = (Vector2)transform.position + LocalAreaPosition;
         Gizmos.DrawWireCube(boxPosition, AreaWidth);
     }
 

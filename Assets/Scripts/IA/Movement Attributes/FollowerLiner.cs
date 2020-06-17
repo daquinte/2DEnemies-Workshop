@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Movements/Follower")]
+
 /// <summary>
 /// This Component provides a Liner with the target position when the timer states so
 /// The Liner can decide how it wants to move the entity, so a Liner component is required 

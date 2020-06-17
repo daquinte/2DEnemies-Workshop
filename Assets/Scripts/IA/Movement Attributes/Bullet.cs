@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Movements/Bullet")]
+
 /// <summary>
 /// Moves in a straight line in a given direction: Up, down, left or right
 /// Contrary to the Enemy Bullet, this is just a define of the linear movement, but its not a bullet itself
@@ -137,6 +140,6 @@ public class Bullet : MovementBehaviour
     {
         // Draws a blue line from this transform to the target
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 10));
+        //Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 10));
     }
 }

@@ -5,6 +5,9 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Movements/Pacer")]
+
 /// <summary>
 /// The enemy moves in a straight line, in the direction you specify, 
 /// but changes direction in response to a trigger.

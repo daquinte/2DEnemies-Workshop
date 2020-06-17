@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Movements/Wander")]
+
 /// <summary>
-/// TODO: Comentar
+/// Wanders inside a customizable area, changing a target position in the time given.
 /// </summary>
 public class WanderLiner : Liner
 {

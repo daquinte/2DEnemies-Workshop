@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+
 public enum RangeSensorType { Horizontal, Vertical, DistanceBased }
 
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Sensors/RangeSensor")]
 
 /// <summary>
 /// This class works as a distance or range sensor between this entity and some target GameObject
 /// When the distance is closer than a given value, either in one of the axis or any given distance, 
 /// the sensor will trigger a customizable response.
 /// </summary>
+
 public class RangeSensor : Sensor
 {
     [Tooltip("Especifies the sensor range´s type.")]

@@ -10,6 +10,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Movements/Floater")]
 public class Floater : MovementBehaviour
 {
     public enum MovementAxis { X, Y };                   //Axis in which a Floater can move
@@ -21,7 +23,7 @@ public class Floater : MovementBehaviour
     public float movementAcceleration = 1.5f;
 
     [Tooltip("Time to reach the target Point")]
-    public float timeToCompleteMovement = 1.5f;
+    public float timeToCompleteMovement = 1f;
 
     [Tooltip("Amount of time that the enemy will wait at the edges")]
     public float delayTime = 0.4f;                                      //Delay in Realtime Seconds the entity will wait at the ends of each path
@@ -91,7 +93,7 @@ public class Floater : MovementBehaviour
             //With 
             if (hasABulletComponent)
             {
-                Vector2 velocidad = distance * (movementAcceleration / timeToCompleteMovement);
+                Vector2 velocidad = distance * (movementAcceleration / (timeToCompleteMovement/2));
                 switch (movementAxis)
                 {
                     case MovementAxis.Y:

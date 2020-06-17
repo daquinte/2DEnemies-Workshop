@@ -2,8 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaycastSensor : Sensor
+
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Sensors/LineSensor")]
+public class LineSensor : Sensor
 {
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        LineDirection = LineDirection.normalized;
+    }
+#endif
 
     //[Tooltip("Position the ray will fire from")]
     //public Vector2 LocalRaycastPoint;
@@ -12,15 +21,16 @@ public class RaycastSensor : Sensor
     public bool SeeThroughWalls = false;
 
     [Tooltip("Direction the ray will follow")]
-    public Vector2 RayDirection;
+    public Vector2 LineDirection;
 
-    private int layer;
+    [Tooltip("Raycast magnitude")]
+    public float LineDistance= 3;
+
     private bool turnOffGizmos = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        layer = GameManager.instance.GetPlayerLayer();
         turnOffGizmos = true;
     }
 
@@ -30,8 +40,8 @@ public class RaycastSensor : Sensor
         base.CheckForDeactivateStateChange();
         List<RaycastHit2D> rayCastInfo = new List<RaycastHit2D>();
         ContactFilter2D contactFilter2D = new ContactFilter2D();
-        int sensorRay = Physics2D.Raycast(transform.position, RayDirection, contactFilter2D, rayCastInfo, RayDirection.magnitude);
-        Debug.DrawRay(transform.position, RayDirection, Color.green);
+        int sensorRay = Physics2D.Raycast(transform.position, LineDirection, contactFilter2D, rayCastInfo, LineDistance);
+        Debug.DrawRay(transform.position, LineDirection * LineDistance, Color.green);
        
 
         if (sensorRay != 0)
@@ -46,11 +56,20 @@ public class RaycastSensor : Sensor
                     //Stop looking
                     stop = true;
                 }
-                else if (rayCastInfo[i].collider.gameObject.layer == GameManager.instance.GetPlayerLayer())
+                else 
                 {
-                    OnSensorDetection();
-                    //Stop looking
-                    stop = true;
+                    EnemyEngine enemyEngine = GetComponent<EnemyEngine>();
+                    if(enemyEngine != null)
+                    {
+                        if (rayCastInfo[i].collider.gameObject.layer == enemyEngine.GetPlayerLayer())
+                        {
+                            OnSensorDetection();
+                            //Stop looking
+                            stop = true;
+                        }                       
+                    }
+                    else Debug.LogWarning("No components detected! A sensor can´t work without at least one");
+
                 }
                 i++;
             }
@@ -79,7 +98,7 @@ public class RaycastSensor : Sensor
         if (!turnOffGizmos)
         {
             Gizmos.color = Color.cyan;
-            Vector2 GizmosRayDirection = new Vector2(transform.position.x + RayDirection.x, transform.position.y + RayDirection.y);
+            Vector2 GizmosRayDirection = (Vector2)transform.position + LineDirection * LineDistance;
             Gizmos.DrawLine(transform.position, GizmosRayDirection);
         }
     }

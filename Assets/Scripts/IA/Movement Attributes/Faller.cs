@@ -5,6 +5,9 @@ using UnityEngine;
 //We need a Rigidbody in order to apply gravity to the gameObject
 [RequireComponent(typeof(Rigidbody2D))]
 
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Movements/Faller")]
+
 /// <summary>
 /// A Faller enemy will drop itself down when a certain condition is met.
 /// The condition usually is given by the detection range.

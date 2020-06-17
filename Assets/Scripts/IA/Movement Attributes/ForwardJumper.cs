@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Adds the class to its AddComponent field
+[AddComponentMenu("EnemiesWorkshop/Movements/ForwardJumper")]
 
 /// <summary>
 /// This component combines a jumper behaviour with a bullet behaviour.
