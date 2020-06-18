@@ -55,7 +55,7 @@ public class EnemyEngine : MonoBehaviour
 		//Set Layer to enemy is it isn´t
 		if(gameObject.layer == 0)
 		{
-			gameObject.layer = LayerMask.NameToLayer("Enemy");
+			gameObject.layer = LayerMask.NameToLayer("Default");
 		}
 
 		if (enemyTarget != null)
@@ -128,7 +128,7 @@ public class EnemyEngine : MonoBehaviour
 			g = LayerMask.NameToLayer("player");
 			if (g == -1)
 			{
-				Debug.LogWarning("[GAME MANAGER WARNING] A Player layer, set in the Quote game object, is required for a behaviour to work!");
+				Debug.LogWarning("[GAME MANAGER WARNING] A Player layer, set in the Player game object, is required for a behaviour to work!");
 			}
 		}
 		return g;

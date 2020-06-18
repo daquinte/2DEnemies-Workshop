@@ -44,23 +44,34 @@ public class AreaSensor : Sensor
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (!collision.gameObject.layer.Equals(GameManager.instance.GetGroundLayer()))
+        EnemyEngine enemyEngine = GetComponent<EnemyEngine>();
+        if (enemyEngine != null)
         {
-            sensorActive = true;
-            OnSensorActive();
+            if (!collision.gameObject.layer.Equals(enemyEngine.GetGroundLayer()))
+            {
+                sensorActive = true;
+                OnSensorActive();
+            }
         }
+        else Debug.LogWarning("No components detected! A sensor can´t work without at least one");
+
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (sensorActive) {
-            if (!collision.gameObject.layer.Equals(GameManager.instance.GetGroundLayer()))
+        EnemyEngine enemyEngine = GetComponent<EnemyEngine>();
+        if (enemyEngine != null)
+        {
+            if (sensorActive)
             {
-                sensorActive = false;
-                OnSensorExit();
+                if (!collision.gameObject.layer.Equals(enemyEngine.GetGroundLayer()))
+                {
+                    sensorActive = false;
+                    OnSensorExit();
+                }
             }
-        }      
+        }
     }
 
     /*Senson Methods*/

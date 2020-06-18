@@ -101,16 +101,22 @@ public class Jumper : MovementBehaviour
 
     public void CheckIfGrounded()
     {
-        //Cast a sphere of 0.2f radius from the groundPoint to check for ground
-        RaycastHit2D groundRay = Physics2D.Raycast(groundPoint.transform.position, Vector2.down, groundCheckRadius);
-        if (groundRay.collider != null)
+        EnemyEngine enemyEngine = GetComponent<EnemyEngine>();
+        List<RaycastHit2D> groundRay = new List<RaycastHit2D>();
+        ContactFilter2D contactFilter2D = new ContactFilter2D();
+        int groundRayCount = Physics2D.BoxCast(groundPoint.transform.position, new Vector2(2, groundCheckRadius), 0f, Vector2.down, contactFilter2D, groundRay, groundCheckRadius);
+        int i = 0;
+        bool stop = false;
+
+        while (i < groundRayCount && !stop)
         {
-            if (groundRay.collider.gameObject.layer == GameManager.instance.GetGroundLayer())
+            if (groundRay[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer())
             {
                 canJump = true;
                 lastJumpTimer = Time.time;
 
             }
+            i++;
         }
     }
 

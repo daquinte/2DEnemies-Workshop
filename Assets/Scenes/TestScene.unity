@@ -675,12 +675,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 847053795}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d55b8c2772770b4bb5ac747a27d34fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeactivateOnExit: 0
+  LocalAreaPosition: {x: -2.47, y: 0}
+  AreaWidth: {x: 6, y: 6}
+--- !u!114 &847053797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847053795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69ae36d7fb666d14c98f693d6b9a47eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpDelay: 1.2
   jumpHeight: 4
---- !u!114 &847053797
+--- !u!114 &847053798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -692,7 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5555d495ddd0e2b4cbd3cc82242b860a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &847053798
+--- !u!50 &847053799
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -713,21 +728,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &847053799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847053795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18452b35c247914a8ac59c07f34b351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeactivateOnExit: 0
-  sensorType: 1
-  detectionRange: 6
 --- !u!1 &1100819659
 GameObject:
   m_ObjectHideFlags: 0

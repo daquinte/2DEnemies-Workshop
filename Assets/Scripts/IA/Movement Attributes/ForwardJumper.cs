@@ -31,7 +31,7 @@ public class ForwardJumper : MovementBehaviour
     private Bullet bullet;                              //This object´s Bullet component
     private GameObject groundPoint;                     //A position marking where to check if the enemy is grounded. Created dinamically.
     private Animator jumpAnimator;                      //This object´s animator
-    private Vector2 GizmosPos;                    
+    private Vector2 GizmosPos;
 
     private bool canJump;                               //Are you touching the ground, and your delay is over?
     private bool updatePlayerPosition = true;           //Can you update player position?
@@ -49,13 +49,13 @@ public class ForwardJumper : MovementBehaviour
         GizmosPos = new Vector2(transform.position.x, transform.position.y + jumpHeight);   //Highest point
         jumpAnimator = GetComponent<Animator>();
         jumpAnimator.SetBool("Alert", true);
-        
+
         canJump = true;
         drawEditorGizmos = false;
         lastJumpTimer = Time.deltaTime;
-        
+
         SetUpComponents();
-        
+
     }
 
     private void OnEnable()
@@ -74,7 +74,7 @@ public class ForwardJumper : MovementBehaviour
     {
         if (canJump)
         {
-            
+
             jumper.Jump();  //Jump!     
 
             if (updatePlayerPosition)
@@ -100,22 +100,20 @@ public class ForwardJumper : MovementBehaviour
                 ContactFilter2D contactFilter2D = new ContactFilter2D();
                 int groundRayCount = Physics2D.BoxCast(groundPoint.transform.position, new Vector2(2, groundCheckRadius), 0f, Vector2.down, contactFilter2D, groundRay, groundCheckRadius);
 
-                if (groundRayCount != 0)
-                {
-                    int i = 0;
-                    bool stop = false;
+                int i = 0;
+                bool stop = false;
 
-                    while (i < groundRayCount && !stop)
+                while (i < groundRayCount && !stop)
+                {
+                    if (groundRay[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer())
                     {
-                        if(groundRay[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer())
-                        {
-                            canJump = true;
-                            lastJumpTimer = Time.time;
-                            stop = true;
-                        }
-                        i++;
+                        canJump = true;
+                        lastJumpTimer = Time.time;
+                        stop = true;
                     }
+                    i++;
                 }
+
 
             }
         }
@@ -142,7 +140,7 @@ public class ForwardJumper : MovementBehaviour
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
-    
+
     private void OnDrawGizmosSelected()
     {
 
@@ -163,7 +161,7 @@ public class ForwardJumper : MovementBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == GameManager.instance.GetGroundLayer())
+        if (collision.gameObject.layer == GameManager.instance.GetGroundLayer())
         {
             jumper.StopJumpAnimation();
         }

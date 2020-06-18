@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class AbstractChangeDir : MonoBehaviour
+public class AbstractChangeDir : MovementBehaviour
 {
     //Public movement speed for this components
     public float movementSpeed = 3f;
@@ -63,4 +63,9 @@ public class AbstractChangeDir : MonoBehaviour
     /// Method that will be overrided
     /// </summary>
     protected virtual void Check() {}
+
+    public override Vector2 GetMovement()
+    {
+        throw new System.NotImplementedException();
+    }
 }
