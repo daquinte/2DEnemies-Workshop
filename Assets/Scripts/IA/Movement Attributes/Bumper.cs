@@ -40,7 +40,7 @@ public class Bumper : AbstractChangeDir
     void Update()
     {
         MoveForward();
-
+        EnemyEngine enemyEngine = GetComponent<EnemyEngine>();
         List<RaycastHit2D> bumperRay = new List<RaycastHit2D>();
         ContactFilter2D contactFilter2D = new ContactFilter2D();
         Vector2 dir = (pMovementSpeed < 0) ? Vector2.left : Vector2.right;
@@ -51,7 +51,7 @@ public class Bumper : AbstractChangeDir
 
         while (i < PlayerRayCount && !stop)
         {
-            if (bumperRay[i].collider.gameObject.layer != GameManager.instance.GetGroundLayer() && bumperRay[i].collider.gameObject.name != "BaseEnemy") //TODO: Cambiar esto :DD:D
+            if (bumperRay[i].collider.gameObject.layer != enemyEngine.GetGroundLayer() && bumperRay[i].collider.gameObject.name != "BaseEnemy") //TODO: Cambiar esto :DD:D
             {
                 ChangeDir();
                 Renderer rend = GetComponent<Renderer>();
@@ -72,7 +72,7 @@ public class Bumper : AbstractChangeDir
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.layer.Equals(GameManager.instance.GetGroundLayer()))
+        if (!collision.gameObject.layer.Equals(GetComponent<EnemyEngine>().GetGroundLayer()))
         {
             ChangeDir();
 

@@ -57,6 +57,8 @@ public class Pacer : AbstractChangeDir
     /// </summary>
     protected override void Check()
     {
+        EnemyEngine enemyEngine = GetComponent<EnemyEngine>();
+    
         List<RaycastHit2D> rayCastInfo = new List<RaycastHit2D>();
         ContactFilter2D contactFilter2D = new ContactFilter2D();
         int sensorRay = Physics2D.Raycast(raycastEmitter.transform.position, Vector2.down, contactFilter2D, rayCastInfo, 1);
@@ -68,7 +70,7 @@ public class Pacer : AbstractChangeDir
 
         while (i < sensorRay)
         {
-            if (rayCastInfo[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer())
+            if (rayCastInfo[i].collider.gameObject.layer == enemyEngine.GetGroundLayer())
             {
                 floorFound = true;
             }

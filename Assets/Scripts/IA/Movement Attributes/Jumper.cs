@@ -110,7 +110,7 @@ public class Jumper : MovementBehaviour
 
         while (i < groundRayCount && !stop)
         {
-            if (groundRay[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer())
+            if (groundRay[i].collider.gameObject.layer == enemyEngine.GetGroundLayer())
             {
                 canJump = true;
                 lastJumpTimer = Time.time;

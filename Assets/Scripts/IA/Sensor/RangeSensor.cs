@@ -24,18 +24,9 @@ public class RangeSensor : Sensor
     public float detectionRange = 3.0f;
 
 
-
-    private GameObject target;
-
     // Start is called before the first frame update
     void Start()
-    {
-
-        target = GameManager.instance.GetLevelManager().GetPlayer();
-        if (target == null)
-        {
-            Debug.LogWarning("Player is null! Please, create a player if there is none.");
-        }
+    {  
 
     }
 
@@ -43,17 +34,20 @@ public class RangeSensor : Sensor
     void Update()
     {
         base.CheckForDeactivateStateChange();
+
+        EnemyEngine enemyEngine = GetComponent<EnemyEngine>();
+        Vector3 target = enemyEngine.GetTargetPosition();
         float distance = 0;
         switch (sensorType)
         {
             case RangeSensorType.Horizontal:
-                distance = Mathf.Abs(transform.position.x - target.transform.position.x);                
+                distance = Mathf.Abs(transform.position.x - target.x);                
                 break;
             case RangeSensorType.Vertical:
-                distance = Mathf.Abs(target.transform.position.y - transform.position.y);               
+                distance = Mathf.Abs(target.y - transform.position.y);               
                 break;
             case RangeSensorType.DistanceBased:
-                distance = Vector2.Distance(transform.position, target.transform.position);              
+                distance = Vector2.Distance(transform.position, target);              
                 break;
         }
 

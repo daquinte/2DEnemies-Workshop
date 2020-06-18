@@ -95,7 +95,7 @@ public class ForwardJumper : MovementBehaviour
             {
                 //Cast a 2-width box into the ground. The box is so that the entity doesn´t get stuck in platform´s edges
                 //((which used to happen and was pretty annoying))
-
+                EnemyEngine enemyEngine = GetComponent<EnemyEngine>();
                 List<RaycastHit2D> groundRay = new List<RaycastHit2D>();
                 ContactFilter2D contactFilter2D = new ContactFilter2D();
                 int groundRayCount = Physics2D.BoxCast(groundPoint.transform.position, new Vector2(2, groundCheckRadius), 0f, Vector2.down, contactFilter2D, groundRay, groundCheckRadius);
@@ -105,7 +105,7 @@ public class ForwardJumper : MovementBehaviour
 
                 while (i < groundRayCount && !stop)
                 {
-                    if (groundRay[i].collider.gameObject.layer == GameManager.instance.GetGroundLayer())
+                    if (groundRay[i].collider.gameObject.layer == enemyEngine.GetGroundLayer())
                     {
                         canJump = true;
                         lastJumpTimer = Time.time;
@@ -161,7 +161,8 @@ public class ForwardJumper : MovementBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == GameManager.instance.GetGroundLayer())
+
+        if (collision.gameObject.layer == GetComponent<EnemyEngine>().GetGroundLayer())
         {
             jumper.StopJumpAnimation();
         }
