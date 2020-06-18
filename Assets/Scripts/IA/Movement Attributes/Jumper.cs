@@ -172,16 +172,18 @@ public class Jumper : MovementBehaviour
     {
         if (!isForwardJumper)
         {
+            Renderer rend = GetComponent<Renderer>();
             if (drawEditorGizmos)
             {
                 Gizmos.color = Color.green;
-                Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + jumpHeight));
+                
+                Gizmos.DrawLine(new Vector2(transform.position.x, transform.position.y + rend.bounds.extents.y), new Vector2(transform.position.x, transform.position.y + jumpHeight));
             }
             else
             {
                 Gizmos.color = Color.red;
                 float distance = Vector2.Distance(transform.position, GizmosPos);
-                Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + distance));
+                Gizmos.DrawLine(new Vector2(transform.position.x, transform.position.y + rend.bounds.extents.y), new Vector2(transform.position.x, transform.position.y + distance));
             }
         }
     }

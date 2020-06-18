@@ -43,24 +43,24 @@ public class RangeSensor : Sensor
     void Update()
     {
         base.CheckForDeactivateStateChange();
+        float distance = 0;
         switch (sensorType)
         {
             case RangeSensorType.Horizontal:
-                if (Mathf.Abs(transform.position.x - target.transform.position.x) < detectionRange)
-                    OnSensorActive();
-                else if (sensorActive) OnSensorExit();
+                distance = Mathf.Abs(transform.position.x - target.transform.position.x);                
                 break;
             case RangeSensorType.Vertical:
-                if (Mathf.Abs(target.transform.position.y - transform.position.y) > detectionRange)
-                    OnSensorActive();
-                else if (sensorActive) OnSensorExit();
+                distance = Mathf.Abs(target.transform.position.y - transform.position.y);               
                 break;
             case RangeSensorType.DistanceBased:
-                if (Vector2.Distance(transform.position, target.transform.position) < detectionRange)
-                    OnSensorActive();
-                else if (sensorActive) OnSensorExit();
+                distance = Vector2.Distance(transform.position, target.transform.position);              
                 break;
         }
+
+        if (!sensorActive && distance < detectionRange)
+            OnSensorActive();
+
+        else if (sensorActive && distance > detectionRange) OnSensorExit();
 
     }
 
