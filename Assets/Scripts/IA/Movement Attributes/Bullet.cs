@@ -19,24 +19,28 @@ public class Bullet : MovementBehaviour
         Up, Down, Left, Right
     };
 
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        BulletDirection = BulletDirection.normalized;
+    }
+#endif
+
     [Tooltip("Do you want collision with walls?")]
     public bool collideWithWalls = true;
 
-    [Tooltip("Do you want gravity enabled?")]
-    public bool enableGravity = false;
 
     [Tooltip("Direction in which the bullet will move")]
-    [SerializeField]
-    private MovementDirection movementDirection = MovementDirection.Up;
+    public Vector2 BulletDirection;
+   // private MovementDirection movementDirection = MovementDirection.Up;
 
     [Tooltip("Movement in Unity units/second")]
     public float bulletSpeed = 1.5f;
 
 
- 
-
     private Rigidbody2D RB2D;                       //This component´s rigid body
     private bool isForwardJumper = false;           //Is this component a sub-component of a Forward Jumper?
+    private bool enableGravity = false;
 
 
 
@@ -49,7 +53,7 @@ public class Bullet : MovementBehaviour
     {
         if (!isForwardJumper)
         {
-            switch (movementDirection)
+            /*switch (movementDirection)
             {
                 case MovementDirection.Up:
                     RB2D.velocity = new Vector2(RB2D.velocity.x, Mathf.Abs(bulletSpeed));
@@ -63,7 +67,8 @@ public class Bullet : MovementBehaviour
                 case MovementDirection.Right:
                     RB2D.velocity = new Vector2(Mathf.Abs(bulletSpeed), RB2D.velocity.y);
                     break;
-            }
+            }*/
+            RB2D.velocity = new Vector2(BulletDirection.x * bulletSpeed, BulletDirection.y * bulletSpeed);
 
         }
     }
@@ -140,6 +145,7 @@ public class Bullet : MovementBehaviour
     {
         // Draws a blue line from this transform to the target
         Gizmos.color = Color.red;
-        //Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 10));
+        Vector2 GizmosRayDirection = (Vector2)transform.position + BulletDirection * 3;
+        Gizmos.DrawLine(transform.position, GizmosRayDirection);
     }
 }
