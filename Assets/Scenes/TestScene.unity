@@ -606,12 +606,12 @@ PrefabInstance:
     - target: {fileID: 3266726794389442963, guid: 386f3bebe62ffb04fb1841e9c59c7756,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.56
+      value: 4.68
       objectReference: {fileID: 0}
     - target: {fileID: 3266726794389442963, guid: 386f3bebe62ffb04fb1841e9c59c7756,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.88
+      value: -3.53
       objectReference: {fileID: 0}
     - target: {fileID: 3266726794389442963, guid: 386f3bebe62ffb04fb1841e9c59c7756,
         type: 3}
@@ -675,13 +675,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 847053795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff957f6ad373151439810e114940ba4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 69ae36d7fb666d14c98f693d6b9a47eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAmplitude: 4
-  timeToCompleteMovement: 1
-  delayTime: 0.4
-  movementAxis: 0
+  jumpHeight: 4
+  jumpDelay: 1.2
+  jumpTime: 1
 --- !u!114 &847053797
 MonoBehaviour:
   m_ObjectHideFlags: 0

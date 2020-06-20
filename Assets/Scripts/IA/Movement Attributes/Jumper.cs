@@ -16,13 +16,13 @@ using UnityEngine;
 public class Jumper : MovementBehaviour
 {
     //Public attributes
-    [Tooltip("Delay between jumps")]
-    [SerializeField]
-    private float jumpDelay = 1.2f;                              //Delay between jumps
-
     [Tooltip("How high you want this entity to jump")]
     [SerializeField]
     private float jumpHeight = 4f;                              //How high you want this entity to jump
+
+    [Tooltip("Delay between jumps")]
+    [SerializeField]
+    private float jumpDelay = 1.2f;                              //Delay between jumps
 
 
     private bool isForwardJumper = false;
