@@ -13,6 +13,7 @@ using UnityEngine;
 /// </summary>
 public class Liner : MovementBehaviour
 {
+    public GameObject target;
 
     [Tooltip("Whether you want the entity to rotate or not")]
     public bool rotateTowardsTarget = true;
@@ -42,7 +43,9 @@ public class Liner : MovementBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetPoint = enemyEngine.GetTargetPosition();
+        if (target == null) target = GameObject.FindGameObjectWithTag("Player");
+
+        targetPoint = target.transform.position;
         SetupLiner();
     }
 

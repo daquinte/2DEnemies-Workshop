@@ -19,9 +19,6 @@ public class Floater : MovementBehaviour
     [Tooltip("Wave amplitude of this movement")]
     public float movementAmplitude = 4f;             //Total distance you want to cover in unity units
 
-    [Tooltip("Movement Speed of this movement")]
-    public float movementAcceleration = 1.5f;
-
     [Tooltip("Time to reach the target Point")]
     public float timeToCompleteMovement = 1f;
 
@@ -36,6 +33,7 @@ public class Floater : MovementBehaviour
     private Vector2 UpPoint;
     private Vector2 DownPoint;
     private Vector3 targetFloaterPosition;                              //Position you´re moving towards
+    private Vector2 distanceToTarget;                                   //Distance to the target position
 
     private float upperLimit;
     private float lowerLimit;
@@ -79,6 +77,7 @@ public class Floater : MovementBehaviour
         }
 
         targetFloaterPosition = UpPoint;
+        distanceToTarget = targetFloaterPosition - transform.position;
         RB2D = GetComponent<Rigidbody2D>();
         RB2D.gravityScale = 0;
     }
@@ -86,14 +85,12 @@ public class Floater : MovementBehaviour
     {
         if (isFloaterMoving)
         {
-
-            Vector2 distance = targetFloaterPosition - transform.position;
             float dist = 0;
 
             //With 
             if (hasABulletComponent)
             {
-                Vector2 velocidad = distance * (movementAcceleration / (timeToCompleteMovement/2));
+                Vector2 velocidad = distanceToTarget / timeToCompleteMovement;
                 switch (movementAxis)
                 {
                     case MovementAxis.Y:
@@ -110,7 +107,7 @@ public class Floater : MovementBehaviour
             {
 
                 dist = Vector3.Distance(transform.position, targetFloaterPosition);
-                RB2D.velocity = distance * (movementAcceleration / timeToCompleteMovement);
+                RB2D.velocity = distanceToTarget / timeToCompleteMovement;
             }
             
             if (dist < 0.15f)
@@ -151,6 +148,7 @@ public class Floater : MovementBehaviour
         else targetFloaterPosition = DownPoint;
 
         RB2D.WakeUp();
+        distanceToTarget = targetFloaterPosition - transform.position;
         isFloaterMoving = true;
     }
 

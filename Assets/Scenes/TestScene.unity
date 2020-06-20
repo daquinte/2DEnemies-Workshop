@@ -675,12 +675,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 847053795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38763839d8790646aaa9fc74d12ac28, type: 3}
+  m_Script: {fileID: 11500000, guid: ff957f6ad373151439810e114940ba4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collideWithWalls: 1
-  BulletDirection: {x: -0.9372574, y: 0.34863833}
-  bulletSpeed: 1.5
+  movementAmplitude: 4
+  timeToCompleteMovement: 1
+  delayTime: 0.4
+  movementAxis: 0
 --- !u!114 &847053797
 MonoBehaviour:
   m_ObjectHideFlags: 0
