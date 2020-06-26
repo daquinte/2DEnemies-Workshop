@@ -8,14 +8,13 @@ using UnityEngine;
 //Adds the class to its AddComponent field
 [AddComponentMenu("EnemiesWorkshop/Movements/Bumper")]
 
-//A Bumper enemy advances in a straight line, but changes direction when it encounters a gameobject
+//A Bumper enemy advances in a straight line, but changes direction when it encounters an obstacle
 public class Bumper : AbstractChangeDir
 {
-
+    [Tooltip("Distance in which this entity will check for walls")]
     public float detectionDistance = 2f;
 
     private GameObject viewPoint;                                       //A position marking where to cast the view box. Created dinamically.
-
 
 
     // Start is called before the first frame update
@@ -51,7 +50,7 @@ public class Bumper : AbstractChangeDir
 
         while (i < PlayerRayCount && !stop)
         {
-            if (bumperRay[i].collider.gameObject.layer != enemyEngine.GetGroundLayer() && bumperRay[i].collider.gameObject.name != "BaseEnemy") //TODO: Cambiar esto :DD:D
+            if (bumperRay[i].collider.gameObject.layer != enemyEngine.GetGroundLayer() && bumperRay[i].collider.gameObject.name != "BaseEnemy")
             {
                 ChangeDir();
                 Renderer rend = GetComponent<Renderer>();
@@ -75,7 +74,6 @@ public class Bumper : AbstractChangeDir
         if (!collision.gameObject.layer.Equals(GetComponent<EnemyEngine>().GetGroundLayer()))
         {
             ChangeDir();
-
         }
     }
 

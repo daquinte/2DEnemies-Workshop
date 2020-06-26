@@ -9,13 +9,16 @@ using UnityEngine;
 [AddComponentMenu("EnemiesWorkshop/Movements/Faller")]
 
 /// <summary>
-/// A Faller enemy will drop itself down when a certain condition is met.
+/// A Faller enemy will drop itself down.
 /// The condition usually is given by the detection range.
 /// </summary>
 public class Faller : MovementBehaviour
 {
-    public float    appliedGravity = 2.5f;                             //Gravity that will be applied for the fall.
-    public float    delayTime = 0.5f;                      //Time, in unscaled seconds, the enemy will wait before the fall
+    [Tooltip("Downwards speed that will be applied for the fall")]
+    public float    appliedGravity = 2.5f;                             //Downwards speed that will be applied for the fall.
+
+    [Tooltip("Time that the enemy will wait before the fall")]
+    public float    delayTime = 0.5f;                                  //Time that the enemy will wait before the fall
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,10 @@ public class Faller : MovementBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// Sets the new gravity scale for this movement
+    /// </summary>
+    /// <param name="mod">new scale</param>
     private void ModifyGravityScale(float mod)
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();

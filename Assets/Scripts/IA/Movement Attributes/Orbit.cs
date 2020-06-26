@@ -12,7 +12,6 @@ public class Orbit : MonoBehaviour
 {
     [Tooltip("Center of the orbit movement")]
     public Vector2 orbitationalCenter;
-
     [Tooltip("Radius of the orbitational sphere")]
     public float radius = 2.0f;
     [Tooltip("speed of the orbitational movement")]
@@ -27,8 +26,8 @@ public class Orbit : MonoBehaviour
 
 
 
-    private Vector2 desiredPosition;
-    private Vector2 GizmoPosition;
+    private Vector2 desiredPosition;                    //Desired position for the steering
+    private Vector2 GizmoPosition;                      //Gizmo position for the orbit´s drawing
 
     private bool drawEditorGizmos = true;
 
@@ -70,22 +69,20 @@ public class Orbit : MonoBehaviour
         if (drawEditorGizmos)
         {
             gizmoPos = (Vector2)transform.position;
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(gizmoPos + orbitationalCenter, 0.3f);
-            Gizmos.color = Color.cyan;
 
             Gizmos.DrawWireSphere(gizmoPos + orbitationalCenter, radius);
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(gizmoPos + orbitationalCenter, 0.1f);
+           
         }
         else
         {
             gizmoPos = GizmoPosition;
-            
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(gizmoPos, 0.3f);
-            Gizmos.color = Color.cyan;
-
             Gizmos.DrawWireSphere(gizmoPos, radius);
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(gizmoPos, 0.1f);
+
         }
-        
+
     }
 }

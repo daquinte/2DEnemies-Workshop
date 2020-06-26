@@ -13,6 +13,7 @@ using UnityEngine;
 /// </summary>
 public class Liner : MovementBehaviour
 {
+    [Tooltip("Target of the Liner movement. Player by default.")]
     public GameObject target;
 
     [Tooltip("Whether you want the entity to rotate or not")]
@@ -49,7 +50,7 @@ public class Liner : MovementBehaviour
         SetupLiner();
     }
 
-
+    //Sets up the Liner according to the public attributes information
     private void SetupLiner()
     {
         //This makes sure that whenever this two components interact, they do it correctly
@@ -68,7 +69,6 @@ public class Liner : MovementBehaviour
         if (linerType == LinerType.Constant)
         {
             SetUpCinematicAttributes();
-            //Debug.Log("CienticLiner creado!");
         }
 
         //Accelerated set up
@@ -105,6 +105,10 @@ public class Liner : MovementBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the new target position for this Liner movement
+    /// </summary>
+    /// <param name="pos">new target position</param>
     public void SetTargetPosition(Vector2 pos)
     {
         t = 0;
@@ -119,15 +123,9 @@ public class Liner : MovementBehaviour
         linerType = lt;
     }
 
-
-    /// <summary>
-    /// This method is called from the enemy engine TODO: ver si lo voy a usar
-    /// </summary>
-    /// <returns></returns>
+    //Return cinematic or physical according to liner Type
     public override Vector2 GetMovement()
     {
-        //Debug.Log("[LINER] Get movement from external call...");
-        //Tengo que devolver cinetica o fisica según toque.
         Vector2 externalMovement = Vector2.zero;
         switch (linerType)
         {
@@ -138,9 +136,7 @@ public class Liner : MovementBehaviour
                 externalMovement = PhysicsLiner();
                 break;
         }
-
         return externalMovement;
-
     }
 
 

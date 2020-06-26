@@ -9,8 +9,8 @@ using UnityEngine;
 [AddComponentMenu("EnemiesWorkshop/Movements/Bullet")]
 
 /// <summary>
-/// Moves in a straight line in a given direction: Up, down, left or right
-/// Contrary to the Enemy Bullet, this is just a define of the linear movement, but its not a bullet itself
+/// Moves in a straight line in a given direction.
+/// Contrary to the Enemy Bullet class, this is just a define of the linear movement, but its not a bullet itself
 /// </summary>
 public class Bullet : MovementBehaviour
 {
@@ -29,10 +29,8 @@ public class Bullet : MovementBehaviour
     [Tooltip("Do you want collision with walls?")]
     public bool collideWithWalls = true;
 
-
     [Tooltip("Direction in which the bullet will move")]
     public Vector2 BulletDirection;
-   // private MovementDirection movementDirection = MovementDirection.Up;
 
     [Tooltip("Movement in Unity units/second")]
     public float bulletSpeed = 1.5f;
@@ -40,7 +38,7 @@ public class Bullet : MovementBehaviour
 
     private Rigidbody2D RB2D;                       //This component´s rigid body
     private bool isForwardJumper = false;           //Is this component a sub-component of a Forward Jumper?
-    private bool enableGravity = false;
+    private bool enableGravity = false;             //Is this bullet affected by gravity?
 
 
 
@@ -52,24 +50,8 @@ public class Bullet : MovementBehaviour
     public void FixedUpdate()
     {
         if (!isForwardJumper)
-        {
-            /*switch (movementDirection)
-            {
-                case MovementDirection.Up:
-                    RB2D.velocity = new Vector2(RB2D.velocity.x, Mathf.Abs(bulletSpeed));
-                    break;
-                case MovementDirection.Down:
-                    RB2D.velocity = new Vector2(RB2D.velocity.x, -Mathf.Abs(bulletSpeed));
-                    break;
-                case MovementDirection.Left:
-                    RB2D.velocity = new Vector2(-Mathf.Abs(bulletSpeed), RB2D.velocity.y);
-                    break;
-                case MovementDirection.Right:
-                    RB2D.velocity = new Vector2(Mathf.Abs(bulletSpeed), RB2D.velocity.y);
-                    break;
-            }*/
+        {            
             RB2D.velocity = new Vector2(BulletDirection.x * bulletSpeed, BulletDirection.y * bulletSpeed);
-
         }
     }
 
@@ -97,7 +79,7 @@ public class Bullet : MovementBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Debug.Log("[Bullet] Player hit!");
+            //Debug.Log("[Bullet] Player hit!");
         }
     }
 

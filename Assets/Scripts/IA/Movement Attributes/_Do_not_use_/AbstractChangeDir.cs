@@ -3,19 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/// <summary>
+/// This class is an abstract class that defines the common parts of all movement components
+/// that imply a straight movement and a change of direction
+/// </summary>
 public class AbstractChangeDir : MovementBehaviour
 {
     //Public movement speed for this components
+    [Tooltip("Movement speed of this movement")]
     public float movementSpeed = 3f;
 
-    //Enumerator to calcule the direction of the entity
+    //Enumerator to set the direction of the entity
     protected enum InitialMovement { Right, Left };
 
+
+    /// <summary>
+    /// Sets the initial movement. It works, but gives some unexpected results in the Pacer behaviour.
+    /// Uncomment the [SerializeField] attribute if selecting initial movement is desirable, otherwise it will move left by default
+    /// </summary>
+    //[SerializeField] 
     private InitialMovement initialMovement = InitialMovement.Left;
 
 
-    protected float pMovementSpeed;
-    protected float pMovementDir = 0f;
+    protected float pMovementSpeed;            //Private movement speed, so that the movement speed is in absolute value
+    protected float pMovementDir = 0f;         //Private direction modificator
 
     /// <summary>
     /// Setup of the direcion, dependant on he initial movement.

@@ -17,13 +17,15 @@ public class FollowerLiner : Liner
     [Tooltip("Time that this component will wait before sending player position to Liner component")]
     public float timeToRefresh = 0.4f;
 
-    private bool updatePlayerPosition = true;
+    private bool updatePlayerPosition = true;   //Should this component ask for the updated player position?
+
     // Update is called once per frame
     void Update()
     {
        
         if (updatePlayerPosition)
         {
+            //Look for the player´s position
             SetTargetPosition(enemyEngine.GetTargetPosition());
             updatePlayerPosition = false;
             StartCoroutine(SetTargetPositionAfterSeconds());

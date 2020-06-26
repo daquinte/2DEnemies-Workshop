@@ -14,8 +14,6 @@ public class LineSensor : Sensor
     }
 #endif
 
-    //[Tooltip("Position the ray will fire from")]
-    //public Vector2 LocalRaycastPoint;
     [Space(10)]
     [Tooltip("Allow the line of sight to see through terrain?")]
     public bool SeeThroughWalls = false;
@@ -26,7 +24,7 @@ public class LineSensor : Sensor
     [Tooltip("Raycast magnitude")]
     public float LineDistance = 3;
 
-    private bool turnOffGizmos = false;
+    private bool turnOffGizmos = false;                                 //Turn off the gizmos when running
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +35,7 @@ public class LineSensor : Sensor
     // Update is called once per frame
     void Update()
     {
-        base.CheckForDeactivateStateChange();
+        CheckForDeactivateStateChange();
 
         List<RaycastHit2D> rayCastInfo = new List<RaycastHit2D>();
         ContactFilter2D contactFilter2D = new ContactFilter2D();
@@ -59,17 +57,12 @@ public class LineSensor : Sensor
                 }
                 else
                 {
-
-
                     if (rayCastInfo[i].collider.gameObject.layer == enemyEngine.GetPlayerLayer())
                     {
                         OnSensorDetection();
                         //Stop looking
                         stop = true;
                     }
-
-                    else Debug.LogWarning("No components detected! A sensor can´t work without at least one");
-
                 }
             }
             i++;
@@ -96,11 +89,10 @@ public class LineSensor : Sensor
 
     private void OnDrawGizmosSelected()
     {
-        if (!turnOffGizmos)
-        {
-            Gizmos.color = Color.cyan;
-            Vector2 GizmosRayDirection = (Vector2)transform.position + LineDirection * LineDistance;
-            Gizmos.DrawLine(transform.position, GizmosRayDirection);
-        }
+       
+         Gizmos.color = Color.cyan;
+         Vector2 GizmosRayDirection = (Vector2)transform.position + LineDirection * LineDistance;
+         Gizmos.DrawLine(transform.position, GizmosRayDirection);
+        
     }
 }

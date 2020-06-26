@@ -10,11 +10,24 @@ using UnityEngine;
 /// </summary>
 public class WanderLiner : Liner
 {
-    public float randomRadius = 10f;
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        target = null;                              //This gameobject cant have a target!
+    }
+#endif
+
+    [Tooltip("Area in which the wander can move")]
+    public float areaRadius = 10f;
+
+    [Tooltip("Time that will wait after reaching destination and setting a new waypoint")]
     public float timeToRefresh = 3f;
    
 
-    private float currentTime;
+    private float currentTime;                      //Current time for internal time check purposes
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +40,17 @@ public class WanderLiner : Liner
         currentTime += Time.deltaTime;
         if (currentTime >= timeToRefresh)
         {
-            SetTargetPosition(Random.insideUnitCircle * randomRadius);
+            //Set a new position in the internal Liner
+            SetTargetPosition(Random.insideUnitCircle * areaRadius);
             currentTime = 0;
         }
 
         //Move according to current liner configuration
         transform.position = GetMovement();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, areaRadius);
     }
 }

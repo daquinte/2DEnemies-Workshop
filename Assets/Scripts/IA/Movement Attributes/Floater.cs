@@ -14,10 +14,10 @@ using UnityEngine;
 [AddComponentMenu("EnemiesWorkshop/Movements/Floater")]
 public class Floater : MovementBehaviour
 {
-    public enum MovementAxis { X, Y };                   //Axis in which a Floater can move
+    public enum MovementAxis { X, Y };                                  //Axis in which a Floater can move
 
     [Tooltip("Wave amplitude of this movement")]
-    public float movementAmplitude = 4f;             //Total distance you want to cover in unity units
+    public float movementAmplitude = 4f;                                //Total distance you want to cover in unity units
 
     [Tooltip("Time to reach the target Point")]
     public float timeToCompleteMovement = 1f;
@@ -30,13 +30,13 @@ public class Floater : MovementBehaviour
 
 
     //Private movement attributes
-    private Vector2 UpPoint;
-    private Vector2 DownPoint;
+    private Vector2 UpPoint;                                            //Highest position of the movement
+    private Vector2 DownPoint;                                          //Lowest position of the movement
     private Vector3 targetFloaterPosition;                              //Position you´re moving towards
     private Vector2 distanceToTarget;                                   //Distance to the target position
 
-    private float upperLimit;
-    private float lowerLimit;
+    private float upperLimit;                                           //private highest number of the movement
+    private float lowerLimit;                                           //private lowest number of the movement
 
     private bool towardsUpperLimit;                                     //Are you going towards the upperLimit?
     private bool isFloaterMoving = true;                                //Are you moving right now, at all?

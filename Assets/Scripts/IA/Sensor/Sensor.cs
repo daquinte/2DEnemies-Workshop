@@ -23,7 +23,7 @@ public class Sensor : MonoBehaviour
     private List<MonoBehaviour> deactivateComponents;
 
 
-    protected bool sensorActive;        //Sometimes I just want the sensor to track this information so any components (previously active) can ask.
+    protected bool sensorActive;        //Sometimes we just want the sensor to track this information so any components (previously active) can ask.
 
     private void Awake()
     {
@@ -75,6 +75,9 @@ public class Sensor : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if the "deactivate on exit" boolean has changed its state in run-time
+    /// </summary>
     protected void CheckForDeactivateStateChange()
     {
         if(DeactivateOnExit && deactivateComponents.Count == 0)
@@ -89,12 +92,16 @@ public class Sensor : MonoBehaviour
             deactivateComponents.Clear();
         }
     }
-    /*Methods*/
 
+
+    /// <summary>
+    /// Sets up the internal sensor logic.
+    /// We have to make sure that all components that are meant to be activated
+    /// are deactivated by default
+    /// </summary>
+    /// <param name="movementBehaviour">Current movement behaviour</param>
     private void ComponentSetup(MonoBehaviour movementBehaviour)
     {
-        //We have to make sure that all components that are meant to be activated
-        //are deactivated by default
         movementBehaviour.enabled = false;
         if (movementBehaviour.GetComponent<Rigidbody2D>() != null)
         {
@@ -105,7 +112,6 @@ public class Sensor : MonoBehaviour
         {
             deactivateComponents.Add(movementBehaviour);
         }
-
     }
 
     protected virtual void OnSensorActive()

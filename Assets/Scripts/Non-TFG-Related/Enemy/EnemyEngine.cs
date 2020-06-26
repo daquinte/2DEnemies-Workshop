@@ -21,14 +21,9 @@ public class EnemyEngine : MonoBehaviour
 	protected float maxAccel = 5.0f;
 
 	/// <summary>
-	/// List with every component that composes an enemy behaviour
+	/// [OUTDATED] List with every component that composes an enemy behaviour
 	/// </summary>
 	private List<MovementBehaviour> enemyBehaviours;
-
-	/// <summary>
-	/// ¿Is the enemy moving?
-	/// </summary>
-	private bool isMoving;
 
 	/// <summary>
 	/// ¿Is the enemy facing left?
@@ -47,9 +42,7 @@ public class EnemyEngine : MonoBehaviour
 
 	private void Awake()
 	{
-		enemyBehaviours = new List<MovementBehaviour>();
-
-		isMoving = false;
+		enemyBehaviours = new List<MovementBehaviour>();	
 		isFacingLeft = true;
 
 		//Set Layer to enemy is it isn´t
@@ -57,18 +50,13 @@ public class EnemyEngine : MonoBehaviour
 		{
 			gameObject.layer = LayerMask.NameToLayer("Default");
 		}
-
-		if (enemyTarget != null)
-		{
-			isMoving = true;
-		}
 		else
 		{
 			GameObject player = GameObject.FindGameObjectWithTag("Player");
 			if (player != null)
 			{
+				//Get the reference to the player
 				enemyTarget = player;
-				isMoving = true;
 			}
 		}
 	}

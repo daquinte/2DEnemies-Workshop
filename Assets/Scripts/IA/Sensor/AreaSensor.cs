@@ -10,7 +10,7 @@ public class AreaSensor : Sensor
     
     [Tooltip("This position is relagtive to the center of the entity")]
     public Vector2 LocalAreaPosition;
-    public Vector2 AreaWidth;
+    public Vector2 AreaSize;
 
     private BoxCollider2D sensorCollider;
     private const float BoxColliderModifier = 0.2f;
@@ -27,20 +27,23 @@ public class AreaSensor : Sensor
         base.CheckForDeactivateStateChange();
     }
 
+    /// <summary>
+    /// Sets up the area taking into consideration the user´s input
+    /// </summary>
     private void SetupAreaSensor()
     {
-        if(AreaWidth.x == 0 || AreaWidth.y == 0)
+        if(AreaSize.x == 0 || AreaSize.y == 0)
         {
             Debug.LogWarning("[Area Sensor] Width or Heigh can´t be zero! Setting it to a default size...");
-            AreaWidth.x = AreaWidth.x == 0 ? defaultSize : AreaWidth.x;
-            AreaWidth.y = AreaWidth.y == 0 ? defaultSize : AreaWidth.y;
+            AreaSize.x = AreaSize.x == 0 ? defaultSize : AreaSize.x;
+            AreaSize.y = AreaSize.y == 0 ? defaultSize : AreaSize.y;
         }
         //1 -> 0.2
         //aP -> x
         sensorCollider = gameObject.AddComponent<BoxCollider2D>();
         sensorCollider.isTrigger = true;
         sensorCollider.offset = new Vector2(LocalAreaPosition.x * BoxColliderModifier, LocalAreaPosition.y * BoxColliderModifier);
-        sensorCollider.size = new Vector2(AreaWidth.x * BoxColliderModifier, AreaWidth.y * BoxColliderModifier);
+        sensorCollider.size = new Vector2(AreaSize.x * BoxColliderModifier, AreaSize.y * BoxColliderModifier);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -90,7 +93,7 @@ public class AreaSensor : Sensor
     {
         Gizmos.color = Color.cyan;
         Vector2 boxPosition = (Vector2)transform.position + LocalAreaPosition;
-        Gizmos.DrawWireCube(boxPosition, AreaWidth);
+        Gizmos.DrawWireCube(boxPosition, AreaSize);
     }
 
 }

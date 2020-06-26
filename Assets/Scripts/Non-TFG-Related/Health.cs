@@ -16,7 +16,7 @@ public class Health : MonoBehaviour {
 
     [Header("Events")]
     [Space]
-    public UnityEvent OnDeathEvent;     //TODO: ¿Lo uso o no?
+    public UnityEvent OnDeathEvent; 
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
@@ -32,7 +32,6 @@ public class Health : MonoBehaviour {
     public void Setup(int health, UnityAction callback = null)
     {
         maxHealth = currentHealth = health;
-        //TODO: Asignar callbacks al evento 
     }
 
     //Heals the entity. A entity cannot overheal.

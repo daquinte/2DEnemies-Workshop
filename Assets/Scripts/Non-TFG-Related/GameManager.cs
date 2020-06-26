@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This class is used for "game simulation" purposes but it is not neccesary
+/// It can restart the scene, and look for layers but that was moved to the Enemy Engine class
+/// as to not have dependencies outside the catalogue
+/// </summary>
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;

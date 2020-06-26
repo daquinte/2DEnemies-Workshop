@@ -13,7 +13,7 @@ using UnityEngine;
 public class ForwardJumper : MovementBehaviour
 {
     //Public attributes
-    [Tooltip("Lateral speed movement. 0 = Jumper")] //TODO: make a log warning if == 0? could be nice
+    [Tooltip("Lateral speed movement. 0 = Jumper")]
     public float movementSpeed = 1.5f;
 
     [Tooltip("Max Height to be reached")]
@@ -48,7 +48,7 @@ public class ForwardJumper : MovementBehaviour
     {
         GizmosPos = new Vector2(transform.position.x, transform.position.y + jumpHeight);   //Highest point
         jumpAnimator = GetComponent<Animator>();
-        jumpAnimator.SetBool("Alert", true);
+        //jumpAnimator.SetBool("Alert", true);
 
         canJump = true;
         drawEditorGizmos = false;
@@ -75,7 +75,7 @@ public class ForwardJumper : MovementBehaviour
         if (canJump)
         {
 
-            jumper.Jump();  //Jump!     
+            GetComponent<Rigidbody2D>().velocity = jumper.GetMovement();  //Jump!     
 
             if (updatePlayerPosition)
             {

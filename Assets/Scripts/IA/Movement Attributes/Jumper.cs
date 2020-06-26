@@ -5,12 +5,11 @@ using UnityEngine;
 //We need a Rigidbody in order to apply force to the gameObject
 [RequireComponent(typeof(Rigidbody2D))]
 
-
 //Adds the class to its AddComponent field
 [AddComponentMenu("EnemiesWorkshop/Movements/Jumper")]
 
 /// <summary>
-/// Jumps as high ad the "jump force" variable.
+/// Jumps as high ad the "jump force" variable, and reaches its max height in the time given.
 /// You can especify the delay between jumps, as well as the jump force. 
 /// </summary>
 public class Jumper : MovementBehaviour
@@ -22,34 +21,36 @@ public class Jumper : MovementBehaviour
 
     [Tooltip("Delay between jumps")]
     [SerializeField]
-    private float jumpDelay = 1.2f;                              //Delay between jumps
+    private float jumpDelay = 1.2f;                             //Delay between jumps
 
 
-    private bool isForwardJumper = false;
-    private bool canJump;                                       //¿Are you touching the ground, and your delay is over?
+    [Tooltip("Time to reach highest point")]
+    public float jumpTime = 1f;                                 //Time that will take to reach max jump
+
+    private bool isForwardJumper = false;                       //Is this component part of a global jumper?
+    private bool canJump;                                       //Are you touching the ground, and your delay is over?
     private bool drawEditorGizmos = true;                       //Are you moving right now, at all?
 
 
-    private float jumpTime = 1f;                                //Time that will take to reach max jump
     private float lastJumpTimer;                                //Tracks the last frame in which you jumped
     private float jumpForce = 0f;                               //Total force of this jump
     private float groundCheckRadius = 0.5f;                     //Radius of the sphere we use to track the ground.
 
-    private Rigidbody2D RB2D;
-    private GameObject groundPoint;
-    private Animator jumpAnimator;
+    private Rigidbody2D RB2D;                                   //This components rigid body
+    private GameObject groundPoint;                             //The lowest point of this entity´s renderer
+    private Animator jumpAnimator;                              //The jumper animator.
 
-    private Vector2 GizmosPos;
+    private Vector2 HighestPoint;                               //Highest point of the jump
 
 
 
     private void Start()
     {
-        GizmosPos = new Vector2(transform.position.x, transform.position.y + jumpHeight);   //Highest point
+        HighestPoint = new Vector2(transform.position.x, transform.position.y + jumpHeight);   //Highest point
         drawEditorGizmos = false;
         jumpAnimator = this.GetComponent<Animator>();
         RB2D = GetComponent<Rigidbody2D>();
-        RB2D.gravityScale = 1;       //while this might seem redundant, we need this component to be affected by physics
+        RB2D.gravityScale = 1;       //while this might seem redundant, we need this component to be affected by physics and other components might prevent that
 
         if (groundPoint == null)
         {
@@ -74,9 +75,12 @@ public class Jumper : MovementBehaviour
         {
             if (canJump)
             {
-                Jump();
-                lastJumpTimer = Time.time;
-                canJump = false;
+                float dist = Vector2.Distance(transform.position, HighestPoint);
+                if(dist < 0.25)
+                {
+                    canJump = false;
+                }
+                else { Jump(); }      
             }
             else
             {
@@ -99,6 +103,7 @@ public class Jumper : MovementBehaviour
         //jumpAnimator.SetBool("Jumping", true);
     }
 
+    //Is this entity touching the ground?
     public void CheckIfGrounded()
     {
         EnemyEngine enemyEngine = GetComponent<EnemyEngine>();
@@ -112,7 +117,7 @@ public class Jumper : MovementBehaviour
         {
             if (groundRay[i].collider.gameObject.layer == enemyEngine.GetGroundLayer())
             {
-                canJump = true;
+                canJump = true;                
                 lastJumpTimer = Time.time;
 
             }
@@ -158,20 +163,20 @@ public class Jumper : MovementBehaviour
 
     /// <summary>
     /// Calculate the jump initial speed that will be applied to the entity
-    /// It follow the formula: √(2*g*Y) 
-    /// being Y the max height, provided in Unity units
     /// </summary>
     /// <returns>A float with the initial speed</returns>
     private void CalculateJumpSpeed()
     {
-        //return Mathf.Sqrt(2 * jumpHeight * Physics2D.gravity.magnitude);
-        jumpForce = ((2 * jumpHeight) / jumpTime);
-        RB2D.gravityScale = jumpHeight / 5;   //5 max heigh == 1 gravity, so we make the rule of three
+        if (isForwardJumper) { jumpForce = jumpHeight * 2; }
+        else { 
+            jumpForce = jumpHeight / jumpTime;
+        }
     }
 
     public override Vector2 GetMovement()
     {
-        throw new System.NotImplementedException();
+        CalculateJumpSpeed();
+        return new Vector2(RB2D.velocity.x, jumpForce);
     }
 
     private void OnDrawGizmosSelected()
@@ -188,7 +193,7 @@ public class Jumper : MovementBehaviour
             else
             {
                 Gizmos.color = Color.red;
-                float distance = Vector2.Distance(transform.position, GizmosPos);
+                float distance = Vector2.Distance(transform.position, HighestPoint);
                 Gizmos.DrawLine(new Vector2(transform.position.x, transform.position.y + rend.bounds.extents.y), new Vector2(transform.position.x, transform.position.y + distance));
             }
         }
